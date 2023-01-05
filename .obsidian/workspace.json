@@ -30,9 +30,45 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "08d7cfb35172db30",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Snowflake.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d32ac66d27b6ae3e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Databricks.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3fecc65ba99403a8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mongo DB.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -82,8 +118,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "108b4e3c8a2ecc65",
@@ -99,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mongo DB Querying Syntax.md",
+                "file": "Mongo DB.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mongo DB Querying Syntax.md",
+                "file": "Mongo DB.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mongo DB Querying Syntax.md"
+                "file": "Mongo DB.md"
               }
             }
           }
@@ -160,11 +195,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4b31ea73515f9b87",
+  "active": "3fecc65ba99403a8",
   "lastOpenFiles": [
     "Mongo DB Querying Syntax.md",
-    "Mongo DB.md",
     "Docker.md",
+    "Databricks.md",
+    "AWS.md",
+    "Snowflake.md",
+    "Mongo DB.md",
     "().md",
     "Untitled.canvas"
   ]
