@@ -1,3 +1,4 @@
+![[mongodb_logo.png]]
 **Mongo DB** is a **NOSQL** database, meaning that it stores data in _key_, _value_ pairs. NOSQL databases are very fast, and non relational, they are useful for large volumes of data. It connects to the three main clouds:
 
 - AWS
