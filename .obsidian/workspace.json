@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mongo DB.md",
+                "file": "Databricks.md",
                 "mode": "source",
                 "source": false
               }
@@ -118,7 +118,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "108b4e3c8a2ecc65",
@@ -134,7 +135,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Mongo DB.md",
+                "file": "Databricks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +152,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Mongo DB.md",
+                "file": "Databricks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Mongo DB.md"
+                "file": "Databricks.md"
               }
             }
           }
@@ -198,11 +199,11 @@
   "active": "3fecc65ba99403a8",
   "lastOpenFiles": [
     "Mongo DB Querying Syntax.md",
+    "Mongo DB.md",
     "Docker.md",
     "Databricks.md",
     "AWS.md",
     "Snowflake.md",
-    "Mongo DB.md",
     "().md",
     "Untitled.canvas"
   ]
