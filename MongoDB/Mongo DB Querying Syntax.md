@@ -82,12 +82,3 @@ We can chain commands using:
 db.<collection_name>.find({key : { $operation1: value1, $operation2: value2 }})
 ```
 The comma acts as an `AND`. Or we can explicitly state the statement with `$and`
-
-WHAT TO MENTION:
-CDP
-SNOWFLAKE
-DATABRICKS
-MONGODB
-
-UDEMY COURSE ON SNOWFLAKE
-PHIZER
