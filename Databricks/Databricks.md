@@ -1,3 +1,3 @@
-![[databrickslogo.png.png]]
+![[databrickslogo.png]]
 **Databricks** is a spark based cloud data platform, that links to the big three cloud providers: **AWS,Azure,** and **GCP**. It is a fully managed service, that allows us to make complex queries on big datasets at high velocity. It provides auto scaling, and spark optimized data processing.
 
