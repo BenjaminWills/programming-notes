@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Docker/Docker.md",
+                "file": "Databricks/Databricks.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Docker/Docker.md",
+                "file": "Databricks/Databricks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Docker/Docker.md",
+                "file": "Databricks/Databricks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Docker/Docker.md"
+                "file": "Databricks/Databricks.md"
               }
             }
           }
@@ -146,15 +146,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0fc8667117b82f16",
+  "active": "51d822f523a18a6e",
   "lastOpenFiles": [
-    "Databricks/Databricks.md",
     "MongoDB/Mongo DB.md",
+    "MongoDB/Mongo DB Querying Syntax.md",
+    "pictures/databrickslogo.png.png",
+    "Docker/Docker.md",
+    "Databricks/Databricks.md",
     "Untitled.canvas",
     "2023-01-05.md",
-    "MongoDB/Mongo DB Querying Syntax.md",
     "Snowflake/Snowflake.md",
-    "Docker/Docker.md",
     "AWS/AWS.md",
     "().md"
   ]
