@@ -60,11 +60,16 @@ db.<collection_name>.find({key:value},{key2:1|0,key3:1|0})
 ```
 This will return an object with only keys 2 and 3 showing. so if we find the following BSON on my name, and only want the name and not the age,
 ```json
-{name:"Ben",age:21}
+{
+	name:"Ben",
+	age:21
+}
 ```
 We would write `db.<collection_name>.find({name:"Ben"},{name:1,_id: 0})`. This would return
 ```json
-{name:"Ben"}
+{
+	name:"Ben"
+}
 ```
 - To execute complex queries we use the `$` in the find method.
 	- `$eq` - equal to
