@@ -3,7 +3,7 @@
   - [Running containers](#running-containers)
   - [Manage containers](#manage-containers)
   - [Manage images](#manage-images)
-- [Info and stats](#info-and-stats)
+  - [Info and stats](#info-and-stats)
 
 REFERENCES:
 
@@ -159,7 +159,7 @@ docker save image > file
 docker load -i file
 ```
 
-# Info and stats
+## Info and stats
 
 - Show logs of a container
 
