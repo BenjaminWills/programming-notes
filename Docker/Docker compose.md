@@ -1,4 +1,5 @@
 - [General structure](#general-structure)
+	- [Docker volumes](#docker-volumes)
 
 ## How to use
 
@@ -38,7 +39,7 @@ services:
 			# build from dockerfile
 			context: {path}
 			dockerfile: {dockerfile name} | image: {image name}
-			
+
 		ports:
 			- "host_port:container_port"
 
@@ -48,12 +49,12 @@ services:
 			# a database running in a docker container.
 			- local_data_path:container_data_path
 			- name:container_data_path
-			
+
 		environment:
 			- env_variable=variable
-			
+
 		command: {shell command}
-		
+
 		entrypoint: {a command to run upon initialising the container}
 
 		depends_on:
@@ -70,14 +71,17 @@ volumes:
 
 ## Docker volumes
 
-Declaring volumes can come in two forms, 
+Declaring volumes can come in two forms,
 
 1. Initiating a docker container on the terminal and reference both directories (like a madman)
+
 ```sh
 docker run \
 -v host_data_path:container_data_path
 ```
+
 2. Initiating a docker container on the terminal and only referencing the container volumes (`anonymous volume`)
+
 ```sh
 docker run \
 -v container_data_path
