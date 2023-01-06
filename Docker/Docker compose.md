@@ -30,6 +30,7 @@ docker-compose down
 `up` builds, recreates, starts and attatches the containers for a service.
 
 - run from specific file
+
 ```sh
 docker-compose -f docker-compose.yml up
 ```
@@ -92,7 +93,9 @@ docker run \
 docker run \
 -v container_data_path
 ```
+
 3. Initialising a docker container on the terminal using `named volumes` which simply names the directory to dump the data in.
+
 ```sh
 docker run \
 -v name:container_data_path
