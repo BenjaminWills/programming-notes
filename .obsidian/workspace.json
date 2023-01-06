@@ -11,9 +11,11 @@
             "id": "51d822f523a18a6e",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "pictures/databricks_logo.png"
+                "file": "Databricks/Databricks.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "pictures/databricks_logo.png",
+                "file": "Databricks/Databricks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "pictures/databricks_logo.png",
+                "file": "Databricks/Databricks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "pictures/databricks_logo.png"
+                "file": "Databricks/Databricks.md"
               }
             }
           }
@@ -144,17 +146,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0fc8667117b82f16",
+  "active": "51d822f523a18a6e",
   "lastOpenFiles": [
-    "pictures/mongodb_logo.png",
     "MongoDB/Mongo DB.md",
-    "Databricks/Databricks.md",
-    "pictures/databricks_logo.png",
     "MongoDB/Mongo DB Querying Syntax.md",
+    "Databricks/Databricks.md",
+    "pictures/mongodb_logo.png",
+    "pictures/databricks_logo.png",
     "Docker/Docker.md",
-    "Untitled.canvas",
-    "2023-01-05.md",
+    "AWS/AWS.md",
+    "Pasted image 20230105170425.png",
     "Snowflake/Snowflake.md",
-    "AWS/AWS.md"
+    "Untitled.canvas"
   ]
 }
