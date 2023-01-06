@@ -5,14 +5,18 @@
 
 - [INDEX](#index)
 - [General Spark Architecture](#general-spark-architecture)
+- [Databricks](#databricks)
+  - [Workspaces](#workspaces)
+  - [Pricing](#pricing)
 
 # General Spark Architecture
 
-Generally a `driver program` will send an input to a `cluster manager` that will delegate the tasks to some `worker nodes` that will use *parallell processing* to complete the analysis/task. Usually the `worker nodes` are VM's in your chosen cloud.
+Generally a `driver program` will send an input to a `cluster manager` that will delegate the tasks to some `worker nodes` that will use _parallell processing_ to complete the analysis/task. Usually the `worker nodes` are VM's in your chosen cloud.
 
 Spark is a `query engine`, not a storage engine.
 
 Spark unifies:
+
 - batch processing
 - interactive SQL
 - real time processing
@@ -20,3 +24,14 @@ Spark unifies:
 - deep learning
 - graph processing
 
+# Databricks
+
+## Workspaces
+
+[databricks test link](https://databricks.com/try-databricks)
+
+## Pricing
+
+[pricing info](https://databricks.com/product/pricing)
+
+There are three tiers, **standard**,**premium** and **enterprise**. Each having their own costs assosiated with them.

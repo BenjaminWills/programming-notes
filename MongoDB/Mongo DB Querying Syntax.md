@@ -1,4 +1,4 @@
-https://www.mongodb.com/docs/manual/tutorial/query-documents/
+[syntax docs](https://www.mongodb.com/docs/manual/tutorial/query-documents/)
 - Listing all DB's
 ```mongosh
 show dbs
