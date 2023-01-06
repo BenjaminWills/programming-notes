@@ -13,18 +13,10 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Docker/Docker.md",
+                "file": "Docker/Dockerfiles.md",
                 "mode": "source",
                 "source": false
               }
-            }
-          },
-          {
-            "id": "188d940b962af175",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
             }
           }
         ]
@@ -46,7 +38,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "byModifiedTime"
               }
             }
           },
@@ -77,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "108b4e3c8a2ecc65",
@@ -94,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Docker/Docker.md",
+                "file": "Docker/Dockerfiles.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Docker/Docker.md",
+                "file": "Docker/Dockerfiles.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Docker/Docker.md"
+                "file": "Docker/Dockerfiles.md"
               }
             }
           }
@@ -157,9 +148,9 @@
   },
   "active": "3578760b4c06b8bc",
   "lastOpenFiles": [
-    "Docker/Dockerfiles.md",
     "Docker/Docker compose.md",
     "Docker/Docker.md",
+    "Docker/Dockerfiles.md",
     "MongoDB/Mongo DB.md",
     "Databricks/Databricks.md",
     "Pasted image 20230106102622.png",
