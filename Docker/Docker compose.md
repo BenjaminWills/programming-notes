@@ -1,7 +1,8 @@
+- [How to use](#how-to-use)
 - [General structure](#general-structure)
 	- [Docker volumes](#docker-volumes)
 
-## How to use
+# How to use
 
 A docker compose is a composition of individual dockerfiles that you can run at once from a `root directory`, this can be done in a few ways.
 
