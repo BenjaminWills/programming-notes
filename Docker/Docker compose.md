@@ -100,3 +100,9 @@ docker run \
 docker run \
 -v name:container_data_path
 ```
+
+On mac the `docker volumes` path is:
+
+```sh
+/var/lib/docker/volumes
+```

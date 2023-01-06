@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Docker/Docker compose.md",
+                "file": "Docker/Docker.md",
                 "mode": "source",
                 "source": false
               }
@@ -105,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Docker/Docker compose.md",
+                "file": "Docker/Docker.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Docker/Docker compose.md",
+                "file": "Docker/Docker.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,7 +145,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Docker/Docker compose.md"
+                "file": "Docker/Docker.md"
               }
             }
           }
@@ -168,10 +168,10 @@
   },
   "active": "431d71a3a5ce51d6",
   "lastOpenFiles": [
-    "Docker/Docker.md",
     "Docker/Docker compose.md",
     "Docker/Dockerfiles.md",
     "MongoDB/Mongo DB.md",
+    "Docker/Docker.md",
     "Databricks/Databricks.md",
     "Pasted image 20230106102622.png",
     "databricks.com/product/pricing.md",
