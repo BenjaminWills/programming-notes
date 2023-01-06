@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Docker/Docker.md",
+                "file": "Docker/Docker compose.md",
                 "mode": "source",
                 "source": false
               }
@@ -39,8 +39,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -86,8 +85,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -168,17 +166,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3578760b4c06b8bc",
+  "active": "431d71a3a5ce51d6",
   "lastOpenFiles": [
     "Docker/Docker.md",
+    "Docker/Docker compose.md",
+    "Docker/Dockerfiles.md",
     "MongoDB/Mongo DB.md",
     "Databricks/Databricks.md",
     "Pasted image 20230106102622.png",
     "databricks.com/product/pricing.md",
     "databricks.com/try-databricks.md",
     "MongoDB/Mongo DB Querying Syntax.md",
-    "pictures/mongodb_logo.png",
-    "pictures/databricks_logo.png",
-    "AWS/AWS.md"
+    "pictures/mongodb_logo.png"
   ]
 }

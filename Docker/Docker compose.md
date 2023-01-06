@@ -29,6 +29,11 @@ docker-compose down
 
 `up` builds, recreates, starts and attatches the containers for a service.
 
+- run from specific file
+```sh
+docker-compose -f docker-compose.yml up
+```
+
 # General structure
 
 ```yml
@@ -49,7 +54,6 @@ services:
 			# and the docker container. This is useful for applications like
 			# a database running in a docker container.
 			- local_data_path:container_data_path
-			- name:container_data_path
 
 		environment:
 			- env_variable=variable
@@ -64,7 +68,8 @@ services:
 				- condition: service_healthy
 
 volumes:
-	- all volumes that have been defined
+	local_data_path:
+		driver:local
 ```
 
 - Alternatively to specifying a port, one could write `expose` to expose a port to a linked service.
@@ -72,7 +77,7 @@ volumes:
 
 ## Docker volumes
 
-Declaring volumes can come in two forms,
+Declaring volumes can come in three forms,
 
 1. Initiating a docker container on the terminal and reference both directories (like a madman)
 
@@ -86,4 +91,9 @@ docker run \
 ```sh
 docker run \
 -v container_data_path
+```
+3. Initialising a docker container on the terminal using `named volumes` which simply names the directory to dump the data in.
+```sh
+docker run \
+-v name:container_data_path
 ```
