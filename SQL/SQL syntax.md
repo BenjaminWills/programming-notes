@@ -116,7 +116,7 @@ CREATE TABLE table_name(
 	c2 INT,
 	c3 VARCHAR(20),
 	UNIQUE(c4) DECIMAL(20,5),
-	CHECK(c1 > 0 ABD c1 >= c2),
+	CHECK(c1 > 0 AND c1 >= c2),
 	PRIMARY KEY (c1,c2),
 	FOREIGN KEY (c2) REFERENCES table_two(c2)
 )
