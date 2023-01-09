@@ -11,6 +11,7 @@
   - [Workspaces](#workspaces)
     - [Notebooks](#notebooks)
     - [Libraries](#libraries)
+  - [Jobs](#jobs)
   - [Pricing](#pricing)
 
 # General Spark Architecture
@@ -69,6 +70,10 @@ Note that we _cannot_ run any cells without a `cluster`, all data that is upload
 We can use `python/scala/r` libraries that aren't baked into `Databricks` by _default_. We can install them quite easily using the library function.
 
 **Warning**: we need to install each package on every node within our clusters, so this can be an **expensive** time **consuming** process.
+
+## Jobs
+
+A `job` is simply a databricks `notebook` that we would like to run on a schedule or be activated by some cloud function. This is wildly useful for pipeline automation, e.g ETL pipelines.
 
 ## Pricing
 
