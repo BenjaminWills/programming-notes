@@ -4,23 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "423f978233653af8",
+        "id": "ecf96ed1eadc1ae8",
         "type": "tabs",
         "children": [
           {
-            "id": "a58329e7fea4e261",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Databricks/Databricks.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4589dc926e404e25",
+            "id": "5094695e0d92556b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -31,8 +19,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -142,7 +129,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -159,14 +147,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4589dc926e404e25",
+  "active": "5094695e0d92556b",
   "lastOpenFiles": [
-    "Databricks/Spark SQL.md",
     "Databricks/Databricks.md",
+    "Databricks/Databricks syntax.md",
+    "Databricks/Spark SQL.md",
     "Docker/Docker.md",
     "Docker/Dockerfiles.md",
     "Docker/Docker compose.md",
-    "Databricks/Databricks syntax.md",
     "readme.md",
     "MongoDB/Mongo DB Querying Syntax.md",
     "MongoDB/Mongo DB.md",
