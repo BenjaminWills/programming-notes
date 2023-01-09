@@ -208,5 +208,6 @@ UPDATE table_name
 - Delete on a condition
 
 ```sql
-
+DELETE FROM table_name
+WHERE condition;
 ```
