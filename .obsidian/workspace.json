@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SQL/SQL syntax.md",
+                "file": "Databricks/Databricks.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SQL/SQL syntax.md",
+                "file": "Databricks/Databricks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "SQL/SQL syntax.md",
+                "file": "Databricks/Databricks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "SQL/SQL syntax.md"
+                "file": "Databricks/Databricks.md"
               }
             }
           }
@@ -159,9 +159,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0fc8667117b82f16",
+  "active": "dff3a6dd35978c55",
   "lastOpenFiles": [
     "Databricks/Spark SQL.md",
+    "SQL/SQL syntax.md",
     "Databricks/Databricks syntax.md",
     "Databricks/Databricks.md",
     "AWS/AWS.md",
@@ -169,7 +170,6 @@
     "Docker/Dockerfiles.md",
     "Docker/Docker compose.md",
     "readme.md",
-    "MongoDB/Mongo DB Querying Syntax.md",
-    "MongoDB/Mongo DB.md"
+    "MongoDB/Mongo DB Querying Syntax.md"
   ]
 }

@@ -40,8 +40,16 @@ to show all of the databases within the notebook.
 We can add `properties` to a table, this is metadata in `key value` pairs that gives more information about the purpose of that table. We can access them using the `TBLPROPERTIES` command.
 
 ```sql
-SHOW TBLPROPERTY table ([optional] property_name)
+SHOW TBLPROPERTIES table;
 ```
+
+Another useful command is:
+
+```sql
+SHOW CREATE TABLE table;
+```
+
+which shows the `SQL` command needed to create the table.
 
 ## Delta Lake
 
