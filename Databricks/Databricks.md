@@ -39,13 +39,24 @@ To be completed
 
 ## Workspaces
 
+[databricks test link](https://databricks.com/try-databricks)
+A `workspace` is the `GUI` for databricks.
+
 ### Notebooks
 
-    To be completed
+When creating a `notebook` data must be uploaded, so that it can be referenced by cells inside of the `notebook`, these are then interpereted as tables via a `GUI` and can be queried using `SQL`.
 
-To be completed
+`Databricks notebooks` can use **any language** as default, `Python`,`Scala`,`SQL` and `R`. We can use more than one language in one notebook.
 
-[databricks test link](https://databricks.com/try-databricks)
+To define the Cell language (that is other than the deafult language) we use a `magic decorator`
+
+```sh
+%md <- markdown
+%sql <- SQL
+%r <- R
+%python <- Python
+%scala <- Scala
+```
 
 ## Pricing
 
