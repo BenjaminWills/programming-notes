@@ -4,7 +4,8 @@
   - [Numeric](#numeric)
   - [Date and Time](#date-and-time)
   - [How to use](#how-to-use)
-- [Create](#create)
+- [Create Tables](#create-tables)
+- [Update Tables](#update-tables)
 
 # Overview
 
@@ -19,6 +20,13 @@
 - C - `Consistency` a transaction never half finishes, it either finishes or fails
 - I - `Isolation` keeps all transactions separated from eachother until they are finished
 - D - `Durability` guarentees that the database will keep track of changes so that the server can recover from an abnormal termination
+
+`SQL` has a heirarchy as follows,
+
+1. `Database` - a collection of schema
+2. `Schema` - a collection of tables
+3. `Table`
+   To access these we connect to a db and query using `schema.table`.
 
 # Data Types
 
@@ -75,7 +83,7 @@ CREATE TABLE table_name (
 );
 ```
 
-# Create
+# Create Tables
 
 - Creating tables
 
@@ -87,7 +95,68 @@ CREATE TABLE table_name (
 );
 ```
 
-Here we have a few new key words 
-1. `serial` - each new row we add to the table is automatically assigned an increasing id 
-2. `primary key` - this column is the primary key of the table, the best practice is that this is a column that will only contain unique values. 
-3. `NOT NULL` - means that this column cannot be left empty when inserting data into it
+Here we have a few new key words
+
+1. `serial` - each new row we add to the table is automatically assigned an increasing id
+2. `primary key` - this column is the primary key of the table, the best practice is that this is a column that will only contain unique values. 3. `NOT NULL` - means that this column cannot be left empty when inserting data into it
+
+- Dropping tables
+
+```sql
+DROP TABLE table_name;
+```
+
+This command will `remove` the table from the database.
+
+- Using `foreign keys` and adding general `constraints`
+
+# Update Tables
+
+- Adding table columns
+
+```sql
+ALTER TABLE table_name
+ADD column_name;
+```
+
+- Removing table columns
+
+```sql
+ALTER TABLE table_name
+DROP COLUMN column_name;
+```
+
+- Add constraint to table
+
+```sql
+ALTER TABLE table_name
+ADD constraint;
+```
+
+- Remove constraint from table
+
+```sql
+ALTER TABLE table_name
+DROP constraint;
+```
+
+- Rename a table
+
+```sql
+ALTER TABLE table_name
+RENAME TO new_table_name;
+```
+
+- Rename a column
+
+```sql
+ALTER TABLE table_name
+RENAME column
+TO new_column
+```
+
+- Remove all data from table
+
+```sql
+TRUNCATE TABLE table_name;
+```
