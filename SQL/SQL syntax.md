@@ -211,3 +211,5 @@ UPDATE table_name
 DELETE FROM table_name
 WHERE condition;
 ```
+
+# Selecting from tables
