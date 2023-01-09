@@ -38,4 +38,19 @@
 
 ## Numeric
 
+| Data type       | Description                                                                                                                                                                                                                               |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| BIT(size)       | A bit-value type with `default` of 1, can have a maximum of 64                                                                                                                                                                            |
+| TINYINT(size)   | A very small integer with a signed range between `-128` and `127` and an unsigned range between `0` and `255`, size refers to the maximum allowed display width which is 255                                                              |
+| BOOLEAN         | `True` and `False`                                                                                                                                                                                                                        |
+| SMALLINT(size)  | A small integer with a signed range between `-32768` and `32767` and an unsigned range between `0` and `65535`, size refers to the maximum allowed display width which is 255                                                             |
+| MEDIUMINT(size) | A medimum integer with a signed range between `-8,388,608` and `8,388,607` and an unsigned range between `0` and `16,777,215`, size refers to the maximum allowed display width which is 255                                              |
+| INT(size)       | A medium integer with a signed range between `-2,147,483,648` and `2,147,483,647` and an unsigned range between `0` and `4,294,967,295`, size refers to the maximum allowed display width which is 255                                    |
+| INTEGER(size)   | Same as int                                                                                                                                                                                                                               |
+| BIGINT(size)    | A medium integer with a signed range of between `-9,223,372,036,854,775,808` and `9,223,372,036,854,775,807` and an unsigned range between `0` and `1,844,674,407,370,955`, size refers to the maximum allowed display width which is 255 |
+| FLOAT(p)        | A floating point value where p (`precision`) is a parameter between `0` and `24`                                                                                                                                                          |
+| DOUBLE(size,d)  | A floating point number where `size` defines the total number of digits, and `d` defines the number of digits after the decimal point                                                                                                     |
+| DECIMAL(size,d) | An exact fixed point number where the total number of digits is set by `size`, and the number of digits after the decimal point is set by `d`                                                                                             |
+| DEC(size,d)     | Same as DECIMAL                                                                                                                                                                                                                           |
+
 ## Date and Time
