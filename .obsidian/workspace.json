@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Databricks/Databricks.md",
+                "file": "Databricks/Spark SQL.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databricks/Databricks.md",
+                "file": "Databricks/Spark SQL.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databricks/Databricks.md",
+                "file": "Databricks/Spark SQL.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databricks/Databricks.md"
+                "file": "Databricks/Spark SQL.md"
               }
             }
           }
@@ -161,10 +161,10 @@
   },
   "active": "dff3a6dd35978c55",
   "lastOpenFiles": [
+    "Databricks/Databricks.md",
     "Databricks/Spark SQL.md",
     "SQL/SQL syntax.md",
     "Databricks/Databricks syntax.md",
-    "Databricks/Databricks.md",
     "AWS/AWS.md",
     "Docker/Docker.md",
     "Docker/Dockerfiles.md",

@@ -51,6 +51,15 @@ SHOW CREATE TABLE table;
 
 which shows the `SQL` command needed to create the table.
 
+We can also create tables from `CSV` files saved in the `Cluster`.
+
+```sql
+DROP TABLE IF EXISTS table;
+
+CREATE TABLE table USING CSV
+OPTIONS (path="path to csv", header="true", inferSchema="true")
+```
+
 ## Delta Lake
 
 This is `spark's` answer to the `RDBMS` functionality of usual `SQL` - and to their competitors like `AWS Athena` and `Snowflake`. This allows usage of `CRUD` operations. The `Delta Lake` stores files as `parquet` files, which is `Spark's` alternative to `pickling` files.
