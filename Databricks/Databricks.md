@@ -34,8 +34,15 @@ Databricks spark clusters use **EC2** instances to run on the backend, and can b
 
 ## Notebooks
 
+To be completed
+
+## Clusters
+
+To be completed
+
 ## Workspaces
 
+To be completed
 [databricks test link](https://databricks.com/try-databricks)
 
 ## Pricing
