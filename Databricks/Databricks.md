@@ -7,8 +7,9 @@
 - [General Spark Architecture](#general-spark-architecture)
 - [Databricks](#databricks)
   - [Integration with AWS](#integration-with-aws)
-  - [Notebooks](#notebooks)
+  - [Clusters](#clusters)
   - [Workspaces](#workspaces)
+    - [Notebooks](#notebooks)
   - [Pricing](#pricing)
 
 # General Spark Architecture
@@ -32,17 +33,18 @@ Spark unifies:
 
 Databricks spark clusters use **EC2** instances to run on the backend, and can be given read/write access to **S3** buckets.
 
-## Notebooks
-
-To be completed
-
 ## Clusters
 
 To be completed
 
 ## Workspaces
 
+### Notebooks
+
+    To be completed
+
 To be completed
+
 [databricks test link](https://databricks.com/try-databricks)
 
 ## Pricing
