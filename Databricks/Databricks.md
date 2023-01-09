@@ -40,6 +40,7 @@ To be completed
 ## Workspaces
 
 [databricks test link](https://databricks.com/try-databricks)
+
 A `workspace` is the `GUI` for databricks.
 
 ### Notebooks
@@ -57,6 +58,8 @@ To define the Cell language (that is other than the deafult language) we use a `
 %python <- Python
 %scala <- Scala
 ```
+
+A `notebook` can be viewed as a **job** that can be **scheduled**, and triggered by some cloud services too.
 
 ## Pricing
 
