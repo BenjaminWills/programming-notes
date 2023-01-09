@@ -3,6 +3,8 @@
   - [Strings](#strings)
   - [Numeric](#numeric)
   - [Date and Time](#date-and-time)
+  - [How to use](#how-to-use)
+- [Create](#create)
 
 # Overview
 
@@ -54,3 +56,38 @@
 | DEC(size,d)     | Same as DECIMAL                                                                                                                                                                                                                           |
 
 ## Date and Time
+
+| Data type | Description                                                                                                                                                                                       |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DATE      | A simple date in the form of `YYYY-MM-DD` with a supported range from `1000-01-01` to `9999-12-31`                                                                                                |
+| DATETIME  | A date time in the form of `YYYY-MM-DD hh:mm:ss` with the same supported range as date (just with time too). Automatically sets column dates to current date by setting `DEFAULT` and `ON UPDATE` |
+| TIMESTAMP | A unix timestamp that will return a value relative to the number of seconds since the `Unix Epoch` (`1970-01-01`), has a range until `2038-01-09 03:14:07`                                        |
+| TIME      | A simple time in `hh:mm:ss` format                                                                                                                                                                |
+| YEAR      | A year from `1901` to `2155`                                                                                                                                                                      |
+
+## How to use
+
+We'll see this in the creation of tables section, but we create tables by baking in the data types as follows
+
+```sql
+CREATE TABLE table_name (
+	name VARCHAR(20)
+);
+```
+
+# Create
+
+- Creating tables
+
+```sql
+CREATE TABLE table_name (
+	id SERIAL PRIMARY KEY,
+	column_1 <Data type> NOT NULL,
+	column_2 <Data type>
+);
+```
+
+Here we have a few new key words 
+1. `serial` - each new row we add to the table is automatically assigned an increasing id 
+2. `primary key` - this column is the primary key of the table, the best practice is that this is a column that will only contain unique values. 
+3. `NOT NULL` - means that this column cannot be left empty when inserting data into it
