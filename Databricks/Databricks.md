@@ -46,7 +46,7 @@ To be completed
 A `workspace` is the `GUI` for databricks.
 
 ### Notebooks
-
+[[Databricks syntax]]
 When creating a `notebook` data must be uploaded, so that it can be referenced by cells inside of the `notebook`, these are then interpereted as tables via a `GUI` and can be queried using `SQL`.
 
 `Databricks notebooks` can use **any language** as default, `Python`,`Scala`,`SQL` and `R`. We can use more than one language in one notebook.
