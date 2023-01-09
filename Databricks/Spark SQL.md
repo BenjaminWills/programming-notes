@@ -1,5 +1,6 @@
 - [Spark SQL engine](#spark-sql-engine)
   - [Syntax](#syntax)
+    - [DDL](#ddl)
   - [Delta Lake](#delta-lake)
 
 # Spark SQL engine
@@ -19,6 +20,28 @@ WHERE condition = value;
 ```
 
 Most functions are supported. There is no `database catalog` as `Spark` is not a `RDBMS`, it uses a `meta store` to store metadata about tables, such as column value types. It also does not support `referential integrity` which we would usually use `foreign` and `primary keys` for.
+
+### DDL
+
+`Data Definition Language` is supported by `sparkSQL` , that is to say: we can run `CREATE`,`DROP`,`ALTER` and `RENAME` commands. e.g
+
+```sql
+CREATE DATABASE database;
+```
+
+In `sparkSQL` we can write
+
+```SQL
+SHOW DATABASES;
+```
+
+to show all of the databases within the notebook.
+
+We can add `properties` to a table, this is metadata in `key value` pairs that gives more information about the purpose of that table. We can access them using the `TBLPROPERTIES` command.
+
+```sql
+SHOW TBLPROPERTY table ([optional] property_name)
+```
 
 ## Delta Lake
 
