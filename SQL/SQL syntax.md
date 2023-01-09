@@ -110,6 +110,24 @@ This command will `remove` the table from the database.
 
 - Using `foreign keys` and adding general `constraints`
 
+```sql
+CREATE TABLE table_name(
+	c1 INT,
+	c2 INT,
+	c3 VARCHAR(20),
+	UNIQUE(c4) DECIMAL(20,5),
+	CHECK(c1 > 0 ABD c1 >= c2),
+	PRIMARY KEY (c1,c2),
+	FOREIGN KEY (c2) REFERENCES table_two(c2)
+)
+```
+
+New keywords again!
+
+1. `unique` - only allows unique values within the column
+2. `check` - will only allow values that pass the check
+3. `foreign key` - this is a data integrity tool, meaning that you cannot update a table if it references another, without going to the root and updating that column.
+
 # Update Tables
 
 - Adding table columns
