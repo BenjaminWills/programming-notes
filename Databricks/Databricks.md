@@ -6,6 +6,8 @@
 - [INDEX](#index)
 - [General Spark Architecture](#general-spark-architecture)
 - [Databricks](#databricks)
+  - [Integration with AWS](#integration-with-aws)
+  - [Notebooks](#notebooks)
   - [Workspaces](#workspaces)
   - [Pricing](#pricing)
 
@@ -25,6 +27,12 @@ Spark unifies:
 - graph processing
 
 # Databricks
+
+## Integration with AWS
+
+Databricks spark clusters use **EC2** instances to run on the backend, and can be given read/write access to **S3** buckets.
+
+## Notebooks
 
 ## Workspaces
 
