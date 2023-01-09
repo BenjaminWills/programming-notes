@@ -57,7 +57,7 @@ We can also create tables from `CSV` files saved in the `Cluster`.
 DROP TABLE IF EXISTS table;
 
 CREATE TABLE table USING CSV
-OPTIONS (path="path to csv", header="true", inferSchema="true")
+OPTIONS (path="path to csv", header="true", inferSchema="true");
 ```
 
 ## Delta Lake

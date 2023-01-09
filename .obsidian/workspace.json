@@ -25,14 +25,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Databricks/Spark SQL.md",
+                "file": "SQL/SQL syntax.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "534286988023a1c8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "SQL/SQL syntax.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databricks/Spark SQL.md",
+                "file": "SQL/SQL syntax.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databricks/Spark SQL.md",
+                "file": "SQL/SQL syntax.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databricks/Spark SQL.md"
+                "file": "SQL/SQL syntax.md"
               }
             }
           }
@@ -159,17 +171,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "dff3a6dd35978c55",
+  "active": "0fc8667117b82f16",
   "lastOpenFiles": [
-    "Databricks/Databricks.md",
-    "Databricks/Spark SQL.md",
+    "SQL/SQL in docker.md",
     "SQL/SQL syntax.md",
+    "Databricks/Spark SQL.md",
+    "Databricks/Databricks.md",
     "Databricks/Databricks syntax.md",
     "AWS/AWS.md",
     "Docker/Docker.md",
     "Docker/Dockerfiles.md",
     "Docker/Docker compose.md",
-    "readme.md",
-    "MongoDB/Mongo DB Querying Syntax.md"
+    "readme.md"
   ]
 }
