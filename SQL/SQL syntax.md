@@ -178,3 +178,35 @@ TO new_column
 ```sql
 TRUNCATE TABLE table_name;
 ```
+
+- Insert into table
+
+```sql
+INSERT INTO table_name (column_list)
+VALUES (value_list_1),
+(value_list_2);
+```
+
+Note that `column_list` and `value_list` must be the same length and have a one to one correspondence
+
+- Inserting rows from another table into this table
+
+```sql
+INSERT INTO table_1(column_list)
+	SELECT column_list
+	FROM table_2;
+```
+
+- Update a column for a selection of rows
+
+```sql
+UPDATE table_name
+	SET c1 = value
+	WHERE condition;
+```
+
+- Delete on a condition
+
+```sql
+
+```
