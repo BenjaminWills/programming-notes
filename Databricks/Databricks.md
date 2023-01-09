@@ -10,6 +10,7 @@
   - [Clusters](#clusters)
   - [Workspaces](#workspaces)
     - [Notebooks](#notebooks)
+    - [Libraries](#libraries)
   - [Pricing](#pricing)
 
 # General Spark Architecture
@@ -60,6 +61,14 @@ To define the Cell language (that is other than the deafult language) we use a `
 ```
 
 A `notebook` can be viewed as a **job** that can be **scheduled**, and triggered by some cloud services too.
+
+Note that we _cannot_ run any cells without a `cluster`, all data that is uploaded to a `notebook` goes to a `cluster` that the `notebook` runs on.
+
+### Libraries
+
+We can use `python/scala/r` libraries that aren't baked into `Databricks` by _default_. We can install them quite easily using the library function.
+
+**Warning**: we need to install each package on every node within our clusters, so this can be an **expensive** time **consuming** process.
 
 ## Pricing
 
