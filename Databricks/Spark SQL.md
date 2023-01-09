@@ -1,5 +1,6 @@
 - [Spark SQL engine](#spark-sql-engine)
   - [Syntax](#syntax)
+  - [Delta Lake](#delta-lake)
 
 # Spark SQL engine
 
@@ -18,3 +19,7 @@ WHERE condition = value;
 ```
 
 Most functions are supported. There is no `database catalog` as `Spark` is not a `RDBMS`, it uses a `meta store` to store metadata about tables, such as column value types. It also does not support `referential integrity` which we would usually use `foreign` and `primary keys` for.
+
+## Delta Lake
+
+This is `spark's` answer to the `RDBMS` functionality of usual `SQL` - and to their competitors like `AWS Athena` and `Snowflake`. This allows usage of `CRUD` operations. The `Delta Lake` stores files as `parquet` files, which is `Spark's` alternative to `pickling` files.
