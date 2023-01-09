@@ -1,0 +1,2 @@
+
+## Magic commands
