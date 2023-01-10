@@ -273,7 +273,15 @@ GROUP BY c1
 HAVING condition;
 ```
 
--
+- Combine rows from two queries
+
+```sql
+SELECT c1,c2
+FROM t1
+UNION ALL
+SELECT c1,c2
+FROM t2;
+```
 
 ## Joins
 
