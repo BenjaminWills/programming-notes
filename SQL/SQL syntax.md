@@ -343,4 +343,29 @@ There are two types of view:
 
 ## Standard views
 
+A `Standard View` is basically a `CTE` that is saved to memory.
+
+```sql
+CREATE VIEW my_view
+AS (
+	SELECT c1
+	FROM table
+);
+```
+
 ## Materialised views
+
+A `Materialised View` persists the data returned from the view definition query and automatically gets updated as data changes in the underlying tables.
+
+```sql
+CREATE MATERIALIZED VIEW mv_test2
+AS (
+	SELECT MAX(i.i_rec_start_date) as max_i_rec_start_date,
+	MIN(i.i_rec_end_date) as min_i_rec_end_date,
+	i.i_item_sk,
+	i.i_item_id,
+	i.i_category_id
+	FROM syntheticworkload.item i
+	GROUP BY i.i_item_sk, i.i_item_id, i.i_category_id
+	);
+```
