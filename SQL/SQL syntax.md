@@ -12,6 +12,9 @@
 - [Views](#views)
   - [Standard views](#standard-views)
   - [Materialised views](#materialised-views)
+- [Aggregate functions](#aggregate-functions)
+- [Indexing](#indexing)
+- [Window functions](#window-functions)
 
 # Overview
 
@@ -369,3 +372,23 @@ AS (
 	GROUP BY i.i_item_sk, i.i_item_id, i.i_category_id
 	);
 ```
+
+# Aggregate functions
+
+`SQL` has some `aggregate` functions built in:
+
+- `AVG` - finds the mean value of a column
+- `COUNT` - finds the number of occurrences of a condition in a column
+- `SUM` - finds the sum of the values in a column / conditional
+- `MIN`,`MAX` - finds the min and max value of a column
+
+# Indexing
+
+An `index` is a `schema object` that contains keys from various columns of the table. When a column is indexed, `WHERE` clauses will run much faster on the table. However this will increase the time taken to `update` a table as the index needs to be updated too - as well as this `disk space` is used to store the index.
+
+```sql
+CREATE INDEX index_name
+ON table_name (c1, c2, ...);
+```
+
+# Window functions
