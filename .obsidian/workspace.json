@@ -8,30 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "5094695e0d92556b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Databricks/Spark SQL.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "dff3a6dd35978c55",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Docker/Docker.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "a6fdefff817e8fd2",
             "type": "leaf",
             "state": {
@@ -43,8 +19,7 @@
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
