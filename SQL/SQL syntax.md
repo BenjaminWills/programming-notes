@@ -25,7 +25,9 @@
 - R - `Read`
 - U - `Update`
 - D - `Delete`
+
   `SQL` databases all conform to `ACID` too:
+
 - A - `Atomicity` each query is executed as a single query
 - C - `Consistency` a transaction never half finishes, it either finishes or fails
 - I - `Isolation` keeps all transactions separated from eachother until they are finished
