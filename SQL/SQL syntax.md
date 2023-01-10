@@ -7,6 +7,7 @@
 - [Create Tables](#create-tables)
 - [Update Tables](#update-tables)
 - [Selecting from tables](#selecting-from-tables)
+  - [Joins](#joins)
 
 # Overview
 
@@ -250,4 +251,56 @@ WHERE condition;
 SELECT c1,c2
 FROM table
 ORDER BY c1 ASC|DESC;
+```
+
+- Select rows with an offset
+
+```sql
+SELECT c1,c2
+FROM table
+LIMIT n
+OFFSET offset;
+```
+
+This will select n rows from the `offset` onwards.
+
+- Using aggregate functions like `mean` or `max`
+
+```sql
+SELECT c1, aggregate(c2)
+FROM table
+GROUP BY c1
+HAVING condition;
+```
+
+-
+
+## Joins
+
+![[SQL joins.png]]
+
+- Selecting using an `inner join`.
+
+```sql
+SELECT c1,c2
+FROM table
+INNER JOIN table_2
+ON condition
+```
+
+- Selecting using a `cross join`
+
+```sql
+SELECT c1,c2
+FROM table_1
+CROSS JOIN table_2;
+```
+
+- Reference table names
+
+```sql
+SELECT t1.c1, t2.c2
+FROM table_1 t1
+INNER JOIN table_2 t2
+ON condition;
 ```
