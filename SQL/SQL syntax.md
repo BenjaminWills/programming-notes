@@ -9,7 +9,9 @@
 - [Selecting from tables](#selecting-from-tables)
   - [Joins](#joins)
 - [Common table expressions](#common-table-expressions)
-- [](#)
+- [Views](#views)
+  - [Standard views](#standard-views)
+  - [Materialised views](#materialised-views)
 
 # Overview
 
@@ -332,3 +334,13 @@ WHERE condition;
 
 This allows us to organise `sub-queries` in a nice and readable way, and to re-use queries.
 
+# Views
+
+There are two types of view:
+
+1. `materialised`
+2. `standard`
+
+## Standard views
+
+## Materialised views
