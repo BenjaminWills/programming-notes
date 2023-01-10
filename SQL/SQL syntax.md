@@ -243,3 +243,11 @@ SELECT c1
 FROM table
 WHERE condition;
 ```
+
+- Sort by `ascending` and `descending`
+
+```sql
+SELECT c1,c2
+FROM table
+ORDER BY c1 ASC|DESC;
+```
