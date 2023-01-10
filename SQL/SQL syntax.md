@@ -26,7 +26,7 @@
 - U - `Update`
 - D - `Delete`
 
-  `SQL` databases all conform to `ACID` too:
+  `SQL` transactions all conform to `ACID` too:
 
 - A - `Atomicity` each query is executed as a single query
 - C - `Consistency` a transaction never half finishes, it either finishes or fails
