@@ -15,6 +15,7 @@
 - [Aggregate functions](#aggregate-functions)
 - [Indexing](#indexing)
 - [Window functions](#window-functions)
+- [User defined functions](#user-defined-functions)
 
 # Overview
 
@@ -392,3 +393,17 @@ ON table_name (c1, c2, ...);
 ```
 
 # Window functions
+
+`Window functions` are basically more specialised `aggregate` functions, that are able to access specific rows in a `partition` instead of returning one value like an `aggregate` does.
+
+```sql
+SELECT c1, SUM(c2) OVER (PARTITION BY c1 ORDER BY c3)
+FROM table
+```
+
+- the `OVER` keyword is what defines the window function
+- `PARTITION BY` allows us to have a moving window down the rows of the table that allows us to have a moving aggregate function. For example imagine for each entry in a table we want to compare it to the 5 before, we would use a window function for this as we'd need a moving partition.
+
+# User defined functions
+
+`UDF's` - complete later. Gyst is you can write them in `JavaScript` and they execute as youd expect.
