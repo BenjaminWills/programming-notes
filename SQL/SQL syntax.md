@@ -8,6 +8,8 @@
 - [Update Tables](#update-tables)
 - [Selecting from tables](#selecting-from-tables)
   - [Joins](#joins)
+- [Common table expressions](#common-table-expressions)
+- [](#)
 
 # Overview
 
@@ -312,3 +314,21 @@ FROM table_1 t1
 INNER JOIN table_2 t2
 ON condition;
 ```
+
+# Common table expressions
+
+A really useful resource is `CTE's` , they allow us to re-use queries.
+
+```sql
+WITH my_cte as (
+	SELECT c1, c2
+	FROM table
+)
+
+SELECT c1
+FROM my_cte
+WHERE condition;
+```
+
+This allows us to organise `sub-queries` in a nice and readable way, and to re-use queries.
+
