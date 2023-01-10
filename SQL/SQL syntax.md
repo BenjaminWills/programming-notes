@@ -6,6 +6,7 @@
   - [How to use](#how-to-use)
 - [Create Tables](#create-tables)
 - [Update Tables](#update-tables)
+- [Selecting from tables](#selecting-from-tables)
 
 # Overview
 
@@ -215,21 +216,28 @@ WHERE condition;
 # Selecting from tables
 
 - Selecting specific columns from a table
+
 ```sql
 SELECT c1 as `column 1`,c2 as `column 2`
 FROM table;
 ```
+
 - Selecting everything from a table
+
 ```sql
 SELECT *
 FROM table;
 ```
+
 - Select only `distinct` rows from a table
+
 ```sql
 SELECT DISTINCT c1
 FROM table;
 ```
+
 - Select a `subset` of rows from a table
+
 ```sql
 SELECT c1
 FROM table
