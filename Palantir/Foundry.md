@@ -36,8 +36,9 @@ why should we use this?
 - Automates governance workflows with `data lineage`, `embedded data health checks` and `integrated granular security`
 - Allows for economies of scale with `auto scaling cloud compute` with `UI's` for less technically experienced folk
 - Easy to manage and add to the workflow as all of the resources are on the `Ontology`
-- Foundary is mega `secure` offering features such as:
+- `Foundary` is mega `secure` offering features such as:
 	- Encryption in transit and at rest
 	- Data security controls i.e `roles` and `granular permissions`
 	- Data privacy features i.e `aggregation`, `anonymisation`
 	- `Certifications` for certain services
+
