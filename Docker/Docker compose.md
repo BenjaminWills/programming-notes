@@ -42,6 +42,7 @@ version: '3'
 
 services:
 	service_1:
+		container_name: {name}
 		build:
 			# build from dockerfile
 			context: {path}

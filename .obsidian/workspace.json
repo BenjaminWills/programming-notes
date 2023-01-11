@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Palantir/Code repositories.md",
+                "file": "Docker/Docker compose.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Palantir/Code repositories.md",
+                "file": "Docker/Docker compose.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Palantir/Code repositories.md",
+                "file": "Docker/Docker compose.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Palantir/Code repositories.md"
+                "file": "Docker/Docker compose.md"
               }
             }
           }
@@ -161,15 +161,15 @@
   },
   "active": "61838c434a2359f8",
   "lastOpenFiles": [
+    "MongoDB/Mongo DB.md",
+    "MongoDB/Mongo DB Querying Syntax.md",
+    "Palantir/Code repositories.md",
     "Palantir/Foundry.md",
     "Docker/Docker.md",
     "SQL/SQL Syntax.md",
     "pictures/SQL joins.png",
     "SQL/SQL in docker.md",
     "Pasted image 20230110100529.png.md",
-    "Pasted image 20230110100529.png",
-    "pictures/Pasted image 20230110100600.png",
-    "Databricks/Spark SQL.md",
-    "Databricks/Databricks.md"
+    "Pasted image 20230110100529.png"
   ]
 }
