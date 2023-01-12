@@ -1,6 +1,6 @@
-**Notes for Cloud Practitioner**
+## **Notes for Cloud Practitioner**
 
-**General knowledge**
+### **General knowledge**
 
 Multi tenancy - Multiple virtual machines being able to run on the same
 underlying hardware
@@ -87,7 +87,7 @@ Advantages of cloud computing:
 
 -   Go global in minutes
 
-**EC2**
+### **EC2**
 
 EC2 provides on demand computing capacity
 
@@ -181,7 +181,7 @@ Vertical scaling is when you increase an instance size, such as from
 t2.micro to t2.large, and horizontal scaling is adding more instances to
 handle the workload
 
-**IAM**
+### **IAM**
 
 **IAM** allows you to create additional **users** and give them the
 permissions they need. This has global scope and by default, users have
@@ -199,7 +199,7 @@ and switch to that instead.
 IAM can also have **roles**, which are permissions that can be applied
 to services such as EC2 or Lambda.
 
-**S3**
+### **S3**
 
 **Simple Storage Service (S3)** allows scalable object based storage
 with very high durability. There are different tiers:
@@ -273,7 +273,7 @@ cloud
 **AWS Storage Gateway** -- Gives on premises data centres access to
 cloud storage on S3 (hybrid cloud)
 
-**RDS**
+### **RDS**
 
 AWS offers database services for relational and NoSQL databases
 
@@ -390,7 +390,7 @@ DMS -- Database Migration Service, migrate databases securely to AWS
 Support homogenous or heterogenous migrations (same or different type of
 database engines)
 
-**Other compute services**
+### **Other compute services**
 
 Docker is used to package apps into containers so that they can run on
 any operating system
@@ -436,7 +436,7 @@ For people with less cloud experience
 
 No auto-scaling, and limited AWS integrations
 
-**Deployments and Infrastructure**
+### **Deployments and Infrastructure**
 
 CloudFormation is a declarative way of outlining AWS Infrastructure
 
@@ -513,7 +513,7 @@ OpsWork -- gives you managed Chef & Puppet in the cloud, which are
 applications that help you perform server configuration and repetitive
 actions.
 
-**Global Infrastructure**
+### **Global Infrastructure**
 
 **Route 53** is a managed Domain name system (DNS)
 
@@ -585,7 +585,7 @@ Different types of architecture
 -   Multi-region Active-Active -- All instances can be read from or
     written to globally, very good read and write latency
 
-**Cloud Integrations**
+### **Cloud Integrations**
 
 AWS provides services to let applications communicate with each other
 
@@ -655,7 +655,7 @@ experiencing events that may impact you
 
 Shows health of AWS services relevant to you
 
-**VPC / Networking**
+### **VPC / Networking**
 
 **VPC** -- Virtual private cloud, private network to deploy your
 resources
@@ -732,7 +732,7 @@ Can also connect to on-premises if site to site VPN is implemented
 **Transit Gateway** -- transitive peering between thousands of VPCs and
 connections between all other types of other connections
 
-**Security and Compliance**
+### **Security and Compliance**
 
 DDoS -- distributed denial of service, servers are overwhelmed by
 requests
@@ -809,7 +809,7 @@ Root user has permission to do everything, including:
 
 -   Register as a seller in the reserved instance marketplace
 
-**Machine Learning**
+### **Machine Learning**
 
 Rekognition -- Identify object, text and scenes in images and videos
 using ML
@@ -846,7 +846,7 @@ recommendations
 Textract -- extract text, handwriting and data from scanned documents
 with ML
 
-**Account management and billing**
+### **Account management and billing**
 
 AWS Organisations lets you manage multiple AWS accounts
 
@@ -998,7 +998,7 @@ Data transfer into S3 is free
 
 For Linux EC2 instances you pay every second
 
-**Advanced Identity**
+### **Advanced Identity**
 
 AWS STS (Security Token Service) -- Enables you to create temporary,
 limited credentials to access AWS resources
@@ -1018,7 +1018,7 @@ Can be extended onto AWS using AWS Directory services
 AWS IAM Identity Center -- One login to access all AWS accounts
 centrally in your AWS Organisation
 
-**Other services (rarely appear in exam)**
+### **Other services (rarely appear in exam)**
 
 WorkSpaces -- Managed Desktop as a Service to easily provision Windows
 or Linux Desktops
