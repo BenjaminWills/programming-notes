@@ -123,7 +123,7 @@ mongosh "mongodb://<username>:<password>@host:port/defaultauthdb?options
 mongodb://
 ```
 
-is the neccessary prefix to any connection string.
+is the necessary prefix to any connection string.
 
 ```sh
 <username>:<password>
