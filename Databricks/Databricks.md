@@ -60,20 +60,6 @@ When creating a `notebook` data must be uploaded, so that it can be referenced b
 
 `Databricks notebooks` can use **any language** as default, `Python`,`Scala`,`SQL` and `R`. We can use more than one language in one notebook.
 
-To define the Cell language (that is other than the deafult language) we use a `magic decorator`
-
-```sh
-%md <- markdown
-%sql <- SQL
-%r <- R
-%python <- Python
-%scala <- Scala
-```
-
-We can also use the `%run <directory>` magic command to run another notebook from this notebook.
-
-The `%fs` magic command (`filesystem`) allows us to run file system commands.
-
 Every notebook comes with the `dbutils` library, that allows for interaction with databricks direclty from `python`.
 
 A `notebook` can be viewed as a **[job](#jobs)** that can be **scheduled**, and triggered by some cloud services too.
