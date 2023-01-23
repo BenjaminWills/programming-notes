@@ -6,6 +6,7 @@
   - [Time travel](#time-travel)
     - [Restoring tables](#restoring-tables)
   - [Compaction](#compaction)
+  - [Cleaning workspace](#cleaning-workspace)
 
 # Magic commands
 
@@ -62,3 +63,12 @@ ZORDER BY column
 
 `ZORDER` corresponds to an index to partition by essentially, so the compiled files will be grouped.
 
+## Cleaning workspace
+
+We can use the `VACUUM` command to remove files that have not been edited in x amount of days.
+
+```SQL
+VACUUM MY_TABLE [RETENTION PERIOD]
+```
+
+The default retention period is `7 days`.
