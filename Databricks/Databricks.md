@@ -10,6 +10,7 @@
   - [Clusters](#clusters)
   - [Workspaces](#workspaces)
     - [Notebooks](#notebooks)
+    - [Adding code libraries](#adding-code-libraries)
     - [Libraries](#libraries)
   - [Jobs](#jobs)
   - [Pricing](#pricing)
@@ -46,6 +47,7 @@ To be completed
 A `workspace` is the `GUI` for databricks.
 
 ### Notebooks
+
 [[Databricks syntax]]
 When creating a `notebook` data must be uploaded, so that it can be referenced by cells inside of the `notebook`, these are then interpereted as tables via a `GUI` and can be queried using `SQL`.
 
@@ -64,6 +66,10 @@ To define the Cell language (that is other than the deafult language) we use a `
 A `notebook` can be viewed as a **[job](#jobs)** that can be **scheduled**, and triggered by some cloud services too.
 
 Note that we _cannot_ run any cells without a `cluster`, all data that is uploaded to a `notebook` goes to a `cluster` that the `notebook` runs on.
+
+### Adding code libraries
+
+We can clone from `github` or other git options easily using databricks when we add a library.
 
 ### Libraries
 
