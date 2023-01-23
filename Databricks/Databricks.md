@@ -71,6 +71,8 @@ To define the Cell language (that is other than the deafult language) we use a `
 
 We can also use the `%run <directory>` magic command to run another notebook from this notebook.
 
+The `%fs` magic command (`filesystem`) allows us to run file system commands.
+
 A `notebook` can be viewed as a **[job](#jobs)** that can be **scheduled**, and triggered by some cloud services too.
 
 Note that we _cannot_ run any cells without a `cluster`, all data that is uploaded to a `notebook` goes to a `cluster` that the `notebook` runs on.
