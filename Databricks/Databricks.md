@@ -38,7 +38,11 @@ Databricks spark clusters use **EC2** instances to run on the backend, and can b
 
 ## Clusters
 
-To be completed
+A cluster is a set of nodes that work together. It consists of a `driver` node and many `worker nodes`. We can use `access control` on clusters. `Photon accelaration` can be added to speed up `SQL` queries.
+
+We can provide the amount of time required for a cluster to `auto deactivate` in order to cut down on costs. We can also choose `auto scaling` to allow for performance to always meet demand.
+
+When making a cluster `Databricks` shows how many `DBU`'s (databricks unit) it will use an hour, this gives the user an idea of the `pricing` of the cluster.
 
 ## Workspaces
 
