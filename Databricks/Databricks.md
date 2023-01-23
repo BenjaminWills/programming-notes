@@ -44,6 +44,8 @@ We can provide the amount of time required for a cluster to `auto deactivate` in
 
 When making a cluster `Databricks` shows how many `DBU`'s (databricks unit) it will use an hour, this gives the user an idea of the `pricing` of the cluster.
 
+These clusters are made up of `virtual machines` from the respective cloud provider.
+
 ## Workspaces
 
 [databricks test link](https://databricks.com/try-databricks)
