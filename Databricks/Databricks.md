@@ -10,7 +10,7 @@
   - [Clusters](#clusters)
   - [Workspaces](#workspaces)
     - [Notebooks](#notebooks)
-    - [Adding code libraries](#adding-code-libraries)
+      - [Adding code](#adding-code)
     - [Libraries](#libraries)
   - [Jobs](#jobs)
   - [Pricing](#pricing)
@@ -67,7 +67,7 @@ A `notebook` can be viewed as a **[job](#jobs)** that can be **scheduled**, and 
 
 Note that we _cannot_ run any cells without a `cluster`, all data that is uploaded to a `notebook` goes to a `cluster` that the `notebook` runs on.
 
-### Adding code libraries
+#### Adding code
 
 We can clone from `github` or other git options easily using databricks when we add a library.
 
