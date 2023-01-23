@@ -10,6 +10,7 @@
   - [Clusters](#clusters)
   - [Workspaces](#workspaces)
     - [Notebooks](#notebooks)
+      - [version control](#version-control)
       - [Adding code](#adding-code)
     - [Libraries](#libraries)
   - [Jobs](#jobs)
@@ -78,6 +79,10 @@ Every notebook comes with the `dbutils` library, that allows for interaction wit
 A `notebook` can be viewed as a **[job](#jobs)** that can be **scheduled**, and triggered by some cloud services too.
 
 Note that we _cannot_ run any cells without a `cluster`, all data that is uploaded to a `notebook` goes to a `cluster` that the `notebook` runs on.
+
+#### version control
+
+We can access our notebooks previous states by clicking on the `last edit` button, then we can choose from the `previous saves`. We can also link `GIT`.
 
 #### Adding code
 
