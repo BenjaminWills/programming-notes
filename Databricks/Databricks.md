@@ -73,6 +73,8 @@ We can also use the `%run <directory>` magic command to run another notebook fro
 
 The `%fs` magic command (`filesystem`) allows us to run file system commands.
 
+Every notebook comes with the `dbutils` library, that allows for interaction with databricks direclty from `python`.
+
 A `notebook` can be viewed as a **[job](#jobs)** that can be **scheduled**, and triggered by some cloud services too.
 
 Note that we _cannot_ run any cells without a `cluster`, all data that is uploaded to a `notebook` goes to a `cluster` that the `notebook` runs on.
