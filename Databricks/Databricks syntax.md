@@ -57,5 +57,8 @@ We can compact small files using the `Optimise command` to improve table perform
 
 ```SQL
 OPTIMIZE MY_TABLE
+ZORDER BY column
 ```
+
+`ZORDER` corresponds to an index to partition by essentially, so the compiled files will be grouped.
 
