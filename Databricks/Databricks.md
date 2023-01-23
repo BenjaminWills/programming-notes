@@ -84,6 +84,8 @@ Note that we _cannot_ run any cells without a `cluster`, all data that is upload
 
 We can access our notebooks previous states by clicking on the `last edit` button, then we can choose from the `previous saves`. We can also link `GIT`.
 
+We can set up a `GIT` connection in user settings, using a `personal access token` from `github`.
+
 #### Adding code
 
 We can clone from `github` or other git options easily using databricks when we add a library.
