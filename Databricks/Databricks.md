@@ -13,6 +13,7 @@
       - [version control](#version-control)
       - [Adding code](#adding-code)
     - [Libraries](#libraries)
+  - [Hive metastore](#hive-metastore)
   - [Jobs](#jobs)
   - [Pricing](#pricing)
 
@@ -81,6 +82,18 @@ We can clone from `github` or other git options easily using databricks when we 
 We can use `python/scala/r` libraries that aren't baked into `Databricks` by _default_. We can install them quite easily using the library function.
 
 **Warning**: we need to install each package on every node within our clusters, so this can be an **expensive** time **consuming** process.
+
+## Hive metastore
+
+The `hive metastore` is a repository of `metadata` - each `Databricks` workspace has one. This `metastore` is stored in the path `dbfs:/user/hive/warehouse`, we can specify where in which this metadata is stored however by writing
+
+```SQL
+CREATE SCHEMA myschema
+LOCATION 'dbfs:/custom/path/db_y.db';
+
+USE db_y;
+CREATE TABLE table1;
+```
 
 ## Jobs
 
