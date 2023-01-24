@@ -84,3 +84,18 @@ We can extract data directly from files using `sparkSQL`. We can query a `JSON` 
 SELECT *
 FROM json.`path`;
 ```
+
+The same logic applies to `csv.` files.
+
+Alternatively we can use the `USING` syntax to avoid schema inference.
+
+```SQL
+CREATE TABLE table_name
+	(#TABLE COLUMNS AND TYPES)
+USING CSV
+OPTIONS (
+	header = "true",
+	delimiter = ";"
+)
+LOCATION `location of file`
+```
