@@ -97,10 +97,10 @@ CREATE TABLE table1;
 
 ## Jobs
 
-A `job` is simply a databricks `notebook` that we would like to run on a schedule or be activated by some cloud function. This is wildly useful for pipeline automation, e.g ETL pipelines.
+A `job` is simply a `databricks notebook` that we would like to run on a schedule or be activated by some cloud function. This is wildly useful for pipeline automation, e.g ETL pipelines.
 
 ## Pricing
 
 [pricing info](https://databricks.com/product/pricing)
 
-There are three tiers, **standard**,**premium** and **enterprise**. Each having their own costs assosiated with them.
+There are three tiers, **standard**,**premium** and **enterprise**. Each having their own costs associated with them.

@@ -1,5 +1,7 @@
 [[Databricks]]
+
 # Index
+
 - [Index](#index)
 - [Magic commands](#magic-commands)
 - [DBSQL](#dbsql)
@@ -7,6 +9,7 @@
     - [Restoring tables](#restoring-tables)
   - [Compaction](#compaction)
   - [Cleaning workspace](#cleaning-workspace)
+  - [Querying from files](#querying-from-files)
 
 # Magic commands
 
@@ -72,3 +75,12 @@ VACUUM MY_TABLE [RETENTION PERIOD]
 ```
 
 The default retention period is `7 days`.
+
+## Querying from files
+
+We can extract data directly from files using `sparkSQL`. We can query a `JSON` file by prefixing our query with a `json.` to let spark know what we want to do.
+
+```SQL
+SELECT *
+FROM json.`path`;
+```
