@@ -11,6 +11,7 @@
   - [Cleaning workspace](#cleaning-workspace)
   - [Querying from files](#querying-from-files)
   - [Accessing nested data structures](#accessing-nested-data-structures)
+  - [Structured Streaming](#structured-streaming)
 
 # Magic commands
 
@@ -137,3 +138,19 @@ SELECT column.*
 FROM table;
 ```
 
+## Structured streaming
+
+A `data stream` is any data source that will grow over time. We use `pySpark` to create a streaming df:
+
+```python
+streamDF = spark.readStream.table("input_table")
+```
+
+Then to write the stream to an output table we write
+
+```python 
+streamDF.writeStream.\
+	trigger(processingTime="2 minutes").\
+		option("checkpointLocation","path").\
+			table("output_table")
+```
