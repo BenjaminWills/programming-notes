@@ -25,14 +25,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Databricks/Databricks syntax.md",
+                "file": "Databricks/Spark SQL.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "da9a20e8190c873d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Databricks/Pyspark.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databricks/Databricks syntax.md",
+                "file": "Databricks/Pyspark.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databricks/Databricks syntax.md",
+                "file": "Databricks/Pyspark.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databricks/Databricks syntax.md"
+                "file": "Databricks/Pyspark.md"
               }
             }
           }
@@ -159,17 +171,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "61838c434a2359f8",
+  "active": "da9a20e8190c873d",
   "lastOpenFiles": [
+    "Databricks/Spark SQL.md",
     "Databricks/Databricks.md",
     "Databricks/Databricks syntax.md",
+    "Databricks/Pyspark.md",
     "MongoDB/Mongo DB.md",
     "MongoDB/Mongo DB Querying Syntax.md",
     "Docker/Docker compose.md",
     "Palantir/Code repositories.md",
     "Palantir/Foundry.md",
-    "Docker/Docker.md",
-    "SQL/SQL Syntax.md",
-    "pictures/SQL joins.png"
+    "Docker/Docker.md"
   ]
 }
