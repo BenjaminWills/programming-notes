@@ -83,6 +83,10 @@ We can use `python/scala/r` libraries that aren't baked into `Databricks` by _de
 
 **Warning**: we need to install each package on every node within our clusters, so this can be an **expensive** time **consuming** process.
 
+## Delta Lake
+
+This is `spark's` answer to the `RDBMS` functionality of usual `SQL` - and to their competitors like `AWS Athena` and `Snowflake`. This allows usage of `CRUD` operations. The `Delta Lake` stores files as `parquet` files, which is `Spark's` alternative to `pickling` files.
+
 ## Hive metastore
 
 The `hive metastore` is a repository of `metadata` - each `Databricks` workspace has one. This `metastore` is stored in the path `dbfs:/user/hive/warehouse`, we can specify where in which this metadata is stored however by writing
