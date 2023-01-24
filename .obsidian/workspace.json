@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AWS/Hakan Notes for cloud practitioner.md",
+                "file": "Databricks/Pyspark.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AWS/Hakan Notes for cloud practitioner.md",
+                "file": "Databricks/Pyspark.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "AWS/Hakan Notes for cloud practitioner.md",
+                "file": "Databricks/Pyspark.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AWS/Hakan Notes for cloud practitioner.md"
+                "file": "Databricks/Pyspark.md"
               }
             }
           }
@@ -173,8 +173,8 @@
   },
   "active": "da9a20e8190c873d",
   "lastOpenFiles": [
-    "AWS/AWS.md",
     "AWS/Hakan Notes for cloud practitioner.md",
+    "AWS/AWS.md",
     "pictures/databricks_logo.png",
     "temp-razin/SQL/crud.md",
     "Databricks/Pyspark.md",
