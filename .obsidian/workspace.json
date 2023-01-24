@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Databricks/Databricks.md",
+                "file": "AWS/Hakan Notes for cloud practitioner.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 327.5026054382324
   },
   "right": {
     "id": "108b4e3c8a2ecc65",
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databricks/Databricks.md",
+                "file": "AWS/Hakan Notes for cloud practitioner.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databricks/Databricks.md",
+                "file": "AWS/Hakan Notes for cloud practitioner.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databricks/Databricks.md"
+                "file": "AWS/Hakan Notes for cloud practitioner.md"
               }
             }
           }
@@ -173,15 +173,15 @@
   },
   "active": "da9a20e8190c873d",
   "lastOpenFiles": [
-    "Databricks/Spark SQL.md",
-    "Databricks/Databricks syntax.md",
-    "Databricks/Databricks.md",
-    "SQL/SQL Syntax.md",
-    "temp-razin/Palantir/foundry.md",
-    "temp-razin/Palantir/Data Engineering.md",
+    "AWS/AWS.md",
+    "AWS/Hakan Notes for cloud practitioner.md",
+    "pictures/databricks_logo.png",
+    "temp-razin/SQL/crud.md",
     "Databricks/Pyspark.md",
-    "MongoDB/Mongo DB.md",
-    "MongoDB/Mongo DB Querying Syntax.md",
-    "Docker/Docker compose.md"
+    "Databricks/Spark SQL.md",
+    "Databricks/Databricks.md",
+    "Databricks/Databricks syntax.md",
+    "SQL/SQL Syntax.md",
+    "temp-razin/Palantir/foundry.md"
   ]
 }

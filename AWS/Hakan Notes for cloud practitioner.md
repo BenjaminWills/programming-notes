@@ -1,5 +1,22 @@
 ## **Notes for Cloud Practitioner**
 
+- [**Notes for Cloud Practitioner**](#notes-for-cloud-practitioner)
+  - [**General knowledge**](#general-knowledge)
+  - [**EC2**](#ec2)
+  - [**IAM**](#iam)
+  - [**S3**](#s3)
+  - [**RDS**](#rds)
+  - [**Other compute services**](#other-compute-services)
+  - [**Deployments and Infrastructure**](#deployments-and-infrastructure)
+  - [**Global Infrastructure**](#global-infrastructure)
+  - [**Cloud Integrations**](#cloud-integrations)
+  - [**VPC / Networking**](#vpc--networking)
+  - [**Security and Compliance**](#security-and-compliance)
+  - [**Machine Learning**](#machine-learning)
+  - [**Account management and billing**](#account-management-and-billing)
+  - [**Advanced Identity**](#advanced-identity)
+  - [**Other services (rarely appear in exam)**](#other-services-rarely-appear-in-exam)
+
 ### **General knowledge**
 
 Multi tenancy - Multiple virtual machines being able to run on the same
@@ -20,72 +37,72 @@ and to provide lower latency for users in countries without AWS regions
 
 You would choose a region based on:
 
--   Compliance with regulations
+- Compliance with regulations
 
--   Proximity and latency
+- Proximity and latency
 
--   Feature availability
+- Feature availability
 
--   Pricing
+- Pricing
 
 There are three ways to connect with AWS:
 
--   Management console -- online, point and click
+- Management console -- online, point and click
 
--   CLI -- API calls through a terminal
+- CLI -- API calls through a terminal
 
--   SDK -- Software development kit inside a programming language (boto3
-    in Python)
+- SDK -- Software development kit inside a programming language (boto3
+  in Python)
 
 AWS has a shared responsibility model
 
--   Security of the cloud, hardware -- Responsibility of AWS
+- Security of the cloud, hardware -- Responsibility of AWS
 
--   Security in the cloud, application updates, software --
-    Responsibility of customer
+- Security in the cloud, application updates, software --
+  Responsibility of customer
 
 Pillars of a well architected cloud framework:
 
--   Operational excellence
+- Operational excellence
 
--   Performance efficiency
+- Performance efficiency
 
--   Security
+- Security
 
--   Cost optimisation
+- Cost optimisation
 
--   Reliability
+- Reliability
 
--   Sustainability
+- Sustainability
 
 AWS Well-Architected Tool can help you review your infrastructure
 against these pillars
 
 Characteristics of cloud computing:
 
--   On-demand self service
+- On-demand self service
 
--   Broad network access
+- Broad network access
 
--   Multi tenancy and resource pooling
+- Multi tenancy and resource pooling
 
--   Rapid elasticity and scalability
+- Rapid elasticity and scalability
 
--   Measured service, pay as you go
+- Measured service, pay as you go
 
 Advantages of cloud computing:
 
--   Capital ex for operational ex
+- Capital ex for operational ex
 
--   Benefit from massive economies of scale
+- Benefit from massive economies of scale
 
--   Stop guessing capacity and workload
+- Stop guessing capacity and workload
 
--   Speed and agility
+- Speed and agility
 
--   No need for data centres
+- No need for data centres
 
--   Go global in minutes
+- Go global in minutes
 
 ### **EC2**
 
@@ -93,31 +110,31 @@ EC2 provides on demand computing capacity
 
 EC2 Instance types:
 
--   General purpose
+- General purpose
 
--   Memory optimised -- for memory intensive apps
+- Memory optimised -- for memory intensive apps
 
--   Storage optimised -- for working with large volumes of data
+- Storage optimised -- for working with large volumes of data
 
--   Compute optimised -- for computationally expensive apps
+- Compute optimised -- for computationally expensive apps
 
 EC2 pricing:
 
--   On demand
+- On demand
 
--   Savings plans -- lower cost
+- Savings plans -- lower cost
 
--   Reserved instances -- reserve for 1 or 3 years for lower cost
+- Reserved instances -- reserve for 1 or 3 years for lower cost
 
--   Spot instances -- discount for unused instances by AWS
+- Spot instances -- discount for unused instances by AWS
 
--   Dedicated instances -- private instance for compliance
+- Dedicated instances -- private instance for compliance
 
 EC2 has auto-scaling functionality
 
--   Predictive scaling -- Predicts the workload and scales appropriately
+- Predictive scaling -- Predicts the workload and scales appropriately
 
--   Dynamic scaling -- Scale in accordance with workload
+- Dynamic scaling -- Scale in accordance with workload
 
 EC2 has security groups to control network traffic. They only have allow
 rules and are stateful, as they remember past packets that have entered.
@@ -151,31 +168,31 @@ they can be maintained and tested within a pipeline
 **FSx** is a 3^rd^ party file management system, which is fully managed.
 Available for:
 
--   Windows File Server
+- Windows File Server
 
--   Lustre -- for high performance computing
+- Lustre -- for high performance computing
 
 **Elastic Load Balancer** manages workload by splitting it up across
 multiple instances and can react to failing and overloaded instances by
 diverting the workload to healthy instances. This provides greater fault
 tolerance. There are 3 kinds of load balancers
 
--   Application load balancer -- for http/https
+- Application load balancer -- for http/https
 
--   Network Load balancer -- for **ultra-high performance** and millions
-    of connections
+- Network Load balancer -- for **ultra-high performance** and millions
+  of connections
 
--   Classic Load Balancer -- old generation, retired
+- Classic Load Balancer -- old generation, retired
 
 **Auto scaling groups** help to scale instances to match the workload,
 ensure we have a minimum and maximum number of instances and replace
 unhealthy instances
 
--   You can apply dynamic scaling to respond to changing demand, such as
-    with a CloudWatch alarm monitoring CPU usage
+- You can apply dynamic scaling to respond to changing demand, such as
+  with a CloudWatch alarm monitoring CPU usage
 
--   You can also apply predictive scaling which uses ML to predict
-    future traffic
+- You can also apply predictive scaling which uses ML to predict
+  future traffic
 
 Vertical scaling is when you increase an instance size, such as from
 t2.micro to t2.large, and horizontal scaling is adding more instances to
@@ -204,13 +221,13 @@ to services such as EC2 or Lambda.
 **Simple Storage Service (S3)** allows scalable object based storage
 with very high durability. There are different tiers:
 
--   Standard for standard access
+- Standard for standard access
 
--   Infrequent access, suitable for backups and long term storage
+- Infrequent access, suitable for backups and long term storage
 
--   S3 Glacier, for data archival purposes
+- S3 Glacier, for data archival purposes
 
--   Intelligent tiering, which sorts objects automatically
+- Intelligent tiering, which sorts objects automatically
 
 Every file is stored as a single object. Objects can be set to be moved
 between different storage types with **lifecycle rules**.
@@ -230,37 +247,37 @@ previous versions.
 
 S3 offers different amounts of encryption:
 
--   No encryption
+- No encryption
 
--   Server-side encryption -- file is encrypted after it is received by
-    the server
+- Server-side encryption -- file is encrypted after it is received by
+  the server
 
--   Client-side -- User encrypts the file before uploading it
+- Client-side -- User encrypts the file before uploading it
 
 **AWS Snow Family** devices for data migration into or out of S3:
 
--   Snowcone -- Small portable computing device, used where Snowball
-    Edge is too large for the space. Online and offline, less than 20
-    petabytes
+- Snowcone -- Small portable computing device, used where Snowball
+  Edge is too large for the space. Online and offline, less than 20
+  petabytes
 
--   Snowball -- Larger device for higher capacity transfer. 50
-    petabytes +
+- Snowball -- Larger device for higher capacity transfer. 50
+  petabytes +
 
--   Snowmobile -- A truck used to transfer huge volumes of data,
-    exabytes
+- Snowmobile -- A truck used to transfer huge volumes of data,
+  exabytes
 
 These are physical, offline devices used to perform data migration. This
 is ideal for when there is:
 
--   Limited connectivity
+- Limited connectivity
 
--   Limited Bandwidth
+- Limited Bandwidth
 
--   High network cost
+- High network cost
 
--   Poor connection stability
+- Poor connection stability
 
--   Shared bandwidth
+- Shared bandwidth
 
 The snow family is useful for edge locations which have limited internet
 access.
@@ -279,14 +296,14 @@ AWS offers database services for relational and NoSQL databases
 
 Benefits of AWS databases:
 
--   Quick provisioning, high availability, vertical and horizontal
-    scaling
+- Quick provisioning, high availability, vertical and horizontal
+  scaling
 
--   Automated backup and restore
+- Automated backup and restore
 
--   Operating system is patched by AWS
+- Operating system is patched by AWS
 
--   Monitoring and alerts
+- Monitoring and alerts
 
 If you were to deploy a database on EC2, it would not be managed by AWS,
 and you would miss out on additional benefits that RDS provides
@@ -521,17 +538,17 @@ DNS directs clients to servers through URLS
 
 Routing policies:
 
--   Simple routing policy -- no health checks, directs you towards the
-    server
+- Simple routing policy -- no health checks, directs you towards the
+  server
 
--   Weight routing policy -- will direct traffic according to assigned
-    server weighting, effectively load balancing
+- Weight routing policy -- will direct traffic according to assigned
+  server weighting, effectively load balancing
 
--   Latency routing policy -- Servers are routed to users based on
-    proximity/latency to the user
+- Latency routing policy -- Servers are routed to users based on
+  proximity/latency to the user
 
--   Failover routing policy -- Route 53 will do health checks, and
-    redirect to healthy instances if one fails (failover)
+- Failover routing policy -- Route 53 will do health checks, and
+  redirect to healthy instances if one fails (failover)
 
 CloudFront -- content delivery network that utilises edge locations to
 cache and deliver content with low latency. This helps improve user
@@ -572,18 +589,18 @@ Different types of architecture
 
 (Difficulty to implement increases as you go down):
 
--   Single-region -- Architecture is only a single region. Can be in one
-    AZ or multi-AZ for higher availability
+- Single-region -- Architecture is only a single region. Can be in one
+  AZ or multi-AZ for higher availability
 
--   Multi-region -- Architecture extends to multiple regions. More
-    globally available
+- Multi-region -- Architecture extends to multiple regions. More
+  globally available
 
--   Multi-region Active-passive -- Some instances in the architecture
-    are active so they can be written to, some are passive so can only
-    be read from. Much better global read latency
+- Multi-region Active-passive -- Some instances in the architecture
+  are active so they can be written to, some are passive so can only
+  be read from. Much better global read latency
 
--   Multi-region Active-Active -- All instances can be read from or
-    written to globally, very good read and write latency
+- Multi-region Active-Active -- All instances can be read from or
+  written to globally, very good read and write latency
 
 ### **Cloud Integrations**
 
@@ -706,9 +723,9 @@ Behave as part of the same network after peering
 VPC Endpoints lets you connect to AWS services over a private network
 rather than publicly
 
--   **Endpoint Gateway** lets you connect to S3 and DynamoDB
+- **Endpoint Gateway** lets you connect to S3 and DynamoDB
 
--   **Endpoint Interface** is used for other services
+- **Endpoint Interface** is used for other services
 
 AWS **PrivateLink** -- Allows you connect a service within a VPC to
 other VPCs
@@ -717,9 +734,9 @@ Requires a **network load balancer** and **elastic network interface**
 
 To connect an on-premises data center to a VPC, you can use:
 
--   **Site to site VPN**, connect an on-premises VPN to AWS
+- **Site to site VPN**, connect an on-premises VPN to AWS
 
--   **Direct Connect,** between on-premises and AWS
+- **Direct Connect,** between on-premises and AWS
 
 For a Site to site VPN, the on-premises data centre requires a
 **customer gateway** and the VPC requires a **virtual private gateway**
@@ -739,17 +756,17 @@ requests
 
 To protect from DDoS attacks, you can use:
 
--   AWS Shield standard -- protects against attacks for no additional
-    costs
+- AWS Shield standard -- protects against attacks for no additional
+  costs
 
--   AWS Shield Advanced -- premium protection against sophisticated
-    attacks with access to a response team
+- AWS Shield Advanced -- premium protection against sophisticated
+  attacks with access to a response team
 
--   AWS WAF -- Filter requests based on rules
+- AWS WAF -- Filter requests based on rules
 
--   CloudFront and Route 53 -- higher availability with edge network
+- CloudFront and Route 53 -- higher availability with edge network
 
--   Using auto scaling to scale to a higher number of requests
+- Using auto scaling to scale to a higher number of requests
 
 You can perform penetration testing for certain types of security
 threats on the cloud
@@ -801,13 +818,13 @@ cause of security issues
 
 Root user has permission to do everything, including:
 
--   Change account settings
+- Change account settings
 
--   Close AWS account
+- Close AWS account
 
--   Change AWS support plan
+- Change AWS support plan
 
--   Register as a seller in the reserved instance marketplace
+- Register as a seller in the reserved instance marketplace
 
 ### **Machine Learning**
 
@@ -867,14 +884,14 @@ Will automatically set up organisations for you
 
 AWS Pricing models:
 
--   Pay as you go -- pay for what you use
+- Pay as you go -- pay for what you use
 
--   Save when you reserve -- minimise risks, manage budgets predictably
-    and comply with long-term requirements
+- Save when you reserve -- minimise risks, manage budgets predictably
+  and comply with long-term requirements
 
--   Pay less by using more -- volume-based discounts
+- Pay less by using more -- volume-based discounts
 
--   Pay less as AWS grows
+- Pay less as AWS grows
 
 Free services and free tier
 
@@ -888,24 +905,24 @@ Easiest way to set up long term commitments on AWS
 
 Includes:
 
--   EC2 Savings Plan
+- EC2 Savings Plan
 
--   Compute Savings Plan for EC2, Lambda and Fargate and for flexibility
-    in EC2 instance types
+- Compute Savings Plan for EC2, Lambda and Fargate and for flexibility
+  in EC2 instance types
 
--   Machine Learning Savings Plan with SageMaker
+- Machine Learning Savings Plan with SageMaker
 
 AWS Compute Optimiser -- reduce costs and improve performance by
 recommending optimal AWS resources for your workloads
 
 Billing and costing tools:
 
--   AWS pricing calculator can help you estimate costs of your
-    infrastructure
+- AWS pricing calculator can help you estimate costs of your
+  infrastructure
 
--   Billing dashboard -- shows cost appreciated and forecasts
+- Billing dashboard -- shows cost appreciated and forecasts
 
--   Free tier dashboard -- usage of free tier services so far
+- Free tier dashboard -- usage of free tier services so far
 
 Cost Allocation Tags -- used to track AWS costs on a detailed level
 
@@ -924,75 +941,75 @@ budget
 AWS Trusted Advisor -- High level account assessment which provides
 recommendations based on 5 categories:
 
--   Cost optimisation
+- Cost optimisation
 
--   Performance
+- Performance
 
--   Security
+- Security
 
--   Fault tolerance
+- Fault tolerance
 
--   Service limits
+- Service limits
 
 Checks for basic and developer support plan:
 
--   S3 Bucket permissions
+- S3 Bucket permissions
 
--   Security groups
+- Security groups
 
--   IAM Use
+- IAM Use
 
--   MFA on root account
+- MFA on root account
 
--   EBS public snapshots
+- EBS public snapshots
 
--   RDS public snapshots
+- RDS public snapshots
 
--   Service limits
+- Service limits
 
 Checks for business and enterprise support plan:
 
--   Cloudwatch alarms when reaching limits
+- Cloudwatch alarms when reaching limits
 
--   Programmatic access with AWS support API
+- Programmatic access with AWS support API
 
--   Full checks available on the 5 categories
+- Full checks available on the 5 categories
 
 AWS support plans:
 
 Basic support plan:
 
--   Customer service and communities
+- Customer service and communities
 
--   7 core checks from trusted advisor
+- 7 core checks from trusted advisor
 
--   Personal health dashboard
+- Personal health dashboard
 
 Developer plan:
 
--   Business hours access to cloud support associates
+- Business hours access to cloud support associates
 
--   Response times between 12-24 hours
+- Response times between 12-24 hours
 
 Business support plan:
 
--   Full trusted advisor checks and API access
+- Full trusted advisor checks and API access
 
--   24/7 phone email and chat access to cloud support engineers
+- 24/7 phone email and chat access to cloud support engineers
 
--   Faster response times for production emergencies
+- Faster response times for production emergencies
 
 Enterprise on-ramp support plan:
 
--   Access to technical account managerss
+- Access to technical account managerss
 
--   Support team for best practices
+- Support team for best practices
 
 Enterprise support plan:
 
--   Designated TAM
+- Designated TAM
 
--   Faster response time when business critical system is down
+- Faster response time when business critical system is down
 
 Data transfer into S3 is free
 
@@ -1049,15 +1066,15 @@ AWS Backup -- Centrally manage and automate backups across AWS services
 
 Disaster Recovery Strategies (higher is lower cost):
 
--   Backup and restore -- create backups and restore applications from
-    them
+- Backup and restore -- create backups and restore applications from
+  them
 
--   Pilot light -- minimal setup of applications available outside of
-    main server
+- Pilot light -- minimal setup of applications available outside of
+  main server
 
--   Warm standby -- Full version of app available
+- Warm standby -- Full version of app available
 
--   Multi-site -- Multiple full versions of app available
+- Multi-site -- Multiple full versions of app available
 
 Elastic Disaster Recovery (DRS) -- Quickly and easily recover physical,
 virtual and cloud-based servers into AWS in case of disaster
