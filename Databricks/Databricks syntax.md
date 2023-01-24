@@ -117,5 +117,21 @@ FROM table;
 
 This would return:
 | id| street| city|country |
-|---|---|---|---|s
+|---|---|---|---|
 |1 |x|y |z |
+
+we can also use the built in `from_json` function and the `schema_of_json` function to insert a `JSON` into a table column with a `struct` data type.
+
+```SQL
+SELECT x, from_json(
+					path_to_json,
+					schema_of_json(insert_example_row_in_here))
+FROM table;
+```
+
+The `struct` datatype makes it possible to interact with a `nested object`. We can access the elements of a `struct` type column by using `.` notation. Further we can use the `*` operator to `flatten` `JSON` columns into multiple columns, abstracting one layer at a time.
+
+```SQL
+SELECT column.*
+FROM table;
+```
