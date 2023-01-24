@@ -124,8 +124,9 @@ we can also use the built in `from_json` function and the `schema_of_json` funct
 
 ```SQL
 SELECT x, from_json(
-					path_to_json,
-					schema_of_json(insert_example_row_in_here))
+	path_to_json,
+	schema_of_json(insert_example_row_in_here)
+	)
 FROM table;
 ```
 
@@ -135,3 +136,4 @@ The `struct` datatype makes it possible to interact with a `nested object`. We c
 SELECT column.*
 FROM table;
 ```
+
