@@ -10,6 +10,7 @@
   - [Compaction](#compaction)
   - [Cleaning workspace](#cleaning-workspace)
   - [Querying from files](#querying-from-files)
+  - [Accessing nested data structures](#accessing-nested-data-structures)
 
 # Magic commands
 
@@ -99,3 +100,22 @@ OPTIONS (
 )
 LOCATION `location of file`
 ```
+
+## Accessing nested data structures
+
+Suppose that we have a `CSV` file that has a column that is a `JSON` that contains someones address. So the column looks something like this:
+| id|address |
+|---|---|
+| 1|{street:"x",city:"y",country:"z"} |
+
+We can access this in `sparkSQL` with the following query
+
+```SQL
+SELECT id, address:street as street,address:city as city,address:country as country
+FROM table;
+```
+
+This would return:
+| id| street| city|country |
+|---|---|---|---|s
+|1 |x|y |z |
