@@ -145,6 +145,14 @@ the available privileges are:
 | USAGE          | required to perform any action on a database object |
 | ALL PRIVILEGES | gives all privileges                                |
 
+We can show permissions of an object by using the
+
+```SQL
+SHOW GRANTS object
+```
+
+`SQL` command.
+
 ## Pricing
 
 [pricing info](https://databricks.com/product/pricing)
