@@ -170,3 +170,16 @@ Here we have 2 new keywords:
 
 1. `STREAMING` - specifies that the table will not be static
 2. `LIVE` - specifies that the table is a `delta live table` that can be used in pipelines
+
+We can use:
+
+```SQL
+APPLY CHANGES INTO LIVE.target_table
+FROM STREAM(LIVE.stream)
+KEYS (key_field)
+APPLY AS DELETE WHEN operation_field = "DELETE"
+SEQUENCE BY sequence_field (date for example)
+COLUMNS *
+```
+
+to apply changes to a streaming table to update it. The sequencing key allows us to place the updates in the correct order. We can add `EXCEPT` to miss out columns to be updated.
