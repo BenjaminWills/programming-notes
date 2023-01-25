@@ -153,6 +153,21 @@ SHOW GRANTS object
 
 `SQL` command.
 
+### Unity catalogue
+
+`Databricks` uses the `unity catalogue` to manage `data governance.`
+![[Unity_catalogue.jpg]]
+there are 3 types of identities in the `unity catalogue`:
+1. **Users** - identified by email addresses
+2. **Service Principles** - identified by application ID's
+3. **Groups** - grouping of `users` and `service principles`
+
+The syntax for using `unity` is:
+
+```SQL
+GRANT <privilege> ON <securable_object> TO principal
+```
+
 ## Pricing
 
 [pricing info](https://databricks.com/product/pricing)
