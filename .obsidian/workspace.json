@@ -11,9 +11,11 @@
             "id": "f9a86128e120c480",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Databricks/practice_papers/PracticeExam_DatabricksDataEngineerAssociate.pdf"
+                "file": "Spark/Pyspark.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databricks/practice_papers/PracticeExam_DatabricksDataEngineerAssociate.pdf",
+                "file": "Spark/Pyspark.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databricks/practice_papers/PracticeExam_DatabricksDataEngineerAssociate.pdf",
+                "file": "Spark/Pyspark.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databricks/practice_papers/PracticeExam_DatabricksDataEngineerAssociate.pdf"
+                "file": "Spark/Pyspark.md"
               }
             }
           }
@@ -145,15 +147,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f9a86128e120c480",
+  "active": "0fc8667117b82f16",
   "lastOpenFiles": [
+    "Databricks/practice_papers/PracticeExam_DatabricksDataEngineerAssociate.pdf",
     "Databricks/Databricks syntax.md",
     "Databricks/Databricks.md",
-    "Databricks/practice_papers/PracticeExam_DatabricksDataEngineerAssociate.pdf",
     "Palantir/Foundry.md",
-    "Databricks/Spark SQL.md",
+    "Spark/Spark SQL.md",
     "pictures/Unity_catalogue.jpg",
-    "Databricks/Pyspark.md",
+    "Spark/Pyspark.md",
     "AWS/Hakan Notes for cloud practitioner.md",
     "AWS/AWS.md",
     "pictures/databricks_logo.png"
