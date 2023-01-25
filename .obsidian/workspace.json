@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "aceb99490f12fbef",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spark/Spark.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spark/Pyspark.md",
+                "file": "Spark/Spark.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spark/Pyspark.md",
+                "file": "Spark/Spark.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spark/Pyspark.md"
+                "file": "Spark/Spark.md"
               }
             }
           }
@@ -147,15 +160,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0fc8667117b82f16",
+  "active": "aceb99490f12fbef",
   "lastOpenFiles": [
+    "Spark/Pyspark.md",
     "Databricks/practice_papers/PracticeExam_DatabricksDataEngineerAssociate.pdf",
     "Databricks/Databricks syntax.md",
     "Databricks/Databricks.md",
     "Palantir/Foundry.md",
     "Spark/Spark SQL.md",
     "pictures/Unity_catalogue.jpg",
-    "Spark/Pyspark.md",
     "AWS/Hakan Notes for cloud practitioner.md",
     "AWS/AWS.md",
     "pictures/databricks_logo.png"
