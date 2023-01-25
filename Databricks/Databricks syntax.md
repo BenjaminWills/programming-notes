@@ -11,7 +11,8 @@
   - [Cleaning workspace](#cleaning-workspace)
   - [Querying from files](#querying-from-files)
   - [Accessing nested data structures](#accessing-nested-data-structures)
-  - [Structured Streaming](#structured-streaming)
+  - [Structured streaming](#structured-streaming)
+  - [Pipelines](#pipelines)
 
 # Magic commands
 
@@ -148,9 +149,24 @@ streamDF = spark.readStream.table("input_table")
 
 Then to write the stream to an output table we write
 
-```python 
+```python
 streamDF.writeStream.\
 	trigger(processingTime="2 minutes").\
 		option("checkpointLocation","path").\
 			table("output_table")
 ```
+
+## Pipelines
+
+We need to use the `LIVE` keyword as a `namespace` for our `SQL` objects when using a pipeline, as this is how the pipeline accesses the `tables`.
+
+```SQL
+CREATE OR REFRESH STREAMING LIVE TABLE table_name
+COMMENT ...
+AS SELECT * FROM ...
+```
+
+Here we have 2 new keywords:
+
+1. `STREAMING` - specifies that the table will not be static
+2. `LIVE` - specifies that the table is a `delta live table` that can be used in pipelines
