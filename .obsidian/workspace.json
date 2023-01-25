@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Databricks/Databricks syntax.md",
+                "file": "Databricks/Databricks.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databricks/Databricks syntax.md",
+                "file": "Databricks/Databricks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databricks/Databricks syntax.md",
+                "file": "Databricks/Databricks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databricks/Databricks syntax.md"
+                "file": "Databricks/Databricks.md"
               }
             }
           }
@@ -173,6 +173,7 @@
   },
   "active": "da9a20e8190c873d",
   "lastOpenFiles": [
+    "Databricks/Databricks syntax.md",
     "Databricks/Pyspark.md",
     "AWS/Hakan Notes for cloud practitioner.md",
     "AWS/AWS.md",
@@ -180,7 +181,6 @@
     "temp-razin/SQL/crud.md",
     "Databricks/Spark SQL.md",
     "Databricks/Databricks.md",
-    "Databricks/Databricks syntax.md",
     "SQL/SQL Syntax.md",
     "temp-razin/Palantir/foundry.md"
   ]

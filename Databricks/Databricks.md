@@ -13,8 +13,10 @@
       - [version control](#version-control)
       - [Adding code](#adding-code)
     - [Libraries](#libraries)
+  - [Delta Lake](#delta-lake)
   - [Hive metastore](#hive-metastore)
   - [Jobs](#jobs)
+  - [Data governance](#data-governance)
   - [Pricing](#pricing)
 
 # General Spark Architecture
@@ -101,7 +103,36 @@ CREATE TABLE table1;
 
 ## Jobs
 
-A `job` is simply a `databricks notebook` that we would like to run on a schedule or be activated by some cloud function. This is wildly useful for pipeline automation, e.g ETL pipelines.
+A `job` is simply a `databricks notebook` that we would like to run on a schedule or be activated by some cloud function. This is wildly useful for pipeline automation, e.g ETL pipelines. Usually we have 3 `tasks` in a `job`:
+
+1. Extract the data
+2. Transform the data
+3. Load the data
+
+These tasks can be interdependent, so that they do not execute if a condition is not met by another job.
+
+We can set `email` notifications to notify on an event relating to a job - further we can use `IAM` to control access to the job.
+
+## Data governance
+
+We can use `SQL` on `Databricks` to control access to objects.
+
+```SQL
+GRANT <privilege> (like select)
+ON <object> object_name (like table)
+TO user_group
+```
+
+The permissible object types are:
+
+| Object   | Scope                                         |
+| -------- | --------------------------------------------- |
+| CATALOG  | control access to the entire catalog          |
+| SCHEMA   | control access to a database                  |
+| TABLE    | control access to a managed or external table |
+| VIEW     | control access to SQL views                   |
+| FUNCTION | control access to a named function            |
+| ANY FILE | control access to the underlying file system  |
 
 ## Pricing
 
