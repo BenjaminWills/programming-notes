@@ -163,14 +163,14 @@
   "active": "aceb99490f12fbef",
   "lastOpenFiles": [
     "Spark/Pyspark.md",
+    "Spark/Spark SQL.md",
+    "Spark/Spark.md",
     "Databricks/practice_papers/PracticeExam_DatabricksDataEngineerAssociate.pdf",
     "Databricks/Databricks syntax.md",
     "Databricks/Databricks.md",
     "Palantir/Foundry.md",
-    "Spark/Spark SQL.md",
     "pictures/Unity_catalogue.jpg",
     "AWS/Hakan Notes for cloud practitioner.md",
-    "AWS/AWS.md",
-    "pictures/databricks_logo.png"
+    "AWS/AWS.md"
   ]
 }

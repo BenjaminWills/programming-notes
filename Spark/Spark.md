@@ -3,7 +3,7 @@
 
 `Spark` is a technology used to handle the processing of `big data` - data files that have a size of > `32 GB`. It is an open source project on `Apache`. It is an alternative to `map reduce`.
 
-## Spark vs map reduce
+# Spark vs map reduce
 
 Here are the main differences:
 
@@ -11,7 +11,7 @@ Here are the main differences:
 2. `Spark` can perform operations up to `100x` faster than `map reduce`
 3. `Map reduce` writes most data to disk after each operation, whereas `Spark` keeps the data in memory after each operation - but can spill over to disk if memory is filled
 
-## Spark RDD
+# Spark RDD
 
 An `RDD` is a **resilient distributed dataset** which is an `object` with 4 main features:
 
@@ -22,4 +22,4 @@ An `RDD` is a **resilient distributed dataset** which is an `object` with 4 main
 
 `RDD`'s are immutable, lazily evaluated (meaning that evaluation of a statement is delayed until it is needed), and cacheable.
 
-The lazy evaluation means that we have 2 types of operations in Spark, a `transformation` which adds to the queue of evaluation, and an `action` which will activate the queue of evaluation.s
+The lazy evaluation means that we have 2 types of operations in Spark, a `transformation` which adds to the queue of evaluation, and an `action` which will activate the queue of evaluations.
