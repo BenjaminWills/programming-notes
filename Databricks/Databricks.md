@@ -134,6 +134,17 @@ The permissible object types are:
 | FUNCTION | control access to a named function            |
 | ANY FILE | control access to the underlying file system  |
 
+the available privileges are:
+
+| Privilege      | Ability                                             |
+| -------------- | --------------------------------------------------- |
+| SELECT         | read access to an object                            |
+| MODIFY         | add, delete and modify data to or from an object    |
+| CREATE         | create an object                                    |
+| READ_METADATA  | view an object and it's metadata                    |
+| USAGE          | required to perform any action on a database object |
+| ALL PRIVILEGES | gives all privileges                                |
+
 ## Pricing
 
 [pricing info](https://databricks.com/product/pricing)
