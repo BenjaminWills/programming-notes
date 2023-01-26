@@ -6,6 +6,7 @@ https://spark.apache.org/docs/
     - [Creating dataframes](#creating-dataframes)
       - [Defining schema](#defining-schema)
       - [Loading from a file](#loading-from-a-file)
+    - [Querying dataframes](#querying-dataframes)
 
 
 This is the `spark's` `python` API, it allows us to run spark operations directly from a python script.
@@ -53,7 +54,25 @@ This will define a `schema`, to police column data types.
 
 We can load data into spark from the follwing formats:
 
-- `CSV` - `spark.read.csv(csv_path)`
-- `JSON` - `spark.read.json(json_path)`
-- `TEXT` - `spark.read.text(text_path)`
-- `Parquet` - `spark.read.load(parquet_path)`
+- `CSV` - `spark.read.csv(csv_path, schema)`
+- `JSON` - `spark.read.json(json_path, schema)`
+- `TEXT` - `spark.read.text(text_path, schema)`
+- `Parquet` - `spark.read.load(parquet_path, schema)`
+
+if no `schema` is defined, then it will be inferred from the data by spark.
+
+### Querying dataframes
+
+Pyspark uses its [functions library](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/functions.html) in place of `WHEN` statements and more.
+
+- We can select data from the table by writing
+
+```python
+from pyspark.sql import functions as F
+
+df.select(
+    column_1,
+    df[column_2].alias(name),
+    F.Col(column_3).alias(name)
+)
+```
