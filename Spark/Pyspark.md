@@ -52,7 +52,7 @@ This will define a `schema`, to police column data types.
 
 #### Loading from a file
 
-We can load data into spark from the follwing formats:
+We can [load data](https://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html) into spark from the follwing formats:
 
 - `CSV` - `spark.read.csv(csv_path, schema)`
 - `JSON` - `spark.read.json(json_path, schema)`
