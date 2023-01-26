@@ -8,6 +8,8 @@ https://spark.apache.org/docs/
       - [Loading from a file](#loading-from-a-file)
     - [Querying dataframes](#querying-dataframes)
     - [Joining dataframes](#joining-dataframes)
+    - [Aggregates](#aggregates)
+    - [Window functions](#window-functions)
   - [Streaming](#streaming)
 
 
@@ -112,6 +114,18 @@ df = df.filter(column > x)
 ```
 
 ### Joining dataframes
+
+[ref](https://towardsdatascience.com/ultimate-pyspark-cheat-sheet-7d3938d13421)
+
+[best reference yet](https://github.com/cartershanklin/pyspark-cheatsheet/blob/master/cheatsheet.ipynb)
+
+placeholder
+
+### Aggregates 
+
+placeholder
+
+### Window functions
 
 placeholder
 
