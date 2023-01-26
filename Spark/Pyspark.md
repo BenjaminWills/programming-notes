@@ -7,6 +7,8 @@ https://spark.apache.org/docs/
       - [Defining schema](#defining-schema)
       - [Loading from a file](#loading-from-a-file)
     - [Querying dataframes](#querying-dataframes)
+    - [Joining dataframes](#joining-dataframes)
+  - [Streaming](#streaming)
 
 
 This is the `spark's` `python` API, it allows us to run spark operations directly from a python script.
@@ -76,3 +78,41 @@ df.select(
     F.Col(column_3).alias(name)
 )
 ```
+
+- Add columns to a dataframe
+
+```python
+df = df.withColumn(new_column_name,column_value)
+```
+
+This will add the new column to the dataframe
+
+- Update column name
+
+```python
+df = df.withColumnRenamed(old_name, new_name)
+```
+
+- Drop a column
+
+```python
+df = df.drop(column_1,column_2)
+```
+
+- Group by
+
+```python
+df = df.groupBy(column)
+```
+
+- Filter
+
+```python
+df = df.filter(column > x)
+```
+
+### Joining dataframes
+
+placeholder
+
+## Streaming
