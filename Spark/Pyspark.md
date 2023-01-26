@@ -5,6 +5,7 @@ https://spark.apache.org/docs/
   - [Dataframes](#dataframes)
     - [Creating dataframes](#creating-dataframes)
       - [Defining schema](#defining-schema)
+      - [Loading from a file](#loading-from-a-file)
 
 
 This is the `spark's` `python` API, it allows us to run spark operations directly from a python script.
@@ -38,3 +39,21 @@ When creating dataframes we have the option to define a `schema` or to infer one
 #### Defining schema
 
 We need to import `datatypes` to define a schema ([datatypes](https://spark.apache.org/docs/latest/sql-ref-datatypes.html))
+
+```python
+from pyspark.sql.types import *
+fields = [StructField(field_name, StringType(), nullable=True)]
+schema = StructType(fields)
+spark.createDataFrame(data, schema)
+```
+
+This will define a `schema`, to police column data types.
+
+#### Loading from a file
+
+We can load data into spark from the follwing formats:
+
+- `CSV` - `spark.read.csv(csv_path)`
+- `JSON` - `spark.read.json(json_path)`
+- `TEXT` - `spark.read.text(text_path)`
+- `Parquet` - `spark.read.load(parquet_path)`
