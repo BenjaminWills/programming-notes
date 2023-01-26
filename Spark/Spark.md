@@ -23,3 +23,4 @@ An `RDD` is a **resilient distributed dataset** which is an `object` with 4 main
 `RDD`'s are immutable, lazily evaluated (meaning that evaluation of a statement is delayed until it is needed), and cacheable.
 
 The lazy evaluation means that we have 2 types of operations in Spark, a `transformation` which adds to the queue of evaluation, and an `action` which will activate the queue of evaluations.
+
