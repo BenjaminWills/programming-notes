@@ -13,6 +13,7 @@ https://spark.apache.org/docs/
     - [Aggregates](#aggregates)
     - [Window functions](#window-functions)
       - [Ranking functions](#ranking-functions)
+      - [Analytic functions](#analytic-functions)
   - [Streaming](#streaming)
   - [UDF](#udf)
   - [](#)
@@ -224,7 +225,7 @@ window_spec = Window.partitionBy("x").orderBy("y")
 df.withColumn("row_number", row_number().over(window_spec))
 ```
 
-This gives the partition row number of each column.
+This gives the `partition` row number of each column.
 
 - `rank()`
 
@@ -261,10 +262,42 @@ This will squish the rank into the range `0-1`, the meaning of this is dependent
 ```python
 from pyspark.sql.functions import ntile
 
-df.withColumn("ntile",ntile(2).over(window_spec))
+df.withColumn("ntile",ntile(n).over(window_spec))
 ```
 
-This function will split the rows in each partition into equally sized groups and return the group that each row falls in to.
+This function will split the rows in each `partition` into equally sized groups and return the group that each row falls in to.
+
+#### Analytic functions
+
+- `cume_dist()`
+
+```python
+from pyspark.sql.functions import cume_dist
+
+df.withColumn("cumulative distribution",cume_dist().over(window_spec))
+```
+
+This function will find the cumulative distribution of values within a `partition` - i.e the probability of seeing a value less than or equal to that number within the `partition`.
+
+- `lag`
+
+```python
+from pyspark.sql.functions import lag
+
+df.withColumn("lag",lag(column,n).over(window_spec))
+```
+
+This function will return an offset value in the partitioned column depending on the value of $n$.
+
+- lead window function
+
+```python
+from pyspark.sql.functions import lead
+
+df.withColumn("lead",lead(column,n).over(window_spec))
+```
+
+This function is the opposite of lag, just ahead by $n$ rather than behind.
 
 ## Streaming
 
