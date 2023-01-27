@@ -90,6 +90,14 @@ df.select(
 )
 ```
 
+- Select columns with an `alias`
+
+```python
+df.select(
+	F.col(column).alias(new_name)
+)
+```
+
 - Add columns to a dataframe
 
 ```python
