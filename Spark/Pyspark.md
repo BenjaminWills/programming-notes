@@ -67,7 +67,13 @@ if no `schema` is defined, then it will be inferred from the data by spark.
 
 ### Querying dataframes
 
-Pyspark uses its [functions library](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/functions.html) in place of `WHEN` statements and more.
+`Pyspark` uses its [functions library](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/functions.html) in place of `WHEN` statements and more.
+
+- Showing a dataframe
+
+```python 
+df.show()
+```
 
 - We can select data from the table by writing
 
@@ -119,8 +125,32 @@ df = df.filter(column > x)
 
 [best reference yet](https://github.com/cartershanklin/pyspark-cheatsheet/blob/master/cheatsheet.ipynb)
 
-placeholder
+`joins` in `pySpark` are quite easy:
 
+- Join by column name (inner join by default)
+```python
+df_3 = df_1.join(df_2,column_name)
+```
+- Join by expression
+```python
+df_3 = df_1.join(df_2, df_1.column == df_2.column)
+```
+- Left (outer) join
+```python
+df_3 = df_1.join(df_2,column_name,"left")
+```
+- Right (outer) join
+```python
+df_3 = df_1.join(df_2,column_name,"right")
+```
+- Full join
+```python
+df_3 = df_1.join(df_2,column_name,"full")
+```
+- Cross join
+```python
+df_2 = df_1.crossjoin(df_1)
+```
 ### Aggregates 
 
 placeholder
@@ -130,3 +160,11 @@ placeholder
 placeholder
 
 ## Streaming
+
+placeholder
+
+## UDF
+
+placeholder
+
+##
