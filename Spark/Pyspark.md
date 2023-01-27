@@ -323,6 +323,28 @@ We can handle live data streams with `pySpark`. All we need to do is connect to 
 
 ## UDF
 
-placeholder
+To define a `user defined function` we use the `@udf` decorator upon function definition
+```python
+
+@udf
+def capitalise(word:str) -> str:
+	try:
+		capiatlised_list = [
+		letter.upper() for letter
+		in list(word)
+		]
+		
+		capitalised_word = ''.join(capiatlised_list)
+		
+		return capitalised_word
+	except:
+		return None
+```
+
+Then we can call this function on the `dataframe`:
+```python
+df.withColumn("capitalised names", capitalise(col("name")))
+```
+
 
 ## IDK
