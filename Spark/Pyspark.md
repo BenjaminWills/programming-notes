@@ -172,7 +172,24 @@ df_3 = df_1.union(df_2)
 
 ### Aggregates
 
-placeholder
+We can also use `aggregate` functions too, the syntax is the same as `SQL` as we can group by specific columns.
+
+```python
+aggregated_df = df.groupBy(column).aggregate()
+```
+
+We can also use **multiple** aggregate functions in one single query
+
+```python
+multi_aggregated_df = df.\
+	groupBy(column).\
+		agg(
+			{
+				column_1:'agg',
+				column_2:'agg'
+			}
+		)
+```
 
 ### Window functions
 
