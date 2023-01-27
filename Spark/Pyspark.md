@@ -317,10 +317,12 @@ Now we can use all the usual aggregate functions like:
 
 ## Streaming
 
-placeholder
+We can handle live data streams with `pySpark`. All we need to do is connect to the `Spark Session` with a `Streaming Session` and then we can process data live.
+
+[pySpark live stream docs](https://spark.apache.org/docs/latest/streaming-programming-guide.html) 
 
 ## UDF
 
 placeholder
 
-##
+## IDK
