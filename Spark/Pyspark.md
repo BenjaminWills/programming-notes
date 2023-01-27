@@ -184,11 +184,11 @@ We can also use **multiple** aggregate functions in one single query
 multi_aggregated_df = df.\
 	groupBy(column).\
 		agg(
-			{
-			column_1:'agg',
-			column_2:'agg'
-			}
-		)
+		{
+		column_1:'agg',
+		column_2:'agg'
+		}
+	)
 ```
 
 ### Window functions
