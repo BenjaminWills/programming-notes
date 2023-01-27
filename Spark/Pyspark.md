@@ -1,5 +1,7 @@
 https://spark.apache.org/docs/
 
+[Great spark document](https://github.com/cartershanklin/pyspark-cheatsheet/blob/master/cheatsheet.ipynb)
+
 - [pySpark syntax](#pyspark-syntax)
   - [Spark session](#spark-session)
   - [Dataframes](#dataframes)
@@ -11,7 +13,8 @@ https://spark.apache.org/docs/
     - [Aggregates](#aggregates)
     - [Window functions](#window-functions)
   - [Streaming](#streaming)
-
+  - [UDF](#udf)
+  - [](#)
 
 This is the `spark's` `python` API, it allows us to run spark operations directly from a python script.
 
@@ -71,7 +74,7 @@ if no `schema` is defined, then it will be inferred from the data by spark.
 
 - Showing a dataframe
 
-```python 
+```python
 df.show()
 ```
 
@@ -121,37 +124,53 @@ df = df.filter(column > x)
 
 ### Joining dataframes
 
-[ref](https://towardsdatascience.com/ultimate-pyspark-cheat-sheet-7d3938d13421)
-
-[best reference yet](https://github.com/cartershanklin/pyspark-cheatsheet/blob/master/cheatsheet.ipynb)
+[[SQL Syntax]]
 
 `joins` in `pySpark` are quite easy:
 
 - Join by column name (inner join by default)
+
 ```python
 df_3 = df_1.join(df_2,column_name)
 ```
+
 - Join by expression
+
 ```python
 df_3 = df_1.join(df_2, df_1.column == df_2.column)
 ```
+
 - Left (outer) join
+
 ```python
 df_3 = df_1.join(df_2,column_name,"left")
 ```
+
 - Right (outer) join
+
 ```python
 df_3 = df_1.join(df_2,column_name,"right")
 ```
+
 - Full join
+
 ```python
 df_3 = df_1.join(df_2,column_name,"full")
 ```
+
 - Cross join
+
 ```python
 df_2 = df_1.crossjoin(df_1)
 ```
-### Aggregates 
+
+- Concatenate two `dataframes` (put one atop of the other)
+
+```python
+df_3 = df_1.union(df_2)
+```
+
+### Aggregates
 
 placeholder
 
