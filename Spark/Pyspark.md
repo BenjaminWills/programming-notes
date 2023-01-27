@@ -14,6 +14,7 @@ https://spark.apache.org/docs/
     - [Window functions](#window-functions)
       - [Ranking functions](#ranking-functions)
       - [Analytic functions](#analytic-functions)
+      - [Aggregate functions](#aggregate-functions)
   - [Streaming](#streaming)
   - [UDF](#udf)
   - [](#)
@@ -298,6 +299,21 @@ df.withColumn("lead",lead(column,n).over(window_spec))
 ```
 
 This function is the opposite of lag, just ahead by $n$ rather than behind.
+
+#### Aggregate functions
+
+In the case of `aggregate functions` we need not use an order by, as that does not matter. Thus we must change the definition of the `window_spec`
+
+```python
+window_spec = Window.partitionBy(column)
+```
+
+Now we can use all the usual aggregate functions like:
+
+- `min`
+- `max`
+- `avg`
+- `sum`
 
 ## Streaming
 
