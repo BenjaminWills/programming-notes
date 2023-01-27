@@ -256,6 +256,16 @@ df.withColumn("percent_rank",percent_rank().over(window_spec))
 
 This will squish the rank into the range `0-1`, the meaning of this is dependent on the `orderBy` clause.
 
+- `ntile`
+
+```python
+from pyspark.sql.functions import ntile
+
+df.withColumn("ntile",ntile(2).over(window_spec))
+```
+
+This function will split the rows in each partition into equally sized groups and return the group that each row falls in to.
+
 ## Streaming
 
 placeholder
