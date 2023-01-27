@@ -12,6 +12,7 @@ https://spark.apache.org/docs/
     - [Joining dataframes](#joining-dataframes)
     - [Aggregates](#aggregates)
     - [Window functions](#window-functions)
+      - [Ranking functions](#ranking-functions)
   - [Streaming](#streaming)
   - [UDF](#udf)
   - [](#)
@@ -201,7 +202,59 @@ multi_aggregated_df = df.\
 
 ### Window functions
 
-placeholder
+`Window functions` operate on a `parition` of rows and return a single value. There are 3 types of `window functions`:
+
+1. Ranking functions
+2. Analytic functions
+3. Aggregate functions
+
+```python
+from pyspark.sql.window import Window
+```
+
+#### Ranking functions
+
+- `row_number()`
+
+```python
+from pyspark.sql.functions import row_number
+
+window_spec = Window.partitionBy("x").orderBy("y")
+
+df.withColumn("row_number", row_number().over(window_spec))
+```
+
+This gives the partition row number of each column.
+
+- `rank()`
+
+```python
+from pyspark.sql.functions import rank
+
+df.withColumn("rank", rank().over(window_spec))
+```
+
+This will give the rank of the row in either ascending or descending order.
+
+- `dense_rank()`
+
+```python
+from pyspark.sql.functions import dense_rank
+
+df.withColumn("dense_rank",dense_rank().over(window_spec))
+```
+
+This is essentially the same as `rank` but instead of skipping ranks on ties, it just carries on counting.
+
+- `percent_rank`
+
+```python
+from pyspark.sql.functions import percent_rank
+
+df.withColumn("percent_rank",percent_rank().over(window_spec))
+```
+
+This will squish the rank into the range `0-1`, the meaning of this is dependent on the `orderBy` clause.
 
 ## Streaming
 
