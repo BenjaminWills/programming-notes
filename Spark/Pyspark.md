@@ -17,7 +17,6 @@ https://spark.apache.org/docs/
       - [Aggregate functions](#aggregate-functions)
   - [Streaming](#streaming)
   - [UDF](#udf)
-  - [IDK](#idk)
 
 This is the `spark's` `python` API, it allows us to run spark operations directly from a python script.
 
@@ -349,5 +348,3 @@ df.withColumn("capitalised names", capitalise(col("name")))
 ```
 
 **DISCLAIMER**: in general we should avoid using `UDF`s as they are not `optimised` for `pySpark`, instead we should opt for built in functions.
-
-## IDK
