@@ -17,7 +17,7 @@ https://spark.apache.org/docs/
       - [Aggregate functions](#aggregate-functions)
   - [Streaming](#streaming)
   - [UDF](#udf)
-  - [](#)
+  - [IDK](#idk)
 
 This is the `spark's` `python` API, it allows us to run spark operations directly from a python script.
 
@@ -319,32 +319,33 @@ Now we can use all the usual aggregate functions like:
 
 We can handle live data streams with `pySpark`. All we need to do is connect to the `Spark Session` with a `Streaming Session` and then we can process data live.
 
-[pySpark live stream docs](https://spark.apache.org/docs/latest/streaming-programming-guide.html) 
+[pySpark live stream docs](https://spark.apache.org/docs/latest/streaming-programming-guide.html)
 
 ## UDF
 
 To define a `user defined function` we use the `@udf` decorator upon function definition
+
 ```python
 
-@udf
+@udf(returnType = StringType()) # Where StringType can be any datatype in general
 def capitalise(word:str) -> str:
 	try:
 		capiatlised_list = [
 		letter.upper() for letter
 		in list(word)
 		]
-		
+
 		capitalised_word = ''.join(capiatlised_list)
-		
+
 		return capitalised_word
 	except:
 		return None
 ```
 
 Then we can call this function on the `dataframe`:
+
 ```python
 df.withColumn("capitalised names", capitalise(col("name")))
 ```
-
 
 ## IDK
