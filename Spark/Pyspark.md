@@ -348,4 +348,6 @@ Then we can call this function on the `dataframe`:
 df.withColumn("capitalised names", capitalise(col("name")))
 ```
 
+**DISCLAIMER**: in general we should avoid using `UDF`s as they are not `optimised` for `pySpark`, instead we should opt for built in functions.
+
 ## IDK
