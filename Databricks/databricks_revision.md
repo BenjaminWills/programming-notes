@@ -8,6 +8,7 @@
   - [ Auto loader VS copy into](#auto-loader-vs-copy-into)
   - [ Data lakehouse](#data-lakehouse)
   - [Jobs / pipelines / queries](#jobs--pipelines--queries)
+  - [Streaming](#streaming)
 
 # Revision
 
@@ -80,7 +81,6 @@ USING DELTA LOCATION "dbfs:/"
 
 There are two types of `temporary views` that can be created, Session scoped and Global
 
-
 - A `local/session scoped` `temporary view is` only available with a spark session, so another notebook in the same cluster can not access it. if a notebook is detached and reattached local `temporary view` is lost.
 
 - A `global` `temporary view` is available to all the notebooks in the cluster, if a cluster restarts global `temporary view` is lost.
@@ -114,8 +114,18 @@ we would get:
 [12,14]
 ```
 
+## Streaming
+
 - To create a `view` ontop of a `stream` in `sparkSQL`
 
 ```python
 Spark.readStream.table("sales").createOrReplaceTempView("streaming_vw") 
 ```
+
+Here the `readStream` keyword is important.
+
+- For fault tolerance in structured streaming we have:
+  - checkpointing - this records the offset range of data being processed at each trigger interval
+  - idempotent sinks - this ensures that no duplicates are added to the table in the streaming process
+
+
