@@ -9,6 +9,7 @@
   - [ Data lakehouse](#data-lakehouse)
   - [Jobs / pipelines / queries](#jobs--pipelines--queries)
   - [Streaming](#streaming)
+  - [Unity catalogue](#unity-catalogue)
 
 # Revision
 
@@ -130,3 +131,7 @@ Here the `readStream` keyword is important.
 
 - `CREATE STREAMING LIVE TABLE` is used when working with Streaming data sources and Incremental data
 
+## Unity catalogue
+
+- `SELECT` is not a privilege granted by unity
+- Change table owner with `ALTER TABLE table OWNER owner`
