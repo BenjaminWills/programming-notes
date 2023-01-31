@@ -78,10 +78,20 @@ USING DELTA LOCATION "dbfs:/"
 
 - `temporary views` are lost once a notebook is detatched and reattatched
 
-There are two types of temporary views that can be created, Session scoped and Global
+There are two types of `temporary views` that can be created, Session scoped and Global
 
 
-- A local/session scoped temporary view is only available with a spark session, so another notebook in the same cluster can not access it. if a notebook is detached and reattached local temporary view is lost.
+- A `local/session scoped` `temporary view is` only available with a spark session, so another notebook in the same cluster can not access it. if a notebook is detached and reattached local `temporary view` is lost.
 
-- A global temporary view is available to all the notebooks in the cluster, if a cluster restarts global temporary view is lost.
+- A `global` `temporary view` is available to all the notebooks in the cluster, if a cluster restarts global `temporary view` is lost.
+
+- When creating `UDF`s the syntax follows:
+
+```sql
+    CREATE FUNCTION udf_convert(temp DOUBLE, measure STRING)
+    RETURNS DOUBLE
+    RETURN CASE WHEN measure == ‘F’ then (temp * 9/5) + 32
+            ELSE (temp – 33 ) * 5/9
+           END
+```
 
