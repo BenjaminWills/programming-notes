@@ -95,3 +95,27 @@ There are two types of `temporary views` that can be created, Session scoped and
            END
 ```
 
+- When selecting from a `struct type` in `SQL` when there are multiple entries in a column, it will combine the entries into a `list` when calling with `.` notation, i.e if we have a table with a column that contains:
+  
+```json
+[{"number":12},{"number":14}]
+```
+
+if we query:
+
+```sql
+SELECT column.number as number
+FROM table;
+```
+
+we would get:
+
+```python
+[12,14]
+```
+
+- To create a `view` ontop of a `stream` in `sparkSQL`
+
+```python
+Spark.readStream.table("sales").createOrReplaceTempView("streaming_vw") 
+```
