@@ -5,7 +5,6 @@
   - [SQL create statements](#sql-create-statements)
   - [Databricks job policies](#databricks-job-policies)
   - [Auto loader](#auto-loader)
-  - [Auto loader VS COPY INTO](#auto-loader-vs-copy-into)
 
 # Revision
 
@@ -18,8 +17,7 @@
     CREATE TABLE orders (
         orderId int,
         orderTime timestamp,
-        orderdate date,
-        GENERATED ALWAYS AS (CAST(orderTime as DATE)),
+        orderdate date GENERATED ALWAYS AS (CAST(orderTime as DATE)),
         units int)
 ```
 
@@ -35,4 +33,19 @@
   2. File notification - use a trigger + queue to store the file notification which can
   later be used to retrieve the file - this is much more scalable than 1.
 
-## Auto loader VS COPY INTO
+## Auto loader VS copy into
+
+- Auto loader:
+	- Incremental loading from cloud storage as files arrive
+	- Structured streaming source identified as `cloudFiles`
+	- Supports schema inference and evolution
+	- When to use instead of COPY INTO:
+		- For locations with files in the order of millions or higher
+		- It is difficult to reprocess subsets of files, can use COPY INTO in tandem with auto loader to get around this
+- Copy into:
+	- allows SQL users to idempotently and incrementally load data from cloud object storage into Delta Lake tables
+	- When to use instead of auto loader:
+		- When the number of files is less than a million
+		- Easy to reprocess subsets of files 
+
+
