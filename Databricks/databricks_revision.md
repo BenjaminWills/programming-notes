@@ -5,6 +5,8 @@
   - [SQL create statements](#sql-create-statements)
   - [Databricks job policies](#databricks-job-policies)
   - [Auto loader](#auto-loader)
+  - [ Auto loader VS copy into](#auto-loader-vs-copy-into)
+  - [ Data lakehouse](#data-lakehouse)
   - [Jobs / pipelines / queries](#jobs--pipelines--queries)
 
 # Revision
@@ -34,27 +36,44 @@
   2. File notification - use a trigger + queue to store the file notification which can
   later be used to retrieve the file - this is much more scalable than 1.
 
-## Auto loader VS copy into
+##  Auto loader VS copy into
 
 - Auto loader:
-	- Incremental loading from cloud storage as files arrive
-	- Structured streaming source identified as `cloudFiles`
-	- Supports schema inference and evolution
-	- Schema location is used to store schema inferred by AUTO LOADER, so the next time AUTO LOADER runs faster as does not need to infer the schema every single time by trying to use the last known schema
-	- When to use instead of COPY INTO:
-		- For locations with files in the order of millions or higher
-		- It is difficult to reprocess subsets of files, can use COPY INTO in tandem with auto loader to get around this
+  - Incremental loading from cloud storage as files arrive
+  - Structured streaming source identified as `cloudFiles`
+  - Supports schema inference and evolution
+  - Schema location is used to store schema inferred by AUTO LOADER, so the next time AUTO LOADER runs faster as does not need to infer the schema every single time by trying to use the last known schema
+  - When to use instead of COPY INTO:
+    - For locations with files in the order of millions or higher
+    - It is difficult to reprocess subsets of files, can use COPY INTO in tandem with auto loader to get around this
 - Copy into:
-	- allows SQL users to idempotently and incrementally load data from cloud object storage into Delta Lake tables
-	- When to use instead of auto loader:
-		- When the number of files is less than a million
-		- Easy to reprocess subsets of files 
+  - allows SQL users to idempotently and incrementally load data from cloud object storage into Delta Lake tables
+  - When to use instead of auto loader:
+    - When the number of files is less than a million
+    - Easy to reprocess subsets of files
 
-
-## Data lakehouse 
+##  Data lakehouse
 
 - Compute and storage are `decoupled` in the lakehouse
+- Does not support `stored procedures` (thats a `unity` thing)
 
 ## Jobs / pipelines / queries
 
 - We can access these via the `control plane`
+- Anytime a table is created using the LOCATION keyword it is considered an external table, below is the current syntax.
+
+```sql
+CREATE TABLE table_name ( column column_data_type…) 
+USING format LOCATION "dbfs:/" 
+```
+
+where format $\in \{\text{DELTA}, \text{JSON}, \text{CSV}, \text{PARQUET}, \text{TEXT}\}$
+
+- To make a `delta table` (a table that supports time travel) use the `USING DELTA` key word
+
+```sql
+CREATE TABLE table_name ( column column_data_type…) 
+USING DELTA LOCATION "dbfs:/" 
+```
+
+- `temporary views` are lost once a notebook is detatched and reattatched
