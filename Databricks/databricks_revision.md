@@ -128,4 +128,5 @@ Here the `readStream` keyword is important.
   - checkpointing - this records the offset range of data being processed at each trigger interval
   - idempotent sinks - this ensures that no duplicates are added to the table in the streaming process
 
+- `CREATE STREAMING LIVE TABLE` is used when working with Streaming data sources and Incremental data
 
