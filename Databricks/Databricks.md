@@ -17,6 +17,7 @@
   - [Hive metastore](#hive-metastore)
   - [Jobs](#jobs)
   - [Data governance](#data-governance)
+    - [Unity catalogue](#unity-catalogue)
   - [Pricing](#pricing)
 
 # General Spark Architecture
