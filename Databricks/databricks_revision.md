@@ -5,6 +5,7 @@
   - [SQL create statements](#sql-create-statements)
   - [Databricks job policies](#databricks-job-policies)
   - [Auto loader](#auto-loader)
+  - [Jobs / pipelines / queries](#jobs--pipelines--queries)
 
 # Revision
 
@@ -50,3 +51,10 @@
 		- Easy to reprocess subsets of files 
 
 
+## Data lakehouse 
+
+- Compute and storage are `decoupled` in the lakehouse
+
+## Jobs / pipelines / queries
+
+- We can access these via the `control plane`
