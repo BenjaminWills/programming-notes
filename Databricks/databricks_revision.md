@@ -39,6 +39,7 @@
 	- Incremental loading from cloud storage as files arrive
 	- Structured streaming source identified as `cloudFiles`
 	- Supports schema inference and evolution
+	- Schema location is used to store schema inferred by AUTO LOADER, so the next time AUTO LOADER runs faster as does not need to infer the schema every single time by trying to use the last known schema
 	- When to use instead of COPY INTO:
 		- For locations with files in the order of millions or higher
 		- It is difficult to reprocess subsets of files, can use COPY INTO in tandem with auto loader to get around this
