@@ -11,7 +11,17 @@
 
 ## SQL create statements
 
-- GENERATED key word in table creation ()
+- GENERATED key word in table creation:
+  - Delta Lake supports generated columns which are a special type of column whose values are automatically generated based on a user-specified function over other columns in the Delta table. e.g
+
+```sql
+    CREATE TABLE orders (
+        orderId int,
+        orderTime timestamp,
+        orderdate date,
+        GENERATED ALWAYS AS (CAST(orderTime as DATE)),
+        units int)
+```
 
 ## Databricks job policies
 
