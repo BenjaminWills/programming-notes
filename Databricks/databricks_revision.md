@@ -140,6 +140,7 @@ Here the `readStream` keyword is important.
 
 - `SELECT` is not a privilege granted by unity
 - Change table owner with `ALTER TABLE table OWNER owner`
+- `Access` is granted via the `data explorer`
 
 ## Medallion architecture / Multi-Hop architecture
 
