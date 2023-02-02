@@ -10,6 +10,7 @@
   - [Jobs / pipelines / queries](#jobs--pipelines--queries)
   - [Streaming](#streaming)
   - [Unity catalogue](#unity-catalogue)
+  - [Medallion architecture](#medallion-architecture)
 
 # Revision
 
@@ -32,11 +33,11 @@
 
 ## Auto loader
 
-- supports both directory listing and file notification but COPY INTO only supports directory  listing.
+- supports both directory listing and file notification but COPY INTO only supports directory listing.
 - Ingests data incrementally in 2 ways:
   1. Directory listing - list directory and maintain the state of the file
   2. File notification - use a trigger + queue to store the file notification which can
-  later be used to retrieve the file - this is much more scalable than 1.
+     later be used to retrieve the file - this is much more scalable than 1.
 
 ##  Auto loader VS copy into
 
@@ -65,8 +66,8 @@
 - Anytime a table is created using the LOCATION keyword it is considered an external table, below is the current syntax.
 
 ```sql
-CREATE TABLE table_name ( column column_data_type…) 
-USING format LOCATION "dbfs:/" 
+CREATE TABLE table_name ( column column_data_type…)
+USING format LOCATION "dbfs:/"
 ```
 
 where format $\in \{\text{DELTA}, \text{JSON}, \text{CSV}, \text{PARQUET}, \text{TEXT}\}$
@@ -74,8 +75,8 @@ where format $\in \{\text{DELTA}, \text{JSON}, \text{CSV}, \text{PARQUET}, \text
 - To make a `delta table` (a table that supports time travel) use the `USING DELTA` key word
 
 ```sql
-CREATE TABLE table_name ( column column_data_type…) 
-USING DELTA LOCATION "dbfs:/" 
+CREATE TABLE table_name ( column column_data_type…)
+USING DELTA LOCATION "dbfs:/"
 ```
 
 - `temporary views` are lost once a notebook is detatched and reattatched
@@ -97,9 +98,9 @@ There are two types of `temporary views` that can be created, Session scoped and
 ```
 
 - When selecting from a `struct type` in `SQL` when there are multiple entries in a column, it will combine the entries into a `list` when calling with `.` notation, i.e if we have a table with a column that contains:
-  
+
 ```json
-[{"number":12},{"number":14}]
+[{ "number": 12 }, { "number": 14 }]
 ```
 
 if we query:
@@ -120,12 +121,13 @@ we would get:
 - To create a `view` ontop of a `stream` in `sparkSQL`
 
 ```python
-Spark.readStream.table("sales").createOrReplaceTempView("streaming_vw") 
+Spark.readStream.table("sales").createOrReplaceTempView("streaming_vw")
 ```
 
 Here the `readStream` keyword is important.
 
 - For fault tolerance in structured streaming we have:
+
   - checkpointing - this records the offset range of data being processed at each trigger interval
   - idempotent sinks - this ensures that no duplicates are added to the table in the streaming process
 
@@ -135,3 +137,13 @@ Here the `readStream` keyword is important.
 
 - `SELECT` is not a privilege granted by unity
 - Change table owner with `ALTER TABLE table OWNER owner`
+
+## Medallion architecture
+
+- This is a design pattern used to logically organise data in a `lake house` as it flows from `unclean` to `clean` data.
+  - `Bronze`:
+    - This is the `raw` ingestion stage in which all necessary data is loaded in and placed in `dataframes`
+  - `Silver`:
+    - This is the `cleaning` stage in which data is `cleaned`, `filtered` and `augmented` to be analysed in the `gold` stage
+  - `Gold`:
+    - This is the stage at which we calculate `business level aggregates` and deliver `clean` data to `upstream` applications
