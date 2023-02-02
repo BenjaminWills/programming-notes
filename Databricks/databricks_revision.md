@@ -173,7 +173,6 @@ A lakehouse has the following key features:
 - End-to-end streaming: Real-time reports are the norm in many enterprises. Support for streaming eliminates the need for separate systems dedicated to serving real-time data applications.
 
 - How is it different than a normal data warehouse?
-  - Delta lake is
   - Open source
   - Builds up on standard data format
   - Optimized for cloud object storage
