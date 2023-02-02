@@ -10,7 +10,8 @@
   - [Jobs / pipelines / queries](#jobs--pipelines--queries)
   - [Streaming](#streaming)
   - [Unity catalogue](#unity-catalogue)
-  - [Medallion architecture](#medallion-architecture)
+  - [Medallion architecture / Multi-Hop architecture](#medallion-architecture--multi-hop-architecture)
+  - [Delta tables](#delta-tables)
 
 # Revision
 
@@ -59,6 +60,7 @@
 
 - Compute and storage are `decoupled` in the lakehouse
 - Does not support `stored procedures` (thats a `unity` thing)
+- `delta lake` is an open source storage layer ontop of the lakehouse
 
 ## Jobs / pipelines / queries
 
@@ -138,7 +140,7 @@ Here the `readStream` keyword is important.
 - `SELECT` is not a privilege granted by unity
 - Change table owner with `ALTER TABLE table OWNER owner`
 
-## Medallion architecture
+## Medallion architecture / Multi-Hop architecture
 
 - This is a design pattern used to logically organise data in a `lake house` as it flows from `unclean` to `clean` data.
   - `Bronze`:
@@ -147,3 +149,5 @@ Here the `readStream` keyword is important.
     - This is the `cleaning` stage in which data is `cleaned`, `filtered` and `augmented` to be analysed in the `gold` stage
   - `Gold`:
     - This is the stage at which we calculate `business level aggregates` and deliver `clean` data to `upstream` applications
+
+## Delta tables
