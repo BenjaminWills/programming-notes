@@ -12,6 +12,7 @@
   - [Unity catalogue](#unity-catalogue)
   - [Medallion architecture / Multi-Hop architecture](#medallion-architecture--multi-hop-architecture)
   - [Delta lakehouse](#delta-lakehouse)
+  - [repositories](#repositories)
 
 # Revision
 
@@ -169,3 +170,7 @@ A lakehouse has the following key features:
 - Support for diverse workloads: including data science, machine learning, and SQL and analytics. Multiple tools might be needed to support all these workloads but they all rely on the same data repository.
 
 - End-to-end streaming: Real-time reports are the norm in many enterprises. Support for streaming eliminates the need for separate systems dedicated to serving real-time data applications.
+
+## repositories
+
+- Can commit or push code to git repositories
