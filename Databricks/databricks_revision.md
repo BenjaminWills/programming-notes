@@ -184,6 +184,8 @@ A lakehouse has the following key features:
   - Storage medium
   - Database service or data warehouse
 
+- All tables created in `Databricks` are `delta` by default
+
 ## repositories
 
 - Can commit or push code to git repositories
