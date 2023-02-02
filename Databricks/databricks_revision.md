@@ -185,6 +185,11 @@ A lakehouse has the following key features:
   - Database service or data warehouse
 
 - All tables created in `Databricks` are `delta` by default
+- Delta tables are stored in the following way:
+  - data is broken down into one or many parquet files
+  - log files are broken down into one or many JSON files
+  - each transaction creates new data and log files
+  
 
 ## repositories
 
