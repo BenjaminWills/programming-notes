@@ -206,7 +206,7 @@ A lakehouse has the following key features:
 
 - Can commit or push code to git repositories
 
-## Delta Live Tables
+## Delta live tables
 
 - Delta live tables address and fix a few problems when it comes to ETL
   - Complexities of ETL
@@ -218,3 +218,7 @@ A lakehouse has the following key features:
   - Difficult pipeline operations
     - Poor observability at granular data level
     - Error handling and recovery is laborious
+
+## Cluster pools
+
+- Allow us to reserve VM's, when a new job cluster is created VMs are grabbed from the pool
