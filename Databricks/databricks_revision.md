@@ -232,7 +232,15 @@ dbfs:/user/hive/warehouse
   - drops table from the meta store
   - keeps metadata (delta log, history)
   - keeps data in storage
+- Can use
+```sql
+DESCRIBE HISTORY table;
+```
+to show the history of operations on the `table`.
 
+- Only 2 types of `constraints` are supported:
+	- Not Null - no null values in specified columns
+	- Check Constraints - boolean checks on each row
 ## Cluster pools
 
 - Allow us to reserve VM's, when a new job cluster is created VMs are grabbed from the pool
