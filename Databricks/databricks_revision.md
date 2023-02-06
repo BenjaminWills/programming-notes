@@ -162,7 +162,6 @@ Here the `readStream` keyword is important.
   - `Gold`:
     - This is the stage at which we calculate `business level aggregates` and deliver `clean` data to `upstream` applications
     - Power `ML` applications, `reporting`, `dashboards` and `ad hoc analytics`
-    -
 
 ## Delta lakehouse
 

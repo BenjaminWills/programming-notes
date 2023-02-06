@@ -6,19 +6,19 @@
 - [INDEX](#index)
 - [General Spark Architecture](#general-spark-architecture)
 - [Databricks](#databricks)
-  - [Integration with AWS](#integration-with-aws)
-  - [Clusters](#clusters)
-  - [Workspaces](#workspaces)
-    - [Notebooks](#notebooks)
-      - [version control](#version-control)
-      - [Adding code](#adding-code)
-    - [Libraries](#libraries)
-  - [Delta Lake](#delta-lake)
-  - [Hive metastore](#hive-metastore)
-  - [Jobs](#jobs)
-  - [Data governance](#data-governance)
-    - [Unity catalogue](#unity-catalogue)
-  - [Pricing](#pricing)
+	- [Integration with AWS](#integration-with-aws)
+	- [Clusters](#clusters)
+	- [Workspaces](#workspaces)
+		- [Notebooks](#notebooks)
+			- [version control](#version-control)
+			- [Adding code](#adding-code)
+		- [Libraries](#libraries)
+	- [Delta Lake](#delta-lake)
+	- [Hive metastore](#hive-metastore)
+	- [Jobs](#jobs)
+	- [Data governance](#data-governance)
+		- [Unity catalogue](#unity-catalogue)
+	- [Pricing](#pricing)
 
 # General Spark Architecture
 
@@ -159,6 +159,7 @@ SHOW GRANTS object
 `Databricks` uses the `unity catalogue` to manage `data governance.`
 ![[Unity_catalogue.jpg]]
 there are 3 types of identities in the `unity catalogue`:
+
 1. **Users** - identified by email addresses
 2. **Service Principles** - identified by application ID's
 3. **Groups** - grouping of `users` and `service principles`
