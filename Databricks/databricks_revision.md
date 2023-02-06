@@ -13,7 +13,9 @@
   - [Medallion architecture / Multi-Hop architecture](#medallion-architecture--multi-hop-architecture)
   - [Delta lakehouse](#delta-lakehouse)
   - [repositories](#repositories)
-  - [Delta Live Tables](#delta-live-tables)
+  - [Delta live tables](#delta-live-tables)
+  - [Cluster pools](#cluster-pools)
+  - [UI functionality](#ui-functionality)
 
 # Revision
 
@@ -209,6 +211,7 @@ A lakehouse has the following key features:
 ## Delta live tables
 
 - Delta live tables address and fix a few problems when it comes to ETL
+
   - Complexities of ETL
     - Hard to build and maintain dependencies
     - Difficult to switch between batch and stream
@@ -219,6 +222,19 @@ A lakehouse has the following key features:
     - Poor observability at granular data level
     - Error handling and recovery is laborious
 
+- Tables are stored by default
+
+```shell
+dbfs:/user/hive/warehouse
+```
+
 ## Cluster pools
 
 - Allow us to reserve VM's, when a new job cluster is created VMs are grabbed from the pool
+
+## UI functionality
+
+- **Control Plane**: stored in `Databricks` cloud account
+  - The control plane includes backend services that `Databricks` manages
+- **Data Plane**: Stored in Customer cloud account
+  - This is where your cloud data resides
