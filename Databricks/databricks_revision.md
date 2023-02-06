@@ -228,6 +228,11 @@ A lakehouse has the following key features:
 dbfs:/user/hive/warehouse
 ```
 
+- When dropping a delta table
+  - drops table from the meta store
+  - keeps metadata (delta log, history)
+  - keeps data in storage
+
 ## Cluster pools
 
 - Allow us to reserve VM's, when a new job cluster is created VMs are grabbed from the pool
