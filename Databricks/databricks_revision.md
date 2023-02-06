@@ -13,6 +13,7 @@
   - [Medallion architecture / Multi-Hop architecture](#medallion-architecture--multi-hop-architecture)
   - [Delta lakehouse](#delta-lakehouse)
   - [repositories](#repositories)
+  - [Delta Live Tables](#delta-live-tables)
 
 # Revision
 
@@ -147,10 +148,19 @@ Here the `readStream` keyword is important.
 - This is a design pattern used to logically organise data in a `lake house` as it flows from `unclean` to `clean` data.
   - `Bronze`:
     - This is the `raw` ingestion stage in which all necessary data is loaded in and placed in `dataframes`
+    - provides efficient `storage` and `querying` of full unprocessed history of data
+    - No `schema` is applied at this layer
   - `Silver`:
     - This is the `cleaning` stage in which data is `cleaned`, `filtered` and `augmented` to be analysed in the `gold` stage
+    - Reduces data storage `complexity`
+    - Optimises `ETL` throughput and `query` performance
+    - Eliminates `duplicate` records
+    - production `schema` enforced
+    - Data quality checks / quarantine corrupt data
   - `Gold`:
     - This is the stage at which we calculate `business level aggregates` and deliver `clean` data to `upstream` applications
+    - Power `ML` applications, `reporting`, `dashboards` and `ad hoc analytics`
+    -
 
 ## Delta lakehouse
 
@@ -173,12 +183,14 @@ A lakehouse has the following key features:
 - End-to-end streaming: Real-time reports are the norm in many enterprises. Support for streaming eliminates the need for separate systems dedicated to serving real-time data applications.
 
 - How is it different than a normal data warehouse?
+
   - Open source
   - Builds up on standard data format
   - Optimized for cloud object storage
   - Built for scalable metadata handling
 
 - Delta lake is not
+
   - Proprietary technology
   - Storage format
   - Storage medium
@@ -189,8 +201,20 @@ A lakehouse has the following key features:
   - data is broken down into one or many parquet files
   - log files are broken down into one or many JSON files
   - each transaction creates new data and log files
-  
 
 ## repositories
 
 - Can commit or push code to git repositories
+
+## Delta Live Tables
+
+- Delta live tables address and fix a few problems when it comes to ETL
+  - Complexities of ETL
+    - Hard to build and maintain dependencies
+    - Difficult to switch between batch and stream
+  - Data quality and governance
+    - Difficult to monitor and enforce data quality
+    - Impossible to trace data lineage
+  - Difficult pipeline operations
+    - Poor observability at granular data level
+    - Error handling and recovery is laborious
