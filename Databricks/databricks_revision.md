@@ -85,7 +85,7 @@ CREATE TABLE table_name ( column column_data_type…)
 USING DELTA LOCATION "dbfs:/"
 ```
 
-- `temporary views` are lost once a notebook is detatched and reattatched
+- `temporary views` are lost once a notebook is detached and reattached
 
 There are two types of `temporary views` that can be created, Session scoped and Global
 
@@ -240,6 +240,10 @@ to show the history of operations on the `table`.
 - Only 2 types of `constraints` are supported:
 	- Not Null - no null values in specified columns
 	- Check Constraints - boolean checks on each row
+
+- Types of table `cloning`:
+	- `Shallow cloning` - these are quick, and allow you to test queries on a copy of the table that would not effect the table
+	- `Deep cloning` - fully copies data and metadata from source to target, this is an incremental operation, hence can sync changes in the source table to the target table
 ## Cluster pools
 
 - Allow us to reserve VM's, when a new job cluster is created VMs are grabbed from the pool
@@ -250,3 +254,8 @@ to show the history of operations on the `table`.
   - The control plane includes backend services that `Databricks` manages
 - **Data Plane**: Stored in Customer cloud account
   - This is where your cloud data resides
+
+## Clusters
+
+- `Standard mode` clusters are used for single users only
+- `High concurrency` clusters are used for multiple users, they are a cloud usage

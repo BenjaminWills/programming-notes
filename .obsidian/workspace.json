@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "368d6b0f9281f9e6",
+        "id": "850e887e0ef98e0b",
         "type": "tabs",
         "children": [
           {
-            "id": "f9a86128e120c480",
+            "id": "d59aed735418f644",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Databricks/Databricks.md",
+                "file": "Databricks/databricks_revision.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databricks/Databricks.md",
+                "file": "Databricks/databricks_revision.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databricks/Databricks.md",
+                "file": "Databricks/databricks_revision.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databricks/Databricks.md"
+                "file": "Databricks/databricks_revision.md"
               }
             }
           }
@@ -147,17 +147,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f9a86128e120c480",
+  "active": "d59aed735418f644",
   "lastOpenFiles": [
+    "temp-razin/TODO.md",
+    "Databricks/databricks_revision.md",
     "Databricks/Databricks syntax.md",
     "Databricks/Databricks.md",
-    "Databricks/databricks_revision.md",
     "Spark/Pyspark.md",
     "().md",
     "SQL/SQL Syntax.md",
     "Spark/Spark SQL.md",
     "Spark/Spark.md",
-    "Databricks/practice_papers/PracticeExam_DatabricksDataEngineerAssociate.pdf",
-    "Palantir/Foundry.md"
+    "Databricks/practice_papers/PracticeExam_DatabricksDataEngineerAssociate.pdf"
   ]
 }
