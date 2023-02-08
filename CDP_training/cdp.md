@@ -8,6 +8,7 @@
     - [Data usage](#data-usage)
     - [Data archiving](#data-archiving)
     - [Data destruction](#data-destruction)
+  - [Data governance](#data-governance)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -75,3 +76,13 @@ for example `Netflix` analysed their films usage, and moved the films to `cold` 
 ### Data destruction
 
 This is the final stage of the life cycle, data is `purged`. This is to save `money` and `storage space`. Data will become redundant after a certain amount of time.
+
+## Data governance
+
+Data governance is focused on three things:
+
+1. People
+2. Policies
+3. Tools and technologies
+
+The main aim is to control access to data, which in turn enhances `compliance` and `data security`.
