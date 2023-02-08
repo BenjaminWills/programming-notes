@@ -2,6 +2,8 @@
 
 - [CDP training](#cdp-training)
   - [Data Life Cycle](#data-life-cycle)
+    - [Data creation](#data-creation)
+    - [Data processing](#data-processing)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -16,10 +18,16 @@ A data life cycle is the phases of the data that it goes through. We can split d
 The data life cycle runs as follows:
 
 - Data creation - data is sourced from multiple sources and compiled to create data
-- Data processing - data is processed and then sent through an ETL pipeline
-- Data storage - both data and metadata is stored on storage
-- Data usage - usage in applications downstream
-- Data archiving - data is removed from active production and no longer processed
-- Data destruction - data is destroyed and will be removed from the organisation
+  - Data processing - data is processed and then sent through an ETL pipeline
+    - Data storage - both data and metadata is stored on storage
+      - Data usage - usage in applications downstream
+        - Data archiving - data is removed from active production and no longer processed
+          - Data destruction - data is destroyed and will be removed from the organisation
 
+### Data creation
 
+The process of creating data includes `acquisition`, `data entry` and `data capture`.
+
+### Data processing
+
+The process of `transforming` this data for use
