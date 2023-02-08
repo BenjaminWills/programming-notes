@@ -4,6 +4,7 @@
   - [Data Life Cycle](#data-life-cycle)
     - [Data creation](#data-creation)
     - [Data processing](#data-processing)
+    - [Data storage](#data-storage)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -13,7 +14,7 @@ A data life cycle is the phases of the data that it goes through. We can split d
 
 | Analytical                  | Transactional |
 | --------------------------- | ------------- |
-| Optimized to run queries on | updated daily |
+| Optimized to run queries on | updated often |
 
 The data life cycle runs as follows:
 
@@ -30,4 +31,18 @@ The process of creating data includes `acquisition`, `data entry` and `data capt
 
 ### Data processing
 
-The process of `transforming` this data for use
+The process of `transforming` this data for use, usually in an ETL pipeline. note that this does **NOT** gain any benefit or insight from the data, it simply allows the data to be placed in a `consistent` and `understandable` format.
+
+This is when data goes through processes such as:
+
+- `cleaning`
+- `integration`
+- `scrubbing`
+- `ETL`
+
+### Data storage
+
+- Before we store the data we need to consider the `structure` the data i.e `structured`,`semi-structured` and `unstructured data.
+- Next we need to consider the `data protection` i.e data `encryption` at `rest` or `in transit`
+- `Data backups` are also essential, to maintain `resilience` and `availability` of the data
+
