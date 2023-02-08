@@ -5,6 +5,7 @@
     - [Data creation](#data-creation)
     - [Data processing](#data-processing)
     - [Data storage](#data-storage)
+    - [Data usage](#data-usage)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -48,4 +49,14 @@ This is when data goes through processes such as:
 - We have a few types of `storage`:
   - `hot` storage is easy and quick to access, and is frequently accessed.
   - `cold` storage is slower to access and is not accessed as much, usually these storage options are cheaper than `hot` storage options.
--  
+
+### Data usage
+
+This is when the data is used `upstream` in various applications. We have a few levels of usage (in ascending order of processing power):
+
+1. Reporting - using the data to find out `what happened`
+2. Analysis - using the data to find out `why did it happen`
+3. Diagnostig - using the data to find out `what is happening now`
+4. Predictive analysis - using the data to find out `what is likely to happen`
+5. Perscriptive analysis - using the data to find out `what should we do`
+
