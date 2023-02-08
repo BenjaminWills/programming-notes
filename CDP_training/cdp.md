@@ -81,8 +81,8 @@ This is the final stage of the life cycle, data is `purged`. This is to save `mo
 
 Data governance is focused on three things:
 
-1. People
-2. Policies
-3. Tools and technologies
+1. People - `people` and `groups` that are assigned policies
+2. Policies - `policies` allow elements of `access` to objects
+3. Tools and technologies - these are the objects that `policies` allow `access` to
 
 The main aim is to control access to data, which in turn enhances `compliance` and `data security`.
