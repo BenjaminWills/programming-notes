@@ -7,6 +7,7 @@
     - [Data storage](#data-storage)
     - [Data usage](#data-usage)
     - [Data archiving](#data-archiving)
+    - [Data destruction](#data-destruction)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -66,6 +67,11 @@ This is when the data is used `upstream` in various applications. We have a few 
 The data is removed from all active uage, and is moved to `cold` storage. This is for a few reasons:
 
 - `Compliance` - dependent on the companies compliance rules
-- `cost savings` - `cold` storage is much cheaper than hot storage
+- `cost savings` - `cold` storage is much cheaper than `hot` storage
 - `strategic business purposes` - viewing historical data to compare and gain insights on pesent data
 
+for example `Netflix` analysed their films usage, and moved the films to `cold` storage. This allowed them to save `$124.1k` with minimal effort.
+
+### Data destruction
+
+This is the final stage of the life cycle, data is `purged`. This is to save `money` and `storage space`. Data will become redundant after a certain amount of time.
