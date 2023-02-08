@@ -85,4 +85,4 @@ Data governance is focused on three things:
 2. Policies - `policies` allow elements of `access` to objects
 3. Tools and technologies - these are the objects that `policies` allow `access` to
 
-The main aim is to control access to data, which in turn enhances `compliance` and `data security`.
+The main aim is to control access to data, which in turn enhances `compliance` and `data security`. It essentially watches over the `data life cycle`.
