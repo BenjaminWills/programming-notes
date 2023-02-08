@@ -45,4 +45,7 @@ This is when data goes through processes such as:
 - Before we store the data we need to consider the `structure` the data i.e `structured`,`semi-structured` and `unstructured data.
 - Next we need to consider the `data protection` i.e data `encryption` at `rest` or `in transit`
 - `Data backups` are also essential, to maintain `resilience` and `availability` of the data
-- We have a few types of `storage`. `hot` storage is easy and quick to access, and is frequently accessed. `cold` storage is slower to access and is not accessed as much, usually these storage options are cheaper than `hot` storage options.
+- We have a few types of `storage`:
+  - `hot` storage is easy and quick to access, and is frequently accessed.
+  - `cold` storage is slower to access and is not accessed as much, usually these storage options are cheaper than `hot` storage options.
+-  
