@@ -13,6 +13,7 @@
     - [Data quality](#data-quality)
     - [Data controls](#data-controls)
     - [Data lifecyle management](#data-lifecyle-management)
+      - [best practices](#best-practices)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -152,4 +153,11 @@ These goals allow us to gain control of our organisations data, which allows us 
 - `controlling costs`
 - `process improvement`
 
-The power of organisation.
+#### best practices
+
+1. create and define data types
+2. use consistent naming scheme
+3. save new data through a disaster recovery plan
+4. consider implmenting an eneterpise file sync - to allow accessibility of data
+5. archive data if it is seldom used
+6. clear up space by destroying data
