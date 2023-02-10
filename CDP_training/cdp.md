@@ -10,6 +10,9 @@
     - [Data destruction](#data-destruction)
   - [Data governance](#data-governance)
     - [Metadata](#metadata)
+    - [Data quality](#data-quality)
+    - [Data controls](#data-controls)
+    - [Data lifecyle management](#data-lifecyle-management)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -120,3 +123,25 @@ Metadata generally can be catagorised into 2 major categories:
 2. `Technical` metadata represents the tecnical aspects of the data, including data types, length, lineage, results from data profiling
 
 A lot of organisations tend to `standardise` their metadata to keep it consistent accross the databases.
+
+### Data quality
+
+Helps to identify if the data that we have conforms to the `organisation's` standards, i.e `non-null` constraints on `SQL` columns. We can enforce data quality.
+
+### Data controls
+
+This is a way of controlling how well the `data quality` standards have been followed, we put systems in place to measure `conformance` by:
+
+- setting `thresholds` and `building reports`
+- establish `service level agreements` for data controls and `define processes` to repond to issues
+
+We can apply these in diferent levels of `granularity`.
+
+### Data lifecyle management
+
+This is simply the `approach` to managing and implementing the whole `life cycle` of data, `DLM` has 3 main goals:
+
+- `confidentiality` - the data can only be accessed by those within the organisation
+- `availability` - the data can be accessed when it is needed
+- `integrity` - the data is consistent for all users
+
