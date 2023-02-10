@@ -9,6 +9,7 @@
     - [Data archiving](#data-archiving)
     - [Data destruction](#data-destruction)
   - [Data governance](#data-governance)
+    - [Metadata](#metadata)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -109,4 +110,11 @@ We have a few stages of data governance after `ingesting` data from various sour
 
 We can then use these stages to create users and user groups control access to specific elements.
 
+More in depth on the `data catalogue`, it is an `inventory` of **all** the datasets that the `enterprise` has.
 
+### Metadata
+
+Metadata generally can be catagorised into 2 major categories:
+
+1. Business metadata describes the meaning of data in the business sense.
+2. Technical metadata represents the tecnical aspects of the data, including data types, length, lineage, results from data profiling
