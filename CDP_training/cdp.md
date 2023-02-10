@@ -86,3 +86,27 @@ Data governance is focused on three things:
 3. Tools and technologies - these are the objects that `policies` allow `access` to
 
 The main aim is to control access to data, which in turn enhances `compliance` and `data security`. It essentially watches over the `data life cycle`.
+
+We have a few stages of data governance after `ingesting` data from various sources:
+
+1. Data discovery and curation:
+   - profiling
+   - classification
+   - lineage
+   - prepare
+   - quality
+2. Data management:
+   - metadata - metadata around the table, e.g last modified date
+   - catalogue - an organised catalogue of data
+   - master data manager - `master data` is all the data that belongs to one person, so say we have two bank accounts, it would be the combined copy of them
+   - [archive](#data-archiving)
+   - quality
+3. Policies:
+   - physical
+   - encryption
+   - access
+   - audit - see who's done what
+
+We can then use these stages to create users and user groups control access to specific elements.
+
+
