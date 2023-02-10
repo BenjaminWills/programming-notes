@@ -145,3 +145,11 @@ This is simply the `approach` to managing and implementing the whole `life cycle
 - `availability` - the data can be accessed when it is needed
 - `integrity` - the data is consistent for all users
 
+These goals allow us to gain control of our organisations data, which allows us to gain deeper insights as we are not wasting energy on organising our files all of the time. As well as the following benefits:
+
+- `data usability`
+- `compliance and governance`
+- `controlling costs`
+- `process improvement`
+
+The power of organisation.
