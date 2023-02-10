@@ -116,5 +116,7 @@ More in depth on the `data catalogue`, it is an `inventory` of **all** the datas
 
 Metadata generally can be catagorised into 2 major categories:
 
-1. Business metadata describes the meaning of data in the business sense.
-2. Technical metadata represents the tecnical aspects of the data, including data types, length, lineage, results from data profiling
+1. `Business` metadata describes the meaning of data in the business sense.
+2. `Technical` metadata represents the tecnical aspects of the data, including data types, length, lineage, results from data profiling
+
+A lot of organisations tend to `standardise` their metadata to keep it consistent accross the databases.
