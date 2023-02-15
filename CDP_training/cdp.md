@@ -251,33 +251,33 @@ cons:
 ### data pipeline good practices
 
 1. Determine the goal
-   - what are our objectives for the pipeline?
-   - how can we measure the performance of the pipeline?
+   - what are our objectives for the `pipeline`?
+   - how can we measure the performance of the `pipeline`?
 
 2. Choose data sources
-   - what are the potential sources of the data?
-   - what format will the data come in?
+   - what are the potential `sources` of the data?
+   - what `format` will the data come in?
 
 3. Determine data ingestion strategy
    - what communication layer will collect data (e.g HTTP,MQTT,gRPC)?
-   - will we use third party integration tools to ingest the data?
+   - will we use `third party integration tools` to ingest the data?
 
 4. Design data processing plan
-   - What data processing strategies will we use (ETL,ELT)?
-   - are we going to be enriching the data with attributes?
+   - What data processing strategies will we use (`ETL`,`ELT`)?
+   - are we going to be `enriching` the data with attributes?
 
 5. Set up storage output
-   - are we going to use big data stores, like warehouses or lakes?
-   - would the data be on the cloud or on prem?
+   - are we going to use `big data` stores, like `warehouses` or `lakes`?
+   - would the data be on the `cloud` or `on premesis`?
 
 6. Plan the data workflow
-   - what downstream jobs are dependent on an upstream job?
-   - are there jobs that can run in parralel?
+   - what downstream jobs are `dependent` on an upstream job?
+   - are there jobs that can run in `parralel`?
   
 7. Implement a data monitoring and governance framework
-   - what needs to be monitored?
-   - how do we ensure data security?
+   - what needs to be `monitored`?
+   - how do we ensure `data security`?
 
 8. Plan data consumption layer
-   - whats the best way to utilise our data?
+   - whats the best way to `utilise` our data?
    - do we have all the data we need for our intended use case?
