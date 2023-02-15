@@ -17,6 +17,9 @@
   - [Data engineering](#data-engineering)
     - [The data pipeline](#the-data-pipeline)
     - [ETL and ELT](#etl-and-elt)
+      - [ELT](#elt)
+      - [ETLT](#etlt)
+    - [Good practices](#good-practices)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -192,3 +195,57 @@ A data pipeline has a few components:
 - monitoring - monitoring of pipeline health and data quality
 
 ### ETL and ELT
+
+### ETL
+
+ETL is the most widley used data pipeline pattern.
+
+pros:
+
+- suited for data warehouse workloads
+- works well when complex data transformations are required
+- results in one copy, no redundancies
+- if all sources are not ready at the same time, ETL can ensure that the transformation will only happen once all the data is available
+
+cons:
+
+- Highly time consuming and has high latency
+- high compute power required for complex transformations
+- due to 1 and 2 it is not useful for big data
+- often have vendor locking
+
+
+#### ELT
+
+ELT is preferred more frequently now to ETL as it is mcuh faster to extract and load first, and then transform.
+
+pros:
+
+- suitable data lake implementations
+- decreased latency as data is available much sooner for processing
+- all kinda of data are able to be stored
+
+cons:
+
+- increased duplication of data in different layers
+- data quality suffers, data is exposed without deduplication and cleansing
+- often ends up creating a data swamp
+- people often forget to transform the data
+
+#### ETLT
+
+This is a hybrid of `ETL` and `ELT`
+
+pros:
+
+- smaller transformation, data cleaning and filtration done whilst extracting data
+- very practical pipeline, solved privacy through masking
+- data swamp potential is decreased due to intial T step
+- enables lakehouse architecture
+
+cons:
+
+- limited by processsing power and latency
+- still generates 2 copies of data
+
+### Good practices
