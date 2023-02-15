@@ -14,6 +14,9 @@
     - [Data controls](#data-controls)
     - [Data lifecyle management](#data-lifecyle-management)
       - [best practices](#best-practices)
+  - [Data engineering](#data-engineering)
+    - [The data pipeline](#the-data-pipeline)
+    - [ETL and ELT](#etl-and-elt)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -161,3 +164,31 @@ These goals allow us to gain control of our organisations data, which allows us 
 4. consider implmenting an eneterpise file sync - to allow accessibility of data
 5. archive data if it is seldom used
 6. clear up space by destroying data
+
+## Data engineering
+
+Data engineering is the practice of building systems to enable collection, cleaning and usage of data. Data engineers will create `data pipelines` that take in `raw` unprocessed data, `clean` it and then return `cleaned` data that can also have `aggregations` depending on the use case.
+
+`ETL` is the biggest tool in data engineering and is usually what constitutes a data pipeline:
+
+- `Extract` - extract the data from the data lake or warehouse - or data source
+- `Transform` - clean the raw data e.g make all column formatting consistent, and collect data into useful groups
+- `Load` - load the data in upstream applications
+
+### The data pipeline
+
+We have 3 types of data pipelines:
+
+- `Batch processing` - use cases are when data is periodically collected, transformed and loaded to a cloud data warehouse
+- `Streaming` - the pipeline will ingest a constant sequence of data, and will progressively update metrics, reports and summary statistics
+- `Hybrid` - batch and stream processing, this combines the power of long running batch models with streaming analytics, data is still fresh and inconsitencies are removed using batch processing. Split the stream into batches
+
+A data pipeline has a few components:
+
+- dataflow - how will data move from one place to another
+- storage - where will the different stages of the data live
+- processing - data processing consists of all transformation processes
+- workflow - the process sequences, and its dependencies in the pipeline
+- monitoring - monitoring of pipeline health and data quality
+
+### ETL and ELT
