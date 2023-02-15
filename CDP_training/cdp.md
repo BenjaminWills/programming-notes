@@ -21,6 +21,10 @@
       - [ELT](#elt)
       - [ETLT](#etlt)
     - [data pipeline good practices](#data-pipeline-good-practices)
+    - [Storage](#storage)
+      - [Data warehouse](#data-warehouse)
+      - [Data lake](#data-lake)
+      - [Data lakehouse](#data-lakehouse)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -281,3 +285,18 @@ cons:
 8. Plan data consumption layer
    - whats the best way to `utilise` our data?
    - do we have all the data we need for our intended use case?
+
+### Storage
+
+#### Data warehouse
+
+fill in
+
+#### Data lake
+
+fill in
+
+#### Data lakehouse
+
+fill in
+
