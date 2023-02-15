@@ -17,6 +17,7 @@
   - [Data engineering](#data-engineering)
     - [The data pipeline](#the-data-pipeline)
     - [ETL and ELT](#etl-and-elt)
+    - [ETL](#etl)
       - [ELT](#elt)
       - [ETLT](#etlt)
     - [Good practices](#good-practices)
@@ -196,7 +197,7 @@ A data pipeline has a few components:
 
 ### ETL and ELT
 
-### ETL
+### ETL
 
 ETL is the most widley used data pipeline pattern.
 
@@ -213,7 +214,6 @@ cons:
 - high compute power required for complex transformations
 - due to 1 and 2 it is not useful for big data
 - often have vendor locking
-
 
 #### ELT
 
@@ -249,3 +249,4 @@ cons:
 - still generates 2 copies of data
 
 ### Good practices
+
