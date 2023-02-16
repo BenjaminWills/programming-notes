@@ -2,7 +2,7 @@ import argparse
 import os
 import pandas as pd
 
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser(prog="CSV operations")
 
 parser.add_argument("--source_path", help="Source of CSV to be loaded in")
 parser.add_argument(
@@ -97,4 +97,5 @@ if __name__ == "__main__":
 
     source_df = pd.read_csv(SOURCE_FILE_PATH)
     source_df_duplicated_dropped = drop_duplicates(source_df)
+
     save_data(source_df_duplicated_dropped, LANDING_FILE_PATH)
