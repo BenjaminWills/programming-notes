@@ -1,17 +1,17 @@
 - [Overview](#overview)
 - [Data Types](#data-types)
-  - [Strings](#strings)
-  - [Numeric](#numeric)
-  - [Date and Time](#date-and-time)
-  - [How to use](#how-to-use)
+	- [Strings](#strings)
+	- [Numeric](#numeric)
+	- [Date and Time](#date-and-time)
+	- [How to use](#how-to-use)
 - [Create Tables](#create-tables)
 - [Update Tables](#update-tables)
 - [Selecting from tables](#selecting-from-tables)
-  - [Joins](#joins)
+	- [Joins](#joins)
 - [Common table expressions](#common-table-expressions)
 - [Views](#views)
-  - [Standard views](#standard-views)
-  - [Materialised views](#materialised-views)
+	- [Standard views](#standard-views)
+	- [Materialised views](#materialised-views)
 - [Aggregate functions](#aggregate-functions)
 - [Indexing](#indexing)
 - [Window functions](#window-functions)
@@ -91,7 +91,7 @@ We'll see this in the creation of tables section, but we create tables by baking
 
 ```sql
 CREATE TABLE table_name (
-	name VARCHAR(20)
+ name VARCHAR(20)
 );
 ```
 
@@ -101,9 +101,9 @@ CREATE TABLE table_name (
 
 ```sql
 CREATE TABLE table_name (
-	id SERIAL PRIMARY KEY,
-	column_1 <Data type> NOT NULL,
-	column_2 <Data type>
+ id SERIAL PRIMARY KEY,
+ column_1 <Data type> NOT NULL,
+ column_2 <Data type>
 );
 ```
 
@@ -124,13 +124,13 @@ This command will `remove` the table from the database.
 
 ```sql
 CREATE TABLE table_name(
-	c1 INT,
-	c2 INT,
-	c3 VARCHAR(20),
-	UNIQUE(c4) DECIMAL(20,5),
-	CHECK(c1 > 0 AND c1 >= c2),
-	PRIMARY KEY (c1,c2),
-	FOREIGN KEY (c2) REFERENCES table_two(c2)
+ c1 INT,
+ c2 INT,
+ c3 VARCHAR(20),
+ UNIQUE(c4) DECIMAL(20,5),
+ CHECK(c1 > 0 AND c1 >= c2),
+ PRIMARY KEY (c1,c2),
+ FOREIGN KEY (c2) REFERENCES table_two(c2)
 )
 ```
 
@@ -205,16 +205,16 @@ Note that `column_list` and `value_list` must be the same length and have a one 
 
 ```sql
 INSERT INTO table_1(column_list)
-	SELECT column_list
-	FROM table_2;
+ SELECT column_list
+ FROM table_2;
 ```
 
 - Update a column for a selection of rows
 
 ```sql
 UPDATE table_name
-	SET c1 = value
-	WHERE condition;
+ SET c1 = value
+ WHERE condition;
 ```
 
 - Delete on a condition
@@ -329,8 +329,8 @@ A really useful resource is `CTE's` , they allow us to re-use queries.
 
 ```sql
 WITH my_cte as (
-	SELECT c1, c2
-	FROM table
+ SELECT c1, c2
+ FROM table
 )
 
 SELECT c1
@@ -354,8 +354,8 @@ A `Standard View` is basically a `CTE` that is saved to memory.
 ```sql
 CREATE VIEW my_view
 AS (
-	SELECT c1
-	FROM table
+ SELECT c1
+ FROM table
 );
 ```
 
@@ -366,14 +366,14 @@ A `Materialised View` persists the data returned from the view definition query 
 ```sql
 CREATE MATERIALIZED VIEW mv_test2
 AS (
-	SELECT MAX(i.i_rec_start_date) as max_i_rec_start_date,
-	MIN(i.i_rec_end_date) as min_i_rec_end_date,
-	i.i_item_sk,
-	i.i_item_id,
-	i.i_category_id
-	FROM syntheticworkload.item i
-	GROUP BY i.i_item_sk, i.i_item_id, i.i_category_id
-	);
+ SELECT MAX(i.i_rec_start_date) as max_i_rec_start_date,
+ MIN(i.i_rec_end_date) as min_i_rec_end_date,
+ i.i_item_sk,
+ i.i_item_id,
+ i.i_category_id
+ FROM syntheticworkload.item i
+ GROUP BY i.i_item_sk, i.i_item_id, i.i_category_id
+ );
 ```
 
 # Aggregate functions
