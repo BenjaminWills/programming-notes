@@ -28,6 +28,8 @@
   - [Modern data stack](#modern-data-stack)
     - [Data processing framework](#data-processing-framework)
     - [Data connectors](#data-connectors)
+    - [Orchestration tools](#orchestration-tools)
+    - [Data quality tools](#data-quality-tools)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -293,21 +295,23 @@ cons:
 
 #### Data warehouse
 
-fill in
+A `data warehouse` can only store structured data, they provide `storage` and `compute` to be able to gain insights from data within it. They support `ACID` transactions
 
 #### Data lake
 
-fill in
+These are data stores that can store both `unstructured` and `structured` data. This is very powerful as it allows us to run both `BI analytics` and `ML/AI` workflows. AWS' `S3` is an example of a data lake. They support `ACID` transactions and `time travel`.
+
+We must be careful not to make this into a `data swamp` which is a data lake that is full of redundant data.
 
 #### Data lakehouse
 
-fill in
+Integrates a `lakehouse` into a `warehouse`, allows for `compute` and `storage` to work together, i.e we get `compute` AND we get storage of **all** kinds of data.
 
 ## Modern data stack
 
 ### Data processing framework
 
-A `framework` is a tool that is a tool that manages the transformation of data in multiple steps. Usually these steps are visually represented in a directed acyclic graph (`DAG`). We call these steps tasks, the pipeline is controlled by an `orchestrator`, which is composed into 3 components:
+A `framework` is a tool that is a tool that manages the transformation of data in multiple steps. Usually these steps are visually represented in a directed acyclic graph (`DAG` - which essentially just defines the order of operations). We call these steps tasks, the pipeline is controlled by an `orchestrator`, which is composed into 3 components:
 
 - a scheduler
 - an executor
@@ -319,3 +323,23 @@ Examples of these frameworks are `map reduce` and `apache spark`. These usually 
 
 When making a pipeline we need connections to connect the endpoints. These can be in the form of `API`'s or `UI`'s for example. It bundles up credentials and authentication in one package.
 
+There are `cloud native` tools and `3rd party` tools that allow you to connect to the cloud/
+
+### Orchestration tools
+
+These are applications that can automatically manage the `configuration`, `coordination`, `integration` and `data management` of our pipeline, these are applications such as `Apache Airflow`.
+
+### Data quality tools
+
+Data quality tools are technologies for `identifying`, `understanding` and `correcitng flaws` to support data governance. Critical measures of quality:
+
+- `Integrity`
+- `Validity`
+- `Accuracy`
+- `Uniqueness`
+- `Consistency`
+- `Timeliness`
+- `Freshness`
+- `Completeness`
+
+These are tools such as `ORACLE`.
