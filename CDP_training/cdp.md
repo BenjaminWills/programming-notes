@@ -26,6 +26,7 @@
       - [Data lake](#data-lake)
       - [Data lakehouse](#data-lakehouse)
   - [Modern data stack](#modern-data-stack)
+    - [Data processing framework](#data-processing-framework)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -302,4 +303,14 @@ fill in
 fill in
 
 ## Modern data stack
+
+### Data processing framework
+
+A `framework` is a tool that is a tool that manages the transformation of data in multiple steps. Usually these steps are visually represented in a directed acyclic graph (`DAG`). We call these steps tasks, the pipeline is controlled by an `orchestrator`, which is composed into 3 components:
+
+- a scheduler
+- an executor
+- a metadata store
+
+Examples of these frameworks are `map reduce` and `apache spark`.
 
