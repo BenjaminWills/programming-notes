@@ -31,6 +31,12 @@
     - [Orchestration tools](#orchestration-tools)
     - [Data quality tools](#data-quality-tools)
     - [Notebooks](#notebooks)
+    - [Cloud object stores](#cloud-object-stores)
+    - [Storage](#storage-1)
+    - [Visualisation](#visualisation)
+    - [Data querying](#data-querying)
+    - [Message broker](#message-broker)
+    - [GitOps](#gitops)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -306,7 +312,7 @@ We must be careful not to make this into a `data swamp` which is a data lake tha
 
 #### Data lakehouse
 
-Integrates a `lakehouse` into a `warehouse`, allows for `compute` and `storage` to work together, i.e we get `compute` AND we get storage of **all** kinds of data. 
+Integrates a `lakehouse` into a `warehouse`, allows for `compute` and `storage` to work together, i.e we get `compute` AND we get storage of **all** kinds of data.
 
 providers such as `Big query`, `Snowflake` and `Redshift`.
 
@@ -349,4 +355,41 @@ These are tools such as `ORACLE`.
 
 ### Notebooks
 
-Modern vendors such as `Databricks` use a notebook environment to run data engineering stacks and pipelines. These can support multiple languages including `markdown`. They are cell based files.
+Modern vendors such as `Databricks` and `jupyter` use a notebook environment to run data engineering stacks and pipelines. These can support multiple languages including `markdown`. They are cell based files.
+
+### Cloud object stores
+
+This is a format for storing data in the cloud.
+
+We can have 3 types of storage:
+
+- `BLOCK`: splitting data into fixed size blocks
+- `FILE`: data is stored in a file hierarchy
+- `OBJECT`: a container for objects
+
+### Storage
+
+How do we query and infer the data? We can use a few technologies for this, three of interest are:
+
+1. Search engines, they excel at text queries (`ELASTICSEARCH`)
+2. Document stores (`NOSQL`), provide better schema adaptability (`MONGODB`)
+3. Columnar stores, such as `SQL` queries (`REDSHIFT`)
+
+### Visualisation
+
+Data visualisation is a possible endpoint of a pipeline. Many cloud providers have tools to do this like `QUICKSIGHT` and `DATABRICKS`, we can also use propritary applications such as `TABLEAU` or `POWER BI`.
+
+### Data querying
+
+We now need to query the data, we can do his with `engines` like `SQL`, `NOSQL` and `Athena`. These engines are dependent on the type of [storage](#storage-1) that the data is kept in.
+
+### Message broker
+
+These take the information from the sender, format it, and then send it to hte outputs. Usually these are used for components of applications communicating with eachother. There are 2 basic messaging styles:
+
+1. Point to point messages - these are used for `one to one` relationships, each message in the queue is only sent to one recipient and consumed only once
+2. Publish/subscribe messages - the producer of each message will publish it to a topic, and then the consumer will read from the specific topic
+
+### GitOps
+
+This is using git for devops. it uses `IaC`, `MRs` and `CI/CS`
