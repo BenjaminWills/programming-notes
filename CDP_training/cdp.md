@@ -25,6 +25,7 @@
       - [Data warehouse](#data-warehouse)
       - [Data lake](#data-lake)
       - [Data lakehouse](#data-lakehouse)
+  - [Modern data stack](#modern-data-stack)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -299,4 +300,6 @@ fill in
 #### Data lakehouse
 
 fill in
+
+## Modern data stack
 
