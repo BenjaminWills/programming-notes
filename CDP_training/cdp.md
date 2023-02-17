@@ -30,6 +30,7 @@
     - [Data connectors](#data-connectors)
     - [Orchestration tools](#orchestration-tools)
     - [Data quality tools](#data-quality-tools)
+    - [Notebooks](#notebooks)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -305,7 +306,9 @@ We must be careful not to make this into a `data swamp` which is a data lake tha
 
 #### Data lakehouse
 
-Integrates a `lakehouse` into a `warehouse`, allows for `compute` and `storage` to work together, i.e we get `compute` AND we get storage of **all** kinds of data.
+Integrates a `lakehouse` into a `warehouse`, allows for `compute` and `storage` to work together, i.e we get `compute` AND we get storage of **all** kinds of data. 
+
+providers such as `Big query`, `Snowflake` and `Redshift`.
 
 ## Modern data stack
 
@@ -343,3 +346,7 @@ Data quality tools are technologies for `identifying`, `understanding` and `corr
 - `Completeness`
 
 These are tools such as `ORACLE`.
+
+### Notebooks
+
+Modern vendors such as `Databricks` use a notebook environment to run data engineering stacks and pipelines. These can support multiple languages including `markdown`. They are cell based files.
