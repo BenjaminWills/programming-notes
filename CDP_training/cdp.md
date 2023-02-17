@@ -27,6 +27,7 @@
       - [Data lakehouse](#data-lakehouse)
   - [Modern data stack](#modern-data-stack)
     - [Data processing framework](#data-processing-framework)
+    - [Data connectors](#data-connectors)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -312,5 +313,9 @@ A `framework` is a tool that is a tool that manages the transformation of data i
 - an executor
 - a metadata store
 
-Examples of these frameworks are `map reduce` and `apache spark`.
+Examples of these frameworks are `map reduce` and `apache spark`. These usually handle the data in batches.
+
+### Data connectors
+
+When making a pipeline we need connections to connect the endpoints. These can be in the form of `API`'s or `UI`'s for example. It bundles up credentials and authentication in one package.
 
