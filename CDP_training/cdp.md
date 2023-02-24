@@ -39,6 +39,10 @@
     - [GitOps](#gitops)
   - [Cloud concepts](#cloud-concepts)
     - [benefits of cloud computing](#benefits-of-cloud-computing)
+    - [Cloud deployment models](#cloud-deployment-models)
+      - [Public](#public)
+      - [Private](#private)
+      - [hybrid](#hybrid)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -421,3 +425,19 @@ Cloud comuputing is the ond demand availability of computer system resources tha
 4. Increased velocity
    - speed and scale
    - centralisation
+
+### Cloud deployment models
+
+#### Public
+
+These are clouds such as `AWS`, these are more scalable and have less system control
+
+#### Private
+
+These are usually `internal` clouds that have more system control and less data secturity - but increased security. You can then use public clouds to be scaled. Private clouds can be made on AWS too using virutal private clouds.
+
+Bespoke infrastructure and privacy.
+
+#### hybrid
+
+This is the combination that organisations can use.
