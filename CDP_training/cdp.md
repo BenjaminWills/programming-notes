@@ -37,6 +37,8 @@
     - [Data querying](#data-querying)
     - [Message broker](#message-broker)
     - [GitOps](#gitops)
+  - [Cloud concepts](#cloud-concepts)
+    - [benefits of cloud computing](#benefits-of-cloud-computing)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -393,3 +395,29 @@ These take the information from the sender, format it, and then send it to hte o
 ### GitOps
 
 This is using git for devops. it uses `IaC`, `MRs` and `CI/CS`
+
+## Cloud concepts
+
+Cloud comuputing is the ond demand availability of computer system resources that exist in a remote location. These resources can be actively managed by the  user. Cloud computing has a few characteristics that distance it from traditional on prem computing:
+
+1. On demand self service
+2. network access
+3. resource pooling
+4. rapid elasticity
+5. measured service
+
+### benefits of cloud computing
+
+1. Cost reduction
+   - elasticity
+   - multi tenancy
+2. Increase revenue
+   - creation of new business and operating models
+   - more simplistic innovation
+3. Risk reduction
+   - Access to security technology
+   - internal governance controls
+   - lowering cost of failiure
+4. Increased velocity
+   - speed and scale
+   - centralisation
