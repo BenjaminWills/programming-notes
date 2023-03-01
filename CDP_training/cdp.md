@@ -44,6 +44,8 @@
       - [Private](#private)
       - [hybrid](#hybrid)
   - [Cloud automation](#cloud-automation)
+    - [Benefits of cloud automation](#benefits-of-cloud-automation)
+    - [Orchestration VS automation](#orchestration-vs-automation)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -445,3 +447,17 @@ This is the combination that organisations can use.
 
 ## Cloud automation
 
+`Cloud automation` enables users to create/modify/delete resources on the cloud automatically and programatically.
+
+### Benefits of cloud automation
+
+There are severel benefits of automating your cloud srevices:
+
+- Reduce manual work required
+- Improved backup processes as they can then run on a schedule
+- Improved security and resilience
+- Improved governance
+
+### Orchestration VS automation
+
+`Automation` is the process of setting up `one` task to be run on its own, `Orchestration` is the process of automating `many` tasks as a process or a workflow. That is to say that an orchestration is a collection of automations, that is executed in a specifc order according to governance.
