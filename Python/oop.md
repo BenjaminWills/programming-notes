@@ -1,7 +1,3 @@
-# Object-Oriented Programming
-
-## Topics
-
 - [Classes](#classes "Classes")
 
 ## Classes [^](#topics "Topics")

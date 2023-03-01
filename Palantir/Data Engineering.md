@@ -1,39 +1,6 @@
-# Data Engineering
-
-## Topics
-
 - [Palantir Learning](#palantir-learning "Palantir Learning")
 - [Data Engineering](#data-engineering-1 "Data Engineering")
 - [Under the Hood](#under-the-hood "Under the Hood")
-
-## Palantir Learning [^](#topics "Topics")
-
-DATAENG 01: Data Pipeline Foundations
-
-- Foundry 107 - Code Repositories
-- Foundry 110 - Pipeline Builder: Getting Started
-- Foundry 111 - Pipeline Builder: Production-Grade Pipelines
-
-DATAENG 02 (Builder): Intro to Data Transformation  
-DATAENG 02 (Repositories): Intro to Data Transformation
-
-DATAENG 03 (Builder): Creating a Project Output  
-DATAENG 03 (Repositories): Creating a Project Output
-
-DATAENG 04: Scheduling Data Pipelines
-
-DATAENG 05 (Builder): Transform Projects in Pipeline Builder  
-DATAENG 05a (Repositories): Working with Raw Files  
-DATAENG 05b (Repositories): Publishing and Using Shared Libraries  
-DATAENG 05c (Repositories): Multiple Outputs with Data Transforms
-
-DATAENG 06: Monitoring Data Pipeline Health
-
-DATAENG 07 (Builder): Configuring Data Expectations  
-DATAENG 07 (Repositories): Configuring Data Expectations
-
-DATAENG 08 (Builder): Ontology Data Pipelines  
-DATAENG 08 (Repositories): Ontology Data Pipelines
 
 ## Data Engineering [^](#topics "Topics")
 

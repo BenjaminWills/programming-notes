@@ -1,7 +1,3 @@
-# Fundamentals
-
-## Topics
-
 - [Main](#main "Main")
 - [Format](#format "Format")
 - [Datatypes](#datatypes "Datatypes")
