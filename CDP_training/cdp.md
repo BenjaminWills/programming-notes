@@ -467,5 +467,17 @@ There are severel benefits of automating your cloud srevices:
 
 `Devops` is achieved through automation. Devops teams can collaborate on a single cloud platform in which they can source and develop, test and deploy new functionalities without the burden of infrastructure.
 
-Automation is used for `continuous integration`,`continuous testing`,`continuous delivery` and `continuous operations`.
+Automation is used for `continuous integration`,`continuous testing`,`continuous delivery` and `continuous operations`, these tools allow us to enforce code quality, gain historical checkpoints for code quality and speed up deployment.
+
+The stages of devops are:
+
+1. Plan
+2. Code
+3. Build
+4. Test
+5. Release
+6. Deploy
+7. Operate
+
+This can all be automated into a pipeline.
 
