@@ -46,8 +46,9 @@
   - [Cloud automation](#cloud-automation)
     - [Benefits of cloud automation](#benefits-of-cloud-automation)
     - [Orchestration VS automation](#orchestration-vs-automation)
+    - [Devops](#devops)
 
-`CDP` (cloud data platform), is a cloud agnostic tool. (?)
+`CDP` (cloud data platform), is a cloud agnostic tool.
 
 ## Data Life Cycle
 
@@ -461,3 +462,10 @@ There are severel benefits of automating your cloud srevices:
 ### Orchestration VS automation
 
 `Automation` is the process of setting up `one` task to be run on its own, `Orchestration` is the process of automating `many` tasks as a process or a workflow. That is to say that an orchestration is a collection of automations, that is executed in a specifc order according to governance.
+
+### Devops
+
+`Devops` is achieved through automation. Devops teams can collaborate on a single cloud platform in which they can source and develop, test and deploy new functionalities without the burden of infrastructure.
+
+Automation is used for `continuous integration`,`continuous testing`,`continuous delivery` and `continuous operations`.
+
