@@ -43,6 +43,7 @@
       - [Public](#public)
       - [Private](#private)
       - [hybrid](#hybrid)
+  - [Cloud automation](#cloud-automation)
 
 `CDP` (cloud data platform), is a cloud agnostic tool. (?)
 
@@ -441,3 +442,6 @@ Bespoke infrastructure and privacy.
 #### hybrid
 
 This is the combination that organisations can use.
+
+## Cloud automation
+
