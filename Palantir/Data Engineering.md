@@ -1,4 +1,3 @@
-- [Palantir Learning](#palantir-learning "Palantir Learning")
 - [Data Engineering](#data-engineering-1 "Data Engineering")
 - [Under the Hood](#under-the-hood "Under the Hood")
 
