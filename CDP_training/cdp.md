@@ -47,8 +47,10 @@
     - [Benefits of cloud automation](#benefits-of-cloud-automation)
     - [Orchestration VS automation](#orchestration-vs-automation)
     - [Devops](#devops)
+    - [Common use cases](#common-use-cases)
+    - [Common tools](#common-tools)
 
-`CDP` (cloud data platform), is a cloud agnostic tool.
+`CDP` (cloud data platform), is a cloud agnostic tool to deploy cloud resources quickly and effectively.
 
 ## Data Life Cycle
 
@@ -479,5 +481,21 @@ The stages of devops are:
 6. Deploy
 7. Operate
 
-This can all be automated into a pipeline.
+This can all be `automated` into a pipeline.
+
+### Common use cases
+
+- Application development and testing - `devops` automation
+- Workload management - `autoscaling`
+- Infrastructure as Code i.e config files like `cloudformation`
+- hybrid cloud - can automate syncronisation between `on premise` and `cloud` services
+
+### Common tools
+
+- AWS `elastic beanstalk`
+- AWS `cloudformation` (my favourite)
+- Puppet
+- Ansible
+- Kubernetes
+- Terraform
 
