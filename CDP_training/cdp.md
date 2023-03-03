@@ -49,6 +49,8 @@
     - [Devops](#devops)
     - [Common use cases](#common-use-cases)
     - [Common tools](#common-tools)
+- [Cloud data platform](#cloud-data-platform)
+  - [Why does it exist](#why-does-it-exist)
 
 `CDP` (cloud data platform), is a cloud agnostic tool to deploy cloud resources quickly and effectively.
 
@@ -499,3 +501,10 @@ This can all be `automated` into a pipeline.
 - Kubernetes
 - Terraform
 
+# Cloud data platform
+
+This is an `accelerator` that allows us to deploy cloud projects quickly
+
+## Why does it exist
+
+The need stems from the time consuming nature of data integration, analysing the data and finally delivering the business critical data. The `CDP` allows you to accelerate this process as a `bootstrapper for the cloud` 

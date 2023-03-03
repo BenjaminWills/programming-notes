@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Databricks/databricks_revision.md",
+                "file": "Docker/Docker.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "605169e37d410e0b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Docker/Docker compose.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databricks/databricks_revision.md",
+                "file": "Docker/Docker compose.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databricks/databricks_revision.md",
+                "file": "Docker/Docker compose.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databricks/databricks_revision.md"
+                "file": "Docker/Docker compose.md"
               }
             }
           }
@@ -147,17 +160,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d59aed735418f644",
+  "active": "605169e37d410e0b",
   "lastOpenFiles": [
-    "temp-razin/TODO.md",
+    "visgames/visgames.md",
+    "visgames",
+    "Terminal/git.md",
+    "Terminal/command.md",
+    "Terminal",
+    "SQL/SQL syntax.md",
+    "Python/oop.md",
+    "Python/fundamentals.md",
+    "Python",
+    "Palantir/Data Engineering.md",
+    "Palantir/App Development.md",
+    "CDP_training/data_engineering/ETL_example_spark.py",
+    "CDP_training/data_engineering/ETL_example_pandas.py",
+    "CDP_training/data_engineering",
+    "CDP_training/cdp.md",
+    "CDP_training",
+    "Docker/Docker.md",
+    "readme.md",
     "Databricks/databricks_revision.md",
+    "temp-razin/TODO.md",
     "Databricks/Databricks syntax.md",
     "Databricks/Databricks.md",
     "Spark/Pyspark.md",
     "().md",
     "SQL/SQL Syntax.md",
     "Spark/Spark SQL.md",
-    "Spark/Spark.md",
-    "Databricks/practice_papers/PracticeExam_DatabricksDataEngineerAssociate.pdf"
+    "Spark/Spark.md"
   ]
 }
