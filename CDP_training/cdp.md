@@ -53,6 +53,7 @@
   - [Why does it exist](#why-does-it-exist)
   - [What are the advantages?](#what-are-the-advantages)
   - [Capabilities](#capabilities)
+  - [How does it work](#how-does-it-work)
 
 `CDP` (cloud data platform), is a cloud agnostic tool to deploy cloud resources quickly and effectively.
 
@@ -527,3 +528,7 @@ The need stems from the time consuming nature of data integration, analysing the
 - Data optimisation for ML and Analytics
 - Support for advanced analytics
 - Secure by design with built in data controls
+
+## How does it work
+
+CDP is made using `terraform` configurations
