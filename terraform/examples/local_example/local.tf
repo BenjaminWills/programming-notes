@@ -5,4 +5,9 @@ resource "local_file" "example"{
     file_permission = "0700"
 }
 
+resource "random_pet" "random-example" {
+  prefix = "Mr"
+  separator = "."
+  length = "1"
+}
 # This file will create a file in the PWD that contains the path to the PWD.
