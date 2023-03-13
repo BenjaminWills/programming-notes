@@ -3,3 +3,6 @@
 .DS_Store
 social_planning.md
 .obsidian
+.terraform*
+terraform.tfstate
+terraform.tfstate.backup
