@@ -1,4 +1,4 @@
-# block name, resource type, resource name
+# block name, [provider]_[resource type], resource name
 resource "local_file" "example"{
     filename = "./example.txt"
     content = path.cwd
