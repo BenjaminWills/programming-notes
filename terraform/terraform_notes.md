@@ -3,6 +3,7 @@
 - [Terraform](#terraform)
   - [What is it?](#what-is-it)
   - [High level features](#high-level-features)
+  - [How to install](#how-to-install)
 
 ## What is it?
 
@@ -25,3 +26,10 @@ resource "aws_instance" "webserver" {
 2. Planning - the order of deployment
 3. Application - apply the resources
 
+## How to install
+
+```sh
+brew install terraform
+
+terraform version
+```
