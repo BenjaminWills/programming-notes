@@ -4,6 +4,7 @@
   - [What is it?](#what-is-it)
   - [High level features](#high-level-features)
   - [How to install](#how-to-install)
+  - [How to run](#how-to-run)
   - [Syntax](#syntax)
     - [blocks](#blocks)
 
@@ -36,6 +37,14 @@ brew install terraform
 terraform version
 ```
 
+## How to run
+
+```sh
+terraform init
+terraform plan
+terraform apply
+```
+
 ## Syntax
 
 Each `terraform` statement takes the following form:
@@ -50,3 +59,4 @@ Each `terraform` statement takes the following form:
 ### blocks
 
 A block in `terraform` specifies the infrastructure and the provider required.
+
