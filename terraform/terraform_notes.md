@@ -5,6 +5,8 @@
   - [High level features](#high-level-features)
   - [How to install](#how-to-install)
   - [How to run](#how-to-run)
+    - [How to deploy resources](#how-to-deploy-resources)
+    - [How to destroy resources](#how-to-destroy-resources)
   - [Syntax](#syntax)
     - [blocks](#blocks)
 
@@ -39,10 +41,18 @@ terraform version
 
 ## How to run
 
+### How to deploy resources
+
 ```sh
 terraform init
 terraform plan
 terraform apply
+```
+
+### How to destroy resources
+
+```sh
+terraform destroy
 ```
 
 ## Syntax
