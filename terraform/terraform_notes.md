@@ -10,6 +10,7 @@
   - [Syntax](#syntax)
     - [blocks](#blocks)
   - [Terraform providers](#terraform-providers)
+  - [Best practices](#best-practices)
 
 ## What is it?
 
@@ -84,3 +85,12 @@ when running `terraform init` you will notice that it specifies a few things:
 ```sh
 * [hostname] org_namespace/resource_type version
 ```
+
+## Best practices
+
+- Have one singular configuration `.tf` file per directory, we can supplement this main file with a few other files:
+  - `main.tf` - main file containing resrouce definitions
+  - `variables.tf` - contains variable declarations
+  - `outputs.tf` - contains outputs from resources
+  - `provider.tf` - conrains provider definition
+
