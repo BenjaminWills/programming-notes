@@ -4,6 +4,8 @@
   - [What is it?](#what-is-it)
   - [High level features](#high-level-features)
   - [How to install](#how-to-install)
+  - [Syntax](#syntax)
+    - [blocks](#blocks)
 
 ## What is it?
 
@@ -33,3 +35,18 @@ brew install terraform
 
 terraform version
 ```
+
+## Syntax
+
+Each `terraform` statement takes the following form:
+
+```java
+<block> <parameters> {
+  key1 = value1
+  key2 = value2
+}
+```
+
+### blocks
+
+A block in `terraform` specifies the infrastructure and the provider required.
