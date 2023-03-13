@@ -9,6 +9,7 @@
     - [How to destroy resources](#how-to-destroy-resources)
   - [Syntax](#syntax)
     - [blocks](#blocks)
+  - [Terraform providers](#terraform-providers)
 
 ## What is it?
 
@@ -70,3 +71,16 @@ Each `terraform` statement takes the following form:
 
 A block in `terraform` specifies the infrastructure and the provider required.
 
+## Terraform providers
+
+When we run `terraform init`, `terraform` downloads necessary plugins for the specified providers and saves them in the root directory. There are 3 tiers of providers:
+
+1. Official - `AWS`,`GCP` etc. These are made by HashiCorp
+2. Partner - A 3rd party software that has partnered by HashiCorp
+3. Community - Open source plugins
+
+when running `terraform init` you will notice that it specifies a few things:
+
+```sh
+* [hostname] org_namespace/resource_type version
+```
