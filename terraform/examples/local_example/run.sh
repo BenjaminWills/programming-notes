@@ -1,2 +1,2 @@
 terraform init
-yes | terraform apply
+yes yes| terraform apply
