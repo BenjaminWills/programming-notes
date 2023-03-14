@@ -154,7 +154,7 @@ There are 2 types of dependencies in resources:
 
 An `output block` can capture the output of a resource block:
 
-```java
+```tf
 output resource_name {
   value = resource.attribute
   description = ""
