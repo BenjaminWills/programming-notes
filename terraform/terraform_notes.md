@@ -25,6 +25,7 @@
   - [Datasouces](#datasouces)
   - [Meta arguments](#meta-arguments)
     - [Count](#count)
+    - [For each](#for-each)
   - [Best practices](#best-practices)
 
 ## What is it?
@@ -293,6 +294,19 @@ resource "resource" "name" {
 ```
 
 This will create $c$ lots of this resource.
+
+### For each
+
+We can run for each loops within resource creation
+
+```tf
+resource "local_file" "name" {
+  filename = each.value
+  for_each = var.variable
+}
+```
+
+We need to use `sets` for this command.
 
 ## Best practices
 
