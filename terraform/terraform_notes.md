@@ -105,6 +105,7 @@ The `variable` `block` has 3 parameters:
    6. `map` - ```{key1=value1}``` can access using map[key], can also declare datatype of map like `map(number)` this only applies to the values
    7. `set` - A list with only unique values, can specify datatype like `set(number)`
    8. `object` - can combine different data types into one new datatype e.g:
+
       ```java
       variable "something" {
         type = object({
@@ -123,7 +124,8 @@ The `variable` `block` has 3 parameters:
         }
       }
       ```
-   9.  `tuple` - tuples are lists that can have multiple vairable types, we declare the data types like: `tuple([string,number,bool])`
+
+   9. `tuple` - tuples are lists that can have multiple vairable types, we declare the data types like: `tuple([string,number,bool])`
 3. `Description` - description for documentation purposes
 
 ## Terraform providers
