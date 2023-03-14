@@ -11,6 +11,6 @@ variable "random_example" {
   default = {
     "prefix" = "Mr"
     "separator" = "."
-    "length" = "1"
+    "length" = "1" 
   }
 }

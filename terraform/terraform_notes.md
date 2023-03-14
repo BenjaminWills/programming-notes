@@ -14,6 +14,7 @@
     - [Resource dependencies](#resource-dependencies)
     - [Output blocks](#output-blocks)
   - [Terraform providers](#terraform-providers)
+  - [Terraform state](#terraform-state)
   - [Best practices](#best-practices)
 
 ## What is it?
@@ -176,6 +177,10 @@ when running `terraform init` you will notice that it specifies a few things:
 ```sh
 * [hostname] org_namespace/resource_type version
 ```
+
+## Terraform state
+
+The `state` file is created by running `terraform apply` and houses the information about the resources to be provisioned. This allows terraform to map from code to provisioning resources.
 
 ## Best practices
 
