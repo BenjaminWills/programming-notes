@@ -139,7 +139,7 @@ resource "x" "y" {
 }
 ```
 
-Using the syntax: `${provider_resource.resource_name.attribute}`
+Using the syntax: `${provider_resource.resource_name.attribute}` we can access outputs of other resources.
 
 ## Terraform providers
 
