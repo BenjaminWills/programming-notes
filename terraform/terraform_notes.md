@@ -96,7 +96,34 @@ resource "local_file" "pet" {
 The `variable` `block` has 3 parameters:
 
 1. `Default` - the default value of the variable
-2. `Type` - the data type of the variable ~ {string,number,boolean,any,list,map,set,object,tuple}
+2. `Type` - the data type of the variable:
+   1. `string` - ```"hello"```
+   2. `number` - 1
+   3. `boolean` - true/false
+   4. `any` - no specification
+   5. `list` - `[1,2,3]` can access using zero indexing, can also declare datatype of list like `list(number)`
+   6. `map` - ```{key1=value1}``` can access using map[key], can also declare datatype of map like `map(number)` this only applies to the values
+   7. `set` - A list with only unique values, can specify datatype like `set(number)`
+   8. `object` - can combine different data types into one new datatype e.g:
+      ```java
+      variable "something" {
+        type = object({
+          name = string
+          colour = string
+          age = number
+          food = list(string)
+          favourite = bool
+      })
+        default = {
+          name = "ben"
+          colour = "blue"
+          age = 22
+          food = ["beans"]
+          favourite = true
+        }
+      }
+      ```
+   9.  `tuple` - 
 3. `Description` - description for documentation purposes
 
 ## Terraform providers
