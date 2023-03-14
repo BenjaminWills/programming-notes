@@ -245,6 +245,23 @@ resource "resource_type" "name" {
 }
 ```
 
+We can also prevent destruction using lifecycle rules too using `prevent_destroy`. Finally we can use the `ignore changes` rule to prevent resources from being updated.
+
+```tf
+resource "aws_instance" "webserver" {
+  ami = "ami"
+  instance_type = "t2.micro"
+  tags = {
+    Name = "Project-Webserver"
+  }
+  lifecycle {
+    ignore_changes = [
+      tags
+    ]
+  }
+}
+```
+
 ## Best practices
 
 - Have one singular configuration `.tf` file per directory, we can supplement this main file with a few other files:
