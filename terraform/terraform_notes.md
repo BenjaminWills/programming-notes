@@ -10,6 +10,7 @@
   - [Syntax](#syntax)
     - [Blocks](#blocks)
     - [Variables](#variables)
+    - [Using outputs of resources](#using-outputs-of-resources)
   - [Terraform providers](#terraform-providers)
   - [Best practices](#best-practices)
 
@@ -128,6 +129,18 @@ The `variable` `block` has 3 parameters:
    9. `tuple` - tuples are lists that can have multiple vairable types, we declare the data types like: `tuple([string,number,bool])`
 3. `Description` - description for documentation purposes
 
+### Using outputs of resources
+
+In the `tf` docs there is an `attribute reference` section that details the outputs of each resource. We reference this output as follows:
+
+```java
+resource "x" "y" {
+  content = "${random_name.resource_name.id}"
+}
+```
+
+Using the syntax: `${provider_resource.resource_name.attribute}`
+
 ## Terraform providers
 
 When we run `terraform init`, `terraform` downloads necessary plugins for the specified providers and saves them in the root directory. There are 3 tiers of providers:
@@ -149,4 +162,3 @@ when running `terraform init` you will notice that it specifies a few things:
   - `variables.tf` - contains variable declarations
   - `outputs.tf` - contains outputs from resources
   - `provider.tf` - conrains provider definition
-
