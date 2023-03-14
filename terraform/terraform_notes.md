@@ -22,6 +22,7 @@
   - [Terraform state](#terraform-state)
   - [Immutability of terraform](#immutability-of-terraform)
   - [Lifecycle rules](#lifecycle-rules)
+  - [Datasouces](#datasouces)
   - [Best practices](#best-practices)
 
 ## What is it?
@@ -264,7 +265,7 @@ resource "aws_instance" "webserver" {
 
 Here we see that `ignore changes` will ignore changes to specific attributes of the resource.
 
-## Datasouces
+## Datasouces
 
 We can use datasources to access resources that are provisioned outside of its control using `data blocks`
 
