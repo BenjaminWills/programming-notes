@@ -182,6 +182,8 @@ when running `terraform init` you will notice that it specifies a few things:
 
 The `state` file is created by running `terraform apply` and houses the information about the resources to be provisioned. This allows terraform to map from code to provisioning resources.
 
+The `tf` state is saved in a file called `terraform.tfstate`, collaberation is made possible by saving a `tfstate` file in a remote webstore such as `AWS S3` and then running the apply in a directory with the correct state in.
+
 ## Best practices
 
 - Have one singular configuration `.tf` file per directory, we can supplement this main file with a few other files:
