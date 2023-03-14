@@ -306,7 +306,7 @@ resource "local_file" "name" {
 }
 ```
 
-We need to use `sets` for this command.
+We need to use `sets` or `maps` for this command.
 
 ## Best practices
 
