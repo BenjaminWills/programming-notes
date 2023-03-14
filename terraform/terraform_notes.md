@@ -123,7 +123,7 @@ The `variable` `block` has 3 parameters:
         }
       }
       ```
-   9.  `tuple` - 
+   9.  `tuple` - tuples are lists that can have multiple vairable types, we declare the data types like: `tuple([string,number,bool])`
 3. `Description` - description for documentation purposes
 
 ## Terraform providers
