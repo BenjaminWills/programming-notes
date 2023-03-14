@@ -1,7 +1,7 @@
 variable "example" {
   type = map(string)
   default = {
-    "filename" = "./example.txt"
+    "filename"        = "./example.txt"
     "file_permission" = "0700"
   }
 }
@@ -9,8 +9,8 @@ variable "example" {
 variable "random_example" {
   type = map(string)
   default = {
-    "prefix" = "Mr"
+    "prefix"    = "Mr"
     "separator" = "."
-    "length" = "1" 
+    "length"    = "1"
   }
 }
