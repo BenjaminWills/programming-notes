@@ -24,7 +24,7 @@
 
 It uses the `HashiCorp configuration language` that looks like:
 
-```java
+```tf
 resource "aws_instance" "webserver" {
   ami = "ami"
   instance_type = "t2.micro"
@@ -65,7 +65,7 @@ terraform destroy
 
 Each `terraform` statement takes the following form:
 
-```java
+```tf
 <block> <parameters> {
   key1 = value1
   key2 = value2
@@ -80,7 +80,7 @@ A block in `terraform` specifies the infrastructure and the provider required.
 
 To create a variable we use the keyword `variable` followed by the name of the variable:
 
-```java
+```tf
 // variables.tf
 variable "filename" {
   default = "path"
@@ -89,7 +89,7 @@ variable "filename" {
 
 Then to call them in `main.tf` we write:
 
-```java
+```tf
 // main.tf
 resource "local_file" "pet" {
   filename = var.filename
@@ -109,7 +109,7 @@ The `variable` `block` has 3 parameters:
    7. `set` - A list with only unique values, can specify datatype like `set(number)`
    8. `object` - can combine different data types into one new datatype e.g:
 
-      ```java
+      ```tf
       variable "something" {
         type = object({
           name = string
@@ -135,7 +135,7 @@ The `variable` `block` has 3 parameters:
 
 In the `tf` docs there is an `attribute reference` section that details the outputs of each resource. We reference this output as follows:
 
-```java
+```tf
 resource "x" "y" {
   content = "${random_name.resource_name.id}"
 }
