@@ -93,6 +93,12 @@ resource "local_file" "pet" {
 }
 ```
 
+The `variable` `block` has 3 parameters:
+
+1. `Default` - the default value of the variable
+2. `Type` - the data type of the variable ~ {string,number,boolean,any,list,map,set,object,tuple}
+3. `Description` - description for documentation purposes
+
 ## Terraform providers
 
 When we run `terraform init`, `terraform` downloads necessary plugins for the specified providers and saves them in the root directory. There are 3 tiers of providers:
