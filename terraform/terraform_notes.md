@@ -4,9 +4,13 @@
   - [What is it?](#what-is-it)
   - [High level features](#high-level-features)
   - [How to install](#how-to-install)
-  - [How to run](#how-to-run)
+  - [Commands](#commands)
     - [How to deploy resources](#how-to-deploy-resources)
     - [How to destroy resources](#how-to-destroy-resources)
+    - [Validate syntax](#validate-syntax)
+    - [Format configuration files](#format-configuration-files)
+    - [Show all resources](#show-all-resources)
+    - [List all providers](#list-all-providers)
   - [Syntax](#syntax)
     - [Blocks](#blocks)
     - [Variables](#variables)
@@ -46,7 +50,7 @@ brew install terraform
 terraform version
 ```
 
-## How to run
+## Commands
 
 ### How to deploy resources
 
@@ -60,6 +64,30 @@ terraform apply
 
 ```sh
 terraform destroy
+```
+
+### Validate syntax
+
+```sh
+terraform validate
+```
+
+### Format configuration files
+
+```sh
+terraform fmt
+```
+
+### Show all resources
+
+```sh
+terraform show [-json]
+```
+
+### List all providers
+
+```sh
+terraform providers
 ```
 
 ## Syntax
