@@ -20,6 +20,7 @@
     - [Output blocks](#output-blocks)
   - [Terraform providers](#terraform-providers)
   - [Terraform state](#terraform-state)
+  - [Immutability of terraform](#immutability-of-terraform)
   - [Best practices](#best-practices)
 
 ## What is it?
@@ -224,6 +225,10 @@ The `tf` state is saved in a file called `terraform.tfstate`, collaberation is m
 It is wise to store states in version controlled software.
 
 It is a `JSON` structure that contains config data.
+
+## Immutability of terraform
+
+Mutable infrastructure can be modified, immutable infrastructure cannot be modified, thus we must destroy the old infrastrucutre and create a new one with the updated attribute. This is how `terraform` works. This makes `versioning` easier as the whole stack is recreated on modification.
 
 ## Best practices
 
