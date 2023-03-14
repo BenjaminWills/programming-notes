@@ -184,6 +184,10 @@ The `state` file is created by running `terraform apply` and houses the informat
 
 The `tf` state is saved in a file called `terraform.tfstate`, collaberation is made possible by saving a `tfstate` file in a remote webstore such as `AWS S3` and then running the apply in a directory with the correct state in.
 
+It is wise to store states in version controlled software.
+
+It is a `JSON` structure that contains config data.
+
 ## Best practices
 
 - Have one singular configuration `.tf` file per directory, we can supplement this main file with a few other files:
