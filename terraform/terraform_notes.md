@@ -12,6 +12,7 @@
     - [Variables](#variables)
     - [Using outputs of resources](#using-outputs-of-resources)
     - [Resource dependencies](#resource-dependencies)
+    - [Output blocks](#output-blocks)
   - [Terraform providers](#terraform-providers)
   - [Best practices](#best-practices)
 
@@ -148,6 +149,19 @@ There are 2 types of dependencies in resources:
 
 1. `Implicit` - this occurs when we make a reference using string interpolation (`${x.y.attribute}`). So `terraform` knows which order to provision in
 2. `Explicit` - we can use the `depends_on` argument to hard code dependencies which is a list of resources. This way we can create an order of creation.
+
+### Output blocks
+
+An `output block` can capture the output of a resource block:
+
+```java
+output resource_name {
+  value = resource.attribute
+  description = ""
+}
+```
+
+We can view all outputs with `terraform output` and specific ones with `terraform output <output name>`
 
 ## Terraform providers
 

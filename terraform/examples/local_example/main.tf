@@ -10,3 +10,8 @@ resource "random_pet" "random-example" {
   separator = var.random_example["separator"]
   length = var.random_example["length"]
 }
+
+output "random-example" {
+  value = random_pet.random-example.id
+  description = "random example output"
+}
