@@ -257,10 +257,12 @@ resource "aws_instance" "webserver" {
   lifecycle {
     ignore_changes = [
       tags
-    ]
+    ] | all
   }
 }
 ```
+
+Here we see that `ignore changes` will ignore changes to specific attributes of the resource.
 
 ## Best practices
 
