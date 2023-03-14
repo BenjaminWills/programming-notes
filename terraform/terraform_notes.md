@@ -8,7 +8,8 @@
     - [How to deploy resources](#how-to-deploy-resources)
     - [How to destroy resources](#how-to-destroy-resources)
   - [Syntax](#syntax)
-    - [blocks](#blocks)
+    - [Blocks](#blocks)
+    - [Variables](#variables)
   - [Terraform providers](#terraform-providers)
   - [Best practices](#best-practices)
 
@@ -68,9 +69,29 @@ Each `terraform` statement takes the following form:
 }
 ```
 
-### blocks
+### Blocks
 
 A block in `terraform` specifies the infrastructure and the provider required.
+
+### Variables
+
+To create a variable we use the keyword `variable` followed by the name of the variable:
+
+```java
+// variables.tf
+variable "filename" {
+  default = "path"
+}
+```
+
+Then to call them in `main.tf` we write:
+
+```java
+// main.tf
+resource "local_file" "pet" {
+  filename = var.filename
+}
+```
 
 ## Terraform providers
 
