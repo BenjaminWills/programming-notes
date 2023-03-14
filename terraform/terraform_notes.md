@@ -11,6 +11,7 @@
     - [Blocks](#blocks)
     - [Variables](#variables)
     - [Using outputs of resources](#using-outputs-of-resources)
+    - [Resource dependencies](#resource-dependencies)
   - [Terraform providers](#terraform-providers)
   - [Best practices](#best-practices)
 
@@ -140,6 +141,13 @@ resource "x" "y" {
 ```
 
 Using the syntax: `${provider_resource.resource_name.attribute}` we can access outputs of other resources.
+
+### Resource dependencies
+
+There are 2 types of dependencies in resources:
+
+1. `Implicit` - this occurs when we make a reference using string interpolation (`${x.y.attribute}`). So `terraform` knows which order to provision in
+2. `Explicit` - we can use the `depends_on` argument to hard code dependencies which is a list of resources. This way we can create an order of creation.
 
 ## Terraform providers
 
