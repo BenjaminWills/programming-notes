@@ -23,6 +23,8 @@
   - [Immutability of terraform](#immutability-of-terraform)
   - [Lifecycle rules](#lifecycle-rules)
   - [Datasouces](#datasouces)
+  - [Meta arguments](#meta-arguments)
+    - [Count](#count)
   - [Best practices](#best-practices)
 
 ## What is it?
@@ -274,6 +276,23 @@ data "resource" "name" {
   attributes
 }
 ```
+
+## Meta arguments
+
+We can use meta arguments to create multiple resources in compact notation
+
+### Count
+
+Take some constant $c \geq 1$ then we can write
+
+```tf
+resource "resource" "name" {
+  attributes
+  count = c
+}
+```
+
+This will create $c$ lots of this resource.
 
 ## Best practices
 
