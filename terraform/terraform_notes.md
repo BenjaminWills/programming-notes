@@ -11,6 +11,7 @@
     - [Format configuration files](#format-configuration-files)
     - [Show all resources](#show-all-resources)
     - [List all providers](#list-all-providers)
+    - [Visualise structure](#visualise-structure)
   - [Syntax](#syntax)
     - [Blocks](#blocks)
     - [Variables](#variables)
@@ -89,6 +90,14 @@ terraform show [-json]
 ```sh
 terraform providers
 ```
+
+### Visualise structure
+
+```sh
+terraform graph
+```
+
+This will generate a `digraph` JSON that can be inputted into graphing software to visualise the deployments and their dependencies.
 
 ## Syntax
 
