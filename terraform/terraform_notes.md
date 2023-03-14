@@ -21,6 +21,7 @@
   - [Terraform providers](#terraform-providers)
   - [Terraform state](#terraform-state)
   - [Immutability of terraform](#immutability-of-terraform)
+  - [Lifecycle rules](#lifecycle-rules)
   - [Best practices](#best-practices)
 
 ## What is it?
@@ -229,6 +230,20 @@ It is a `JSON` structure that contains config data.
 ## Immutability of terraform
 
 Mutable infrastructure can be modified, immutable infrastructure cannot be modified, thus we must destroy the old infrastrucutre and create a new one with the updated attribute. This is how `terraform` works. This makes `versioning` easier as the whole stack is recreated on modification.
+
+## Lifecycle rules
+
+A `life cycle rule` is a way of managing how changes in configurations effect a resource, for example; in some cases we may want to create a new resource before we destroy the old one (such that there are no service outages etc), we can do this with the following:
+
+```tf
+resource "resource_type" "name" {
+  arguments
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+```
 
 ## Best practices
 
