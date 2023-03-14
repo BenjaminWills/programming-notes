@@ -264,6 +264,16 @@ resource "aws_instance" "webserver" {
 
 Here we see that `ignore changes` will ignore changes to specific attributes of the resource.
 
+## Datasouces
+
+We can use datasources to access resources that are provisioned outside of its control using `data blocks`
+
+```tf
+data "resource" "name" {
+  attributes
+}
+```
+
 ## Best practices
 
 - Have one singular configuration `.tf` file per directory, we can supplement this main file with a few other files:
