@@ -26,6 +26,7 @@
   - [Meta arguments](#meta-arguments)
     - [Count](#count)
     - [For each](#for-each)
+  - [Version control](#version-control)
   - [Best practices](#best-practices)
 
 ## What is it?
@@ -307,6 +308,24 @@ resource "local_file" "name" {
 ```
 
 We need to use `sets` or `maps` for this command.
+
+## Version control
+
+We can control the version of a provider by using the `terraform` block:
+
+```tf
+required_providers {
+  local = {
+    source = hashicorp/local"
+    version = "1.4.0" | "!=2.0.0" <- Not 2.0.0 
+  }
+}
+
+resource "local_file" "pet" {
+  filename = "file"
+  content = "file content"
+}
+```
 
 ## Best practices
 
