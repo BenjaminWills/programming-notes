@@ -314,13 +314,14 @@ We need to use `sets` or `maps` for this command.
 We can control the version of a provider by using the `terraform` block:
 
 ```tf
-required_providers {
-  local = {
-    source = hashicorp/local"
-    version = "1.4.0" | "!=2.0.0" <- Not 2.0.0 
+terraform{
+  required_providers {
+    local = {
+      source = hashicorp/local"
+      version = "1.4.0" | "!=2.0.0" <- Not 2.0.0 
+    }
   }
 }
-
 resource "local_file" "pet" {
   filename = "file"
   content = "file content"
