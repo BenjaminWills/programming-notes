@@ -30,6 +30,7 @@
   - [Terraform with AWS](#terraform-with-aws)
   - [Authentiation](#authentiation)
   - [Iam](#iam)
+  - [S3](#s3)
   - [Best practices](#best-practices)
 
 ## What is it?
@@ -357,6 +358,37 @@ resource "aws_iam_user" "admin-user" {
     } 
 }
 ```
+
+Then we can create a policy using a `data` block
+
+```tf
+data "aws_iam_policy_document" "test_policy" {
+  statement {
+    actions = ["*"]
+    resources = ["*"]
+  }
+}
+
+resource "aws_iam_policy" "terraform_test_user_policy" {
+  name = "terraform_test_user_policy"
+  policy = "${data.aws_iam_policy_document.test_policy.json}"
+}
+```
+
+Finally we can apply these:
+
+```tf
+resource "aws_iam_policy_attachment" "terraform_test_user_policy_attatchment" {
+  name = "test-attatchment"
+
+  users = [aws_iam_user.terraform_test_user.name]
+
+  policy_arn = aws_iam_policy.terraform_test_user_policy.arn
+
+}
+````
+
+## S3
 
 ## Best practices
 
