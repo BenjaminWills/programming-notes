@@ -31,6 +31,7 @@
   - [Authentiation](#authentiation)
   - [Iam](#iam)
   - [S3](#s3)
+  - [Remote backends](#remote-backends)
   - [Best practices](#best-practices)
 
 ## What is it?
@@ -410,6 +411,23 @@ resource "aws_s3_bucket_object" "add_object" {
   bucket = aws_s3_bucket.terraform_bucket.id
 }
 ```
+
+## Remote backends
+
+The idea of a `remote backend` is to have a `single source of truth` for a `terraform state` file, we can do this as follows:
+
+```tf
+terraform {
+  backend "s3" {
+    bucket = "state-bucket"
+    key = "terraform.tfstate"
+    region = "eu-west-2"
+    dynamodb_table = "state-locking"
+  }
+}
+```
+
+This will save and load the state file from s3 whenever apply is run.
 
 ## Best practices
 
