@@ -386,9 +386,30 @@ resource "aws_iam_policy_attachment" "terraform_test_user_policy_attatchment" {
   policy_arn = aws_iam_policy.terraform_test_user_policy.arn
 
 }
-````
+```
 
 ## S3
+
+Similarly to `IAM` we can use `resources` to provision s3 buckets
+
+```tf
+resource "aws_s3_bucket" "terraform_bucket" {
+  bucket = "terraform-test-bucket-bpw"
+  tags = {
+    Description = "Bucket created by terraform"
+  }
+}
+```
+
+We can also add objects to these buckets:
+
+```tf
+resource "aws_s3_bucket_object" "add_object" {
+  content = "./main.tf"
+  key = "main.tf"
+  bucket = aws_s3_bucket.terraform_bucket.id
+}
+```
 
 ## Best practices
 
