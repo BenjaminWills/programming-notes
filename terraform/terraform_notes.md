@@ -27,6 +27,9 @@
     - [Count](#count)
     - [For each](#for-each)
   - [Version control](#version-control)
+  - [Terraform with AWS](#terraform-with-aws)
+  - [Authentiation](#authentiation)
+  - [Iam](#iam)
   - [Best practices](#best-practices)
 
 ## What is it?
@@ -325,6 +328,33 @@ terraform{
 resource "local_file" "pet" {
   filename = "file"
   content = "file content"
+}
+```
+
+## Terraform with AWS
+
+## Authentiation
+
+Before using `AWS` with terraform we need to authenticate our credentials to gain access to the cloud.
+
+```tf
+provider "aws" {
+  region = "region"
+  access_key = ""
+  secret_key = ""
+}
+```
+
+## Iam
+
+We can create a user like this:
+
+```tf
+resource "aws_iam_user" "admin-user" {
+    name = "ben"
+    tags = {
+        Description = "Legend"
+    } 
 }
 ```
 
