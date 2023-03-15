@@ -6,3 +6,4 @@ social_planning.md
 .terraform*
 terraform.tfstate
 terraform.tfstate.backup
+aws_credentials.tf
