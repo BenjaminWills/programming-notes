@@ -54,7 +54,7 @@
       - [Lookup](#lookup)
     - [Terraform conditional operators](#terraform-conditional-operators)
       - [Logical operators](#logical-operators)
-      - [conditional statements](#conditional-statements)
+      - [Conditional statements](#conditional-statements)
   - [Best practices](#best-practices)
 
 ## What is it?
@@ -680,7 +680,7 @@ Terraform supports the same conditional operators as python.
 - `or` - `||`
 - `not` - `!`
   
-#### conditional statements
+#### Conditional statements
 
 Conditional statements are simply ternary.
 
