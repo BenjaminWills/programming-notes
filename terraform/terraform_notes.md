@@ -32,10 +32,12 @@
     - [For each](#for-each)
   - [Version control](#version-control)
   - [Terraform with AWS](#terraform-with-aws)
-  - [Authentiation](#authentiation)
-  - [Iam](#iam)
-  - [S3](#s3)
+    - [Authentiation](#authentiation)
+    - [Iam](#iam)
+    - [S3](#s3)
   - [Debugging](#debugging)
+  - [Importing](#importing)
+  - [Functions](#functions)
   - [Best practices](#best-practices)
 
 ## What is it?
@@ -395,7 +397,7 @@ resource "local_file" "pet" {
 
 ## Terraform with AWS
 
-## Authentiation
+### Authentiation
 
 Before using `AWS` with terraform we need to authenticate our credentials to gain access to the cloud.
 
@@ -407,7 +409,7 @@ provider "aws" {
 }
 ```
 
-## Iam
+### Iam
 
 We can create a user like this:
 
@@ -449,7 +451,7 @@ resource "aws_iam_policy_attachment" "terraform_test_user_policy_attatchment" {
 }
 ```
 
-## S3
+### S3
 
 Similarly to `IAM` we can use `resources` to provision s3 buckets
 
@@ -495,6 +497,24 @@ export TF_LOG_PATH = ./terraform.log
 ```
 
 To disable logigng unset the env variables using `unset`.
+
+## Importing
+
+We can import resources created externally by writing:
+
+```sh
+terraform import <resource type>.<resource name> <identifying attribute>
+```
+
+We would do this to bring the resource under `terraform` management.
+
+Import only updates the `state file` and not the `config file`, unfortunately.
+
+Before running import we create an empty resource that will house the imported resource, we can then complete the resource block using the `state file`.
+
+## Functions
+
+
 
 ## Best practices
 
