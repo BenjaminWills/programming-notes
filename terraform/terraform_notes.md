@@ -19,6 +19,7 @@
     - [Resource dependencies](#resource-dependencies)
     - [Output blocks](#output-blocks)
   - [Terraform providers](#terraform-providers)
+  - [Terraform provisioners](#terraform-provisioners)
   - [Terraform state](#terraform-state)
     - [Remote backends](#remote-backends)
     - [State show command](#state-show-command)
@@ -227,6 +228,10 @@ when running `terraform init` you will notice that it specifies a few things:
 ```sh
 * [hostname] org_namespace/resource_type version
 ```
+
+## Terraform provisioners
+
+A `provisioner` is a task that will be run upon resource creation - or locally on a machine.
 
 ## Terraform state
 
