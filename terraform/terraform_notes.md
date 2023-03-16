@@ -55,6 +55,7 @@
     - [Terraform conditional operators](#terraform-conditional-operators)
       - [Logical operators](#logical-operators)
       - [Conditional statements](#conditional-statements)
+  - [Modules](#modules)
   - [Best practices](#best-practices)
 
 ## What is it?
@@ -687,6 +688,29 @@ Conditional statements are simply ternary.
 ```tf
 condition ? true_value : false_value
 ```
+
+## Modules
+
+Modules are simply organised directories of terraform code. Suppose that we have the following file structure of directories:
+
+```sh
+- root
+- module_1
+- module_2
+```
+
+Then we can reference module 1 and 2 by writing the following in `root`
+
+```tf
+module "mod_1" {
+  source = "../module_1"
+}
+module "mod_2" {
+  source = "../module_2"
+}
+```
+
+This will run the contents of module 1 and module 2.
 
 ## Best practices
 
