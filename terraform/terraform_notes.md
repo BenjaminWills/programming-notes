@@ -15,6 +15,7 @@
   - [Syntax](#syntax)
     - [Blocks](#blocks)
     - [Variables](#variables)
+      - [Declaring variables at apply](#declaring-variables-at-apply)
     - [Using outputs of resources](#using-outputs-of-resources)
     - [Resource dependencies](#resource-dependencies)
     - [Output blocks](#output-blocks)
@@ -202,6 +203,12 @@ The `variable` `block` has 3 parameters:
 
    9. `tuple` - tuples are lists that can have multiple vairable types, we declare the data types like: `tuple([string,number,bool])`
 3. `Description` - description for documentation purposes
+
+#### Declaring variables at apply
+
+```sh
+terraform apply var=key=value
+```
 
 ### Using outputs of resources
 
