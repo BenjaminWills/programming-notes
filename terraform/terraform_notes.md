@@ -20,6 +20,8 @@
     - [Output blocks](#output-blocks)
   - [Terraform providers](#terraform-providers)
   - [Terraform state](#terraform-state)
+    - [Remote backends](#remote-backends)
+    - [State show command](#state-show-command)
   - [Immutability of terraform](#immutability-of-terraform)
   - [Lifecycle rules](#lifecycle-rules)
   - [Datasouces](#datasouces)
@@ -31,7 +33,6 @@
   - [Authentiation](#authentiation)
   - [Iam](#iam)
   - [S3](#s3)
-  - [Remote backends](#remote-backends)
   - [Best practices](#best-practices)
 
 ## What is it?
@@ -237,6 +238,27 @@ It is wise to store states in version controlled software.
 
 It is a `JSON` structure that contains config data.
 
+### Remote backends
+
+The idea of a `remote backend` is to have a `single source of truth` for a `terraform state` file, we can do this as follows:
+
+```tf
+terraform {
+  backend "s3" {
+    bucket = "state-bucket"
+    key = "terraform.tfstate"
+    region = "eu-west-2"
+    dynamodb_table = "state-locking"
+  }
+}
+```
+
+This will save and load the state file from s3 whenever apply is run.
+
+### State show command
+
+One can run the `terraform state show <resource>` command to view all the terraform state information that terraform is holding in the `terraform.tfstate` file about that resource.
+
 ## Immutability of terraform
 
 Mutable infrastructure can be modified, immutable infrastructure cannot be modified, thus we must destroy the old infrastrucutre and create a new one with the updated attribute. This is how `terraform` works. This makes `versioning` easier as the whole stack is recreated on modification.
@@ -411,23 +433,6 @@ resource "aws_s3_bucket_object" "add_object" {
   bucket = aws_s3_bucket.terraform_bucket.id
 }
 ```
-
-## Remote backends
-
-The idea of a `remote backend` is to have a `single source of truth` for a `terraform state` file, we can do this as follows:
-
-```tf
-terraform {
-  backend "s3" {
-    bucket = "state-bucket"
-    key = "terraform.tfstate"
-    region = "eu-west-2"
-    dynamodb_table = "state-locking"
-  }
-}
-```
-
-This will save and load the state file from s3 whenever apply is run.
 
 ## Best practices
 
