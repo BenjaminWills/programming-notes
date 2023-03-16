@@ -249,6 +249,11 @@ resource "aws_instance" "terraform-instance" {
 
 This code will save the ip address of the commissioned `ec2` instance to a text file in the parent directory called `ip.txt`.
 
+It is important to note that:
+
+- The plan will not show outputs of terraform provisionals
+- Some provisionals will require a network connection to the resource to work
+
 ## Terraform state
 
 The `state` file is created by running `terraform apply` and houses the information about the resources to be provisioned. This allows terraform to map from code to provisioning resources.
