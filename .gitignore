@@ -7,3 +7,5 @@ social_planning.md
 terraform.tfstate
 terraform.tfstate.backup
 aws_credentials.tf
+*.pem
+*.pub
