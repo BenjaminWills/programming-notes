@@ -23,6 +23,7 @@
   - [Terraform state](#terraform-state)
     - [Remote backends](#remote-backends)
     - [State show command](#state-show-command)
+    - [Resource taint](#resource-taint)
   - [Immutability of terraform](#immutability-of-terraform)
   - [Lifecycle rules](#lifecycle-rules)
   - [Datasouces](#datasouces)
@@ -254,6 +255,8 @@ It is important to note that:
 - The plan will not show outputs of terraform provisionals
 - Some provisionals will require a network connection to the resource to work
 
+It is recommended that provisionals are used as a last resort as they can make life unecessarily difficult at times.
+
 ## Terraform state
 
 The `state` file is created by running `terraform apply` and houses the information about the resources to be provisioned. This allows terraform to map from code to provisioning resources.
@@ -284,6 +287,14 @@ This will save and load the state file from s3 whenever apply is run.
 ### State show command
 
 One can run the `terraform state show <resource>` command to view all the terraform state information that terraform is holding in the `terraform.tfstate` file about that resource.
+
+### Resource taint
+
+A resource can be implicitly tainted by causing a run to fail, this means that on the next apply it will be rebuilt. 
+
+We can explicitly taint a resource by using the `terraform taint <resource>` to ensure that the resource is rebuilt on the next apply. This can be usefeul if we dont want to completely destroy a deployment.
+
+We can untaint a resource using `terraform untiant <resource>`
 
 ## Immutability of terraform
 
