@@ -694,12 +694,12 @@ condition ? true_value : false_value
 Modules are simply organised directories of terraform code. Suppose that we have the following file structure of directories:
 
 ```sh
-- root
-- modules
+- root/
+- modules/
   |
-   - module_1
-  |
-   - module_2
+   -- module_1/
+  | 
+   -- module_2/
 ```
 
 Then we can reference module 1 and 2 by writing the following in `root`
