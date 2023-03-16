@@ -35,6 +35,7 @@
   - [Authentiation](#authentiation)
   - [Iam](#iam)
   - [S3](#s3)
+  - [Debugging](#debugging)
   - [Best practices](#best-practices)
 
 ## What is it?
@@ -470,6 +471,30 @@ resource "aws_s3_bucket_object" "add_object" {
   bucket = aws_s3_bucket.terraform_bucket.id
 }
 ```
+
+## Debugging
+
+We can use environment variables to enable logging for terraform.
+
+The tf logger has 5 levels, written in order of increasing granularity:
+
+1. `Error`
+2. `Warning`
+3. `Debug`
+4. `Info`
+5. `Trace`
+
+```sh
+export TF_LOG = <log level>
+```
+
+We can also save logs to a path
+
+```sh
+export TF_LOG_PATH = ./terraform.log
+```
+
+To disable logigng unset the env variables using `unset`.
 
 ## Best practices
 
