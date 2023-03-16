@@ -51,6 +51,9 @@
       - [Contains](#contains)
       - [Key and value](#key-and-value)
       - [Lookup](#lookup)
+    - [Terraform conditional operators](#terraform-conditional-operators)
+      - [Logical operators](#logical-operators)
+      - [conditional statements](#conditional-statements)
   - [Best practices](#best-practices)
 
 ## What is it?
@@ -659,6 +662,24 @@ For maps we can return a set of keys and values by passing the map as the argume
 #### Lookup
 
 Lookup finds an element of a map based on the key `lookup(map,key,default_value)`
+
+### Terraform conditional operators
+
+Terraform supports the same conditional operators as python.
+
+#### Logical operators
+
+- `and` - `&&`
+- `or` - `||`
+- `not` - `!`
+  
+#### conditional statements
+
+Conditional statements are simply ternary.
+
+```tf
+condition ? true_value : false_value
+```
 
 ## Best practices
 
