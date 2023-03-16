@@ -704,9 +704,11 @@ Then we can reference module 1 and 2 by writing the following in `root`
 ```tf
 module "mod_1" {
   source = "../module_1"
+  var = value # We can change the values of the paramaters in the files.
 }
 module "mod_2" {
   source = "../module_2"
+  var = value # We can change the values of the paramaters in the files.
 }
 ```
 
