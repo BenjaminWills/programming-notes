@@ -38,6 +38,19 @@
   - [Debugging](#debugging)
   - [Importing](#importing)
   - [Functions](#functions)
+    - [Numeric functions](#numeric-functions)
+      - [Max and min](#max-and-min)
+      - [Ceil and floor](#ceil-and-floor)
+    - [String functions](#string-functions)
+      - [Split and join](#split-and-join)
+      - [Upper, lower and Title](#upper-lower-and-title)
+      - [Substr](#substr)
+    - [Collection functions](#collection-functions)
+      - [Length](#length)
+      - [Index and element](#index-and-element)
+      - [Contains](#contains)
+      - [Key and value](#key-and-value)
+      - [Lookup](#lookup)
   - [Best practices](#best-practices)
 
 ## What is it?
@@ -514,7 +527,138 @@ Before running import we create an empty resource that will house the imported r
 
 ## Functions
 
+We can use the `terraform console` command to enter the terraform console to experiment with functions and interpoolations - basically a repr for terraform.
 
+### Numeric functions
+
+#### Max and min
+
+```tf
+variable "set" {
+  type = set(number)
+  default = [1,2,3,4,5]
+}
+
+max(var.list...) -> 5
+min(var.list...) -> 1
+# ... is the `expansion symbol` to expand a list into args, like * for python
+```
+
+#### Ceil and floor
+
+This function will round its input up to the nearest integer.
+
+```tf
+ceil(10.1) -> 11
+floor(10) -> 10
+```
+
+### String functions
+
+#### Split and join
+
+The split function allows us to separate a string into a list depending on some separator, join will join a list separated by some separator.
+
+```tf
+variable "string" {
+  type = string
+  default = "this-is-my-string"
+}
+variable "separator" {
+  type = string
+  default = "-"
+}
+
+split(var.separator,var.string) -> ["this","is","my","string"]
+join(var.separator,["this","is","my","string"]) -> "this-is-my-string"
+```
+
+#### Upper, lower and Title
+
+```tf
+variable "string" {
+  type = string
+  default = "this-is-my-string"
+}
+
+upper(var.string) -> THIS-IS-MY-STRING
+lower(var.string) -> this-is-my-string
+title(var.string) -> This-Is-My-String
+```
+
+#### Substr
+
+Allows us to find a substring from within a string, using an `offset` and a `length`
+
+```tf
+variable "string" {
+  type = string
+  default = "this-is-my-string"
+}
+variable "offset" {
+  type = number
+  default = 5
+  description = "Index of character with which the substring begins"
+}
+variable "length" {
+  type = number
+  default = 2
+  description = "desired length of the substring"
+}
+
+substr(var.string,var.offset,var.length) -> "is"
+```
+
+### Collection functions
+
+#### Length
+
+Finds the number of elements in a `collection`
+
+```tf
+variable "collection_list" {
+  type = list(number)
+  default = [1,2,3]
+}
+
+length(var.collection_list) -> 3
+```
+
+#### Index and element
+
+Returns the element of the specified `collection` at index `i`, element does the opposite.
+
+```tf
+variable "collection_list" {
+  type = list(number)
+  default = [1,2,3]
+}
+
+index(var.collection_list,1) -> 0
+element(var.collection_list,0) -> 1
+```
+
+#### Contains
+
+Returns boolean to see if a `collection` contains an element.
+
+```tf
+variable "collection_list" {
+  type = list(number)
+  default = [1,2,3]
+}
+
+contains(var.collection_list,1) -> true
+contains(var.collection_list,123) -> false
+```
+
+#### Key and value
+
+For maps we can return a set of keys and values by passing the map as the argument to either of these functions.
+
+#### Lookup
+
+Lookup finds an element of a map based on the key `lookup(map,key,default_value)`
 
 ## Best practices
 
