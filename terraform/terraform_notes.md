@@ -238,6 +238,8 @@ resource "aws_instance" "terraform-instance" {
   ami           = "ami-0055e70f580e9ae80"
   instance_type = "t2.micro"
 
+  user_data = file("path to shell script")
+
   provisioner "local-exec" {
     on_failiure = continue
     command = "echo ${aws_instance.terraform-instance.public_ip} > ./ip.txt"
