@@ -2,11 +2,7 @@ resource "aws_instance" "terraform-instance" {
   ami           = "ami-0055e70f580e9ae80"
   instance_type = "t2.micro"
 
-  user_data = <<-COMMANDS
-                #!/bin/bash
-                mkdir test_dir
-                echo "hello world" > test_dir/test.txt
-                COMMANDS
+  user_data = file("./init.sh")
 
   key_name               = aws_key_pair.ec2-keys.id
   vpc_security_group_ids = [aws_security_group.ssh-access.id]
