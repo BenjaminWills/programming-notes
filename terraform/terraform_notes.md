@@ -231,7 +231,21 @@ when running `terraform init` you will notice that it specifies a few things:
 
 ## Terraform provisioners
 
-A `provisioner` is a task that will be run upon resource creation - or locally on a machine.
+A `provisioner` is a task that will be run upon resource creation - or locally on a machine. These blocks go within the resource blocks.
+
+```tf
+resource "aws_instance" "terraform-instance" {
+  ami           = "ami-0055e70f580e9ae80"
+  instance_type = "t2.micro"
+
+  provisioner "local-exec" {
+    on_failiure = continue
+    command = "echo ${aws_instance.terraform-instance.public_ip} > ./ip.txt"
+  }
+}
+```
+
+This code will save the ip address of the commissioned `ec2` instance to a text file in the parent directory called `ip.txt`.
 
 ## Terraform state
 
