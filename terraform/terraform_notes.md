@@ -56,6 +56,9 @@
       - [Logical operators](#logical-operators)
       - [Conditional statements](#conditional-statements)
   - [Modules](#modules)
+    - [Local modules](#local-modules)
+    - [Using modules from the terraform registry](#using-modules-from-the-terraform-registry)
+  - [Workspaces](#workspaces)
   - [Best practices](#best-practices)
 
 ## What is it?
@@ -691,7 +694,11 @@ condition ? true_value : false_value
 
 ## Modules
 
-Modules are simply organised directories of terraform code. Suppose that we have the following file structure of directories:
+Modules are simply organised directories of terraform code.
+
+### Local modules
+
+Suppose that we have the following file structure of directories:
 
 ```sh
 - root/
@@ -716,6 +723,42 @@ module "mod_2" {
 ```
 
 This will run the contents of module 1 and module 2.
+
+### Using modules from the terraform registry
+
+`Terraform resgistry` houses modules that can be imported. We can get these from the website. (reflected in the `source` argument)
+
+## Workspaces
+
+Terraform workspaces are a way to partition and modularise code to encourage reusability. Consider the problem of provisioning instances to London and America, we can solve this problem without rewriting code and instead using workspaces.
+
+We can create a workspace with the
+
+```sh
+terraform workspace new <workspace name>
+terraform workspace list <- Shows the workspaces currently made
+```
+
+Once a workspace has been created, it can be referenced in the config filles with `terraform.workspace`.
+
+```tf
+# variables.tf
+
+variable "regions"{
+  type = map(string)
+  default = {
+    "workspace_a" = "us-east-1"
+    "workspace_b" = "eu-west-2"
+  }
+}
+```
+
+```tf
+# main.tf
+resource "aws_instance" "regional_instances" {
+  region = lookup(var.regions,terraform.workspace)
+}
+```
 
 ## Best practices
 
