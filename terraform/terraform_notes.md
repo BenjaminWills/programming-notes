@@ -760,6 +760,12 @@ resource "aws_instance" "regional_instances" {
 }
 ```
 
+We can view the workspace hierarchy as follows:
+
+```sh
+tree terraform.tfstate.d/
+```
+
 ## Best practices
 
 - Have one singular configuration `.tf` file per directory, we can supplement this main file with a few other files:
