@@ -8,6 +8,10 @@
   - [Storage auto scaling](#storage-auto-scaling)
   - [Parameter groups](#parameter-groups)
   - [Option groups](#option-groups)
+  - [Security](#security)
+    - [Network](#network)
+    - [IAM](#iam)
+      - [IAM authentication](#iam-authentication)
 
 
 ## Overview
@@ -93,3 +97,48 @@ These are optional features offered by the DB engines
 
 - The default option group cannot be edited
 - These can be applied to instances in any aws region
+
+## Security
+
+### Network
+
+- Launch within `VPC` to restrict internet access to the `RDS` instance. Usually we would have the application in a public subnet and then the database within a private subnet of this `VPC`.
+- Cannot change the `VPC` of the `RDS` instance once it has been created
+- `RDS` uses security groups to control access at all levels.
+
+### IAM
+
+- Manage access to `RDS` db resources
+- Traditional username and password can be used to log into the databse
+- IAM based auth can be used for mySQL and postgreSQL
+- Best practices:
+  - IAM policies control who can and cannot CRUD db resources
+  - Grant least privilege to groups/users/roles
+  - Use MFA for sensitive operations
+  - Use policy conditions to restrict access to specfic IP addresses
+
+#### IAM authentication
+
+- This works for postgreSQ and mySQL
+- Get an authentication token that can be obtained through IAM and `RDS` api calls
+- Auth token ahs a lifetime of 15 minutes
+- Benefits:
+  - Network in/out must be encrypted using SSL
+  - IAM to centrally manage users instead of DB
+  - Can leverage IAM roles and EC2 instance profiles for easy integration
+- To use IAM authentication we msut use a policy that looks like:
+
+```json
+{
+    "Version":"2012-10-17",
+    "Statement":{
+        "Effect":"Allow",
+        "Action":[
+            "rds-db: connect" <---- this is the important bit
+        ],
+        "Resource": [
+            "arn of RDS instance"
+        ]
+    }
+}
+```
