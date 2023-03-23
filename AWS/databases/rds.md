@@ -5,6 +5,9 @@
   - [Why should you use it?](#why-should-you-use-it)
   - [Pricing](#pricing)
   - [Storage types](#storage-types)
+  - [Storage auto scaling](#storage-auto-scaling)
+  - [Parameter groups](#parameter-groups)
+  - [Option groups](#option-groups)
 
 
 ## Overview
@@ -70,3 +73,23 @@ We choose a few things to begin with:
   - well suited for write heavy workloads
 
 If an instance runs out of storage, it is not available until more storage is allocated.
+
+## Storage auto scaling
+
+This feature allows storage to dynamically scale up or down based on workload. No downtime during these operations.
+
+## Parameter groups
+
+These are specific to the selected DB engine.
+
+- The default parameter group cannot be edited
+- These can be applied to any instances in aws region
+- `Dynamic` parameters are applied immediately ( causes downtime)
+- `Static` paramaters are applied during a manual reboot
+
+## Option groups
+
+These are optional features offered by the DB engines
+
+- The default option group cannot be edited
+- These can be applied to instances in any aws region
