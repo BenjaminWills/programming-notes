@@ -14,7 +14,9 @@
       - [IAM authentication](#iam-authentication)
       - [Rotating DB credentials](#rotating-db-credentials)
       - [Encryption in transit](#encryption-in-transit)
-
+      - [RDS encryption at rest](#rds-encryption-at-rest)
+    - [RDS backups](#rds-backups)
+      - [ Backups vs snapshots](#backups-vs-snapshots)
 
 ## Overview
 
@@ -154,3 +156,32 @@ These are optional features offered by the DB engines
 #### Encryption in transit
 
 - Use SSl/TLS connections for encryption in transit
+
+#### RDS encryption at rest
+
+- RDS supports [AES-256](https://www.ipswitch.com/blog/use-aes-256-encryption-secure-data) encryption.
+- Keys managed through [KMS](https://aws.amazon.com/kms/)
+- Can encrypt both master and read replicas
+- Encryption must be defined at RDS launch time
+
+### RDS backups
+
+- RDS has automatic backups
+- Capures transaction logs in real time
+- Enabled by default with a 7-days retention period (0 = disable)
+- Can provide backup window and backup retention period
+- First backup is a full backup, others are incremental
+- Data is stored in an s3 bucket (owned and managed by RDS)
+- Multi AZ is recommended to avoid performance issues
+- Integrates with AWS backup service
+
+####  Backups vs snapshots
+
+|  backups |  snapshots |
+|---|---|
+|  automated |  manually triggered |
+| incremental  |  full backups |
+|  retention period up to 35 days |  retained as long as you wish |
+|  good for unexpected failures |  great for known events such as upgrades |
+|   | can use lambda functions to take periodic backups  |
+
