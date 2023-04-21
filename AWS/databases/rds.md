@@ -12,6 +12,8 @@
     - [Network](#network)
     - [IAM](#iam)
       - [IAM authentication](#iam-authentication)
+      - [Rotating DB credentials](#rotating-db-credentials)
+      - [Encryption in transit](#encryption-in-transit)
 
 
 ## Overview
@@ -142,3 +144,13 @@ These are optional features offered by the DB engines
     }
 }
 ```
+
+#### Rotating DB credentials
+
+- Use AWS secrets manager to store credentials separately
+- Secret manager can automatically rotate secrets
+- Can connect to Lambda and automatically replace the key ARN
+
+#### Encryption in transit
+
+- Use SSl/TLS connections for encryption in transit
