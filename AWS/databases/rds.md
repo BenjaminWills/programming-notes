@@ -12,11 +12,13 @@
     - [Network](#network)
     - [IAM](#iam)
       - [IAM authentication](#iam-authentication)
-      - [Rotating DB credentials](#rotating-db-credentials)
-      - [Encryption in transit](#encryption-in-transit)
-      - [RDS encryption at rest](#rds-encryption-at-rest)
+    - [Rotating DB credentials](#rotating-db-credentials)
+    - [Encryption in transit](#encryption-in-transit)
+    - [RDS encryption at rest](#rds-encryption-at-rest)
     - [RDS backups](#rds-backups)
       - [ Backups vs snapshots](#backups-vs-snapshots)
+      - [Restoring from a snapshot](#restoring-from-a-snapshot)
+      - [PITR with RDS](#pitr-with-rds)
 
 ## Overview
 
@@ -147,17 +149,17 @@ These are optional features offered by the DB engines
 }
 ```
 
-#### Rotating DB credentials
+### Rotating DB credentials
 
 - Use AWS secrets manager to store credentials separately
 - Secret manager can automatically rotate secrets
 - Can connect to Lambda and automatically replace the key ARN
 
-#### Encryption in transit
+### Encryption in transit
 
 - Use SSl/TLS connections for encryption in transit
 
-#### RDS encryption at rest
+### RDS encryption at rest
 
 - RDS supports [AES-256](https://www.ipswitch.com/blog/use-aes-256-encryption-secure-data) encryption.
 - Keys managed through [KMS](https://aws.amazon.com/kms/)
@@ -185,3 +187,20 @@ These are optional features offered by the DB engines
 |  good for unexpected failures |  great for known events such as upgrades |
 |   | can use lambda functions to take periodic backups  |
 
+#### Restoring from a snapshot
+
+- Can only restore to a new instance
+- Cant restore from a shared and encrypted snapshot directly (copy first and then restore from copy)
+- Cant restore from another region directly (copy first then restore)
+- Can restore from a snapshot of a DB instance from outside a VPC to inside (but not visa versa)
+- The restored cluster gets applied with:
+  - A new security group
+  - Default parameter group
+  - Option group that was associated with the snapshot
+
+#### PITR with RDS
+
+- Point in time recovery
+- Can only restore to a new instance
+- Backup retention period controls the PITR window
+- RDS uploads DB transaction logs to S3 every 5 minutes, so PITR may have a >=5 minute lag.
