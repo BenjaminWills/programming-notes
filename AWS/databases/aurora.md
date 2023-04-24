@@ -16,6 +16,8 @@
     - [Autoscaling in Aurora serverless](#autoscaling-in-aurora-serverless)
   - [Monitoring in Aurora](#monitoring-in-aurora)
   - [Databse activity streams](#databse-activity-streams)
+  - [Aurora backups and backtracking](#aurora-backups-and-backtracking)
+    - [Backups vs snapshots vs backtrack](#backups-vs-snapshots-vs-backtrack)
 
 ## Overview
 
@@ -169,3 +171,28 @@ It is effectively AWS's solution for RDBMS, it is their flagship and thus has al
 - Used for monitoring, auditing and compliance purposes
 - Aurora creates a Kenesis data stream and pushes the activity stream to it
 
+## Aurora backups and backtracking
+
+- Automatic backups and snapchots
+- Cannot disable automatic backups (min 1 day retention)
+- Backtrack feature allows you to rewind DB into one place:
+  - Only supported by MySQL
+  - Performs an in-place restore i.e do not need to restore into an instance
+  - Allows quick recovery from disaster
+  - Up to 72 hours of PITR
+  - Can repeatedly go backward and forward in time
+  - Can only backtrack entire cluster
+  - Requires a few minutes of downtime
+  - Not a replacement for backups
+  - Cross region replication does not support backtrack
+  - Causes brief instance disruption, so must pause application before running backtrack
+
+### Backups vs snapshots vs backtrack
+
+|  backups |  snapshots |  backtrack |
+|---|---|---|
+|  Automated |  Manually triggered | Automated  |
+|  Can only restore to a new instance (takes hours) |  Can only restore to a new instance (takes hours) | Supports in-place restore (takes minutes)  |
+| Support PITR within backup retention period (>=35 days)  |  Does not support PITR | Supports PITR up to 72 hours  |
+|  Great for unexpected failures | Great for known DB events such as upgrades  |  Great for undoing mistakes, quick restores, exlporing earlier data changes  |
+|   |   |  Can repeatedly go backwards and forwards in time |
