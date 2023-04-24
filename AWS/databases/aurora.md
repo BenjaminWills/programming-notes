@@ -18,6 +18,7 @@
   - [Databse activity streams](#databse-activity-streams)
   - [Aurora backups and backtracking](#aurora-backups-and-backtracking)
     - [Backups vs snapshots vs backtrack](#backups-vs-snapshots-vs-backtrack)
+  - [Cloning databases](#cloning-databases)
 
 ## Overview
 
@@ -196,3 +197,22 @@ It is effectively AWS's solution for RDBMS, it is their flagship and thus has al
 | Support PITR within backup retention period (>=35 days)  |  Does not support PITR | Supports PITR up to 72 hours  |
 |  Great for unexpected failures | Great for known DB events such as upgrades  |  Great for undoing mistakes, quick restores, exlporing earlier data changes  |
 |   |   |  Can repeatedly go backwards and forwards in time |
+
+## Cloning databases
+
+- Different from read replcicas, support reads and writes
+- Clones use same storage layer as the source cluster
+- Requires only minimal additional storage
+- Can be created from existing clones
+- Quick, cost-effective and has no administrative effort
+- Only within region
+- Supports cross account cloning
+- Uses a copy-on-write protocol:
+  - Initially source and clone share the data, when the underlying data is cloned, the changes are separated. The changes after cloning are no longer shared. This massively reduces storage costs
+- Use cases:
+  - Create a clone for testing purposes
+  - Impact assessment of changes before applying change to main DB
+  - Perform workload intensive OPS
+- Cannot backtrack clone to a time from before it's creation
+- Only available in Aurora
+
