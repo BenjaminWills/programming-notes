@@ -20,6 +20,7 @@
       - [Restoring from a snapshot](#restoring-from-a-snapshot)
       - [PITR with RDS](#pitr-with-rds)
       - [RDS recovery strategies](#rds-recovery-strategies)
+    - [Scaling in RDS](#scaling-in-rds)
 
 ## Overview
 
@@ -218,3 +219,19 @@ There are 2 key metrics to consider when thinking about disaster recovery:
   - Expressed in data lost per hour
 
 So PITR gives you an RPO of 5 mins. In general the best data recovery strategy is read replicas - but these are expensive. Automated backups can be good for low cost recovery.
+
+### Scaling in RDS
+
+- Vertical scaling
+  - Single AZ instances will be unavailable during scale up
+  - Multi AZ instances will have minimal downtime
+- Horizontal scaling
+  - Useful for read heavy workloads
+  - Use read replicas
+  - Can be used for disaster recovery
+- Sharding
+  - Horizontal partitioning of databases
+  - Maps out a section of the data to a new database
+  - Expensive though
+
+### Monitoring in RDS
