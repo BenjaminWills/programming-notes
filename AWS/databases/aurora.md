@@ -6,11 +6,13 @@
   - [Aurora parallel query](#aurora-parallel-query)
   - [Aurora serverless](#aurora-serverless)
     - [Data API](#data-api)
-
+  - [Pricing](#pricing)
+    - [Aurora serverless pricing](#aurora-serverless-pricing)
+  - [Security](#security)
 
 ## Overview
 
-AWS Aurora is an RDS based RDBMS, it is MySQL and PostgreSQL compatable. It is 5x faster than MySQL, 3x faster than PostgreSQL and 10% of the cost of commmercial grade RDBMS. They can have up to 15 read replicas at one time. 
+AWS Aurora is an RDS based RDBMS, it is MySQL and PostgreSQL compatable. It is 5x faster than MySQL, 3x faster than PostgreSQL and 10% of the cost of commmercial grade RDBMS. They can have up to 15 read replicas at one time.
 
 `Aurora Serverless` is an automatic self start/stop DB with autoscaling for compute and storage (from 10GB to 64TB).
 
@@ -37,7 +39,7 @@ It is effectively AWS's solution for RDBMS, it is their flagship and thus has al
 - Only available for MySQL engine and **NOT** PostgreSQL
 - Some features are lost when choosing a parallel query cluster:
   - Performance insights
-  - Backtrack (PITR) 
+  - Backtrack (PITR)
   - IAM authentication
 
 ## Aurora serverless
@@ -65,3 +67,27 @@ It is effectively AWS's solution for RDBMS, it is their flagship and thus has al
 - Good for use with Lambda functions
 - Lambda needs no VPC config
 
+## Pricing
+
+- Aurora costs ~10% of the cost of commercial grade RDBMS solutions
+- Pricing model like RDS (pay as you go)
+- 20% more expensive than RDS
+- When creating an Aurora DB you choose:
+  - Instance type
+  - Engine type
+  - DB instance class
+  - Regional or Global DB
+- Storage (GB/month)
+- I/O (per million requests)
+- Data transfers
+
+### Aurora serverless pricing
+
+- No charge when not running
+- Database capacity (Aurora capacity unit [ACU] ~ 2GB memory)
+- Database storage
+- I/O
+- Choose a min and max range of ACU's for autoscaling
+- Pay per second model
+
+## Security
