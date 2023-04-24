@@ -21,6 +21,7 @@
       - [PITR with RDS](#pitr-with-rds)
       - [RDS recovery strategies](#rds-recovery-strategies)
     - [Scaling in RDS](#scaling-in-rds)
+    - [Monitoring in RDS](#monitoring-in-rds)
 
 ## Overview
 
@@ -234,4 +235,23 @@ So PITR gives you an RPO of 5 mins. In general the best data recovery strategy i
   - Maps out a section of the data to a new database
   - Expensive though
 
-### Monitoring in RDS
+### Monitoring in RDS
+
+Common metrics:
+
+- CPU
+- RAM
+- Disk space consumption
+- Network traffic
+- DB connections
+- IOPS metrics (operations per second)
+
+Engine native logs:
+
+- Pgaudit for postgres for example
+
+Manual Monitoring tools:
+
+- RDS console
+- AWS trusted advisor
+
