@@ -15,6 +15,7 @@
   - [Scaling in Aurora](#scaling-in-aurora)
     - [Autoscaling in Aurora serverless](#autoscaling-in-aurora-serverless)
   - [Monitoring in Aurora](#monitoring-in-aurora)
+  - [Databse activity streams](#databse-activity-streams)
 
 ## Overview
 
@@ -161,3 +162,10 @@ It is effectively AWS's solution for RDBMS, it is their flagship and thus has al
   - Can be viewed in the logs section of the RDS console
   - Enable with `server_audit_logging` parameter
   - Use `server_audit_events` parameter to choose which events to log
+
+## Databse activity streams
+
+- Near realtime datastream of DB activity
+- Used for monitoring, auditing and compliance purposes
+- Aurora creates a Kenesis data stream and pushes the activity stream to it
+
