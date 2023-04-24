@@ -9,6 +9,7 @@
   - [Pricing](#pricing)
     - [Aurora serverless pricing](#aurora-serverless-pricing)
   - [Security](#security)
+    - [SSL for Aurora serverless](#ssl-for-aurora-serverless)
 
 ## Overview
 
@@ -91,3 +92,11 @@ It is effectively AWS's solution for RDBMS, it is their flagship and thus has al
 - Pay per second model
 
 ## Security
+
+- Aurora uses the native RDS infrastructure for network, IAM and encryption
+
+### SSL for Aurora serverless
+
+- Same procedure as connecting to RDS / Aurora
+- With Aurora serverless can use certificates from ACM
+- No need to download RDS SSL/TLS certificates
