@@ -19,6 +19,7 @@
       - [ Backups vs snapshots](#backups-vs-snapshots)
       - [Restoring from a snapshot](#restoring-from-a-snapshot)
       - [PITR with RDS](#pitr-with-rds)
+      - [RDS recovery strategies](#rds-recovery-strategies)
 
 ## Overview
 
@@ -205,3 +206,15 @@ These are optional features offered by the DB engines
 - Backup retention period controls the PITR window
 - RDS uploads DB transaction logs to S3 every 5 minutes, so PITR may have a >=5 minute lag.
 
+#### RDS recovery strategies
+
+There are 2 key metrics to consider when thinking about disaster recovery:
+
+- RTO (recovery time objective)
+  - How long it takes you to recover
+  - Expressed in hours
+- RPO (recovery point objective)
+  - How much data is lost
+  - Expressed in data lost per hour
+
+So PITR gives you an RPO of 5 mins. In general the best data recovery strategy is read replicas - but these are expensive. Automated backups can be good for low cost recovery.
