@@ -1,5 +1,11 @@
 # Amazon Aurora
 
+- [Amazon Aurora](#amazon-aurora)
+  - [Overview](#overview)
+  - [Architecture](#architecture)
+  - [Aurora parallel query](#aurora-parallel-query)
+
+
 ## Overview
 
 AWS Aurora is an RDS based RDBMS, it is MySQL and PostgreSQL compatable. It is 5x faster than MySQL, 3x faster than PostgreSQL and 10% of the cost of commmercial grade RDBMS. They can have up to 15 read replicas at one time. 
@@ -22,4 +28,13 @@ It is effectively AWS's solution for RDBMS, it is their flagship and thus has al
 - Data is continuously backed up to S3 in real time using storage nodes
 
 ## Aurora parallel query
+
+- Allows for faster analytical queries
+- Can run queries in parallel across thousand of storage nodes
+- Query processed in the Aurora storage layer
+- Only available for MySQL engine and **NOT** PostgreSQL
+- Some features are lost when choosing a parallel query cluster:
+  - Performance insights
+  - Backtrack (PITR) 
+  - IAM authentication
 
