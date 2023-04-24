@@ -12,6 +12,8 @@
     - [SSL for Aurora serverless](#ssl-for-aurora-serverless)
   - [Parameter groups](#parameter-groups)
     - [Parameter groups in Aurora serverless](#parameter-groups-in-aurora-serverless)
+  - [Scaling in Aurora](#scaling-in-aurora)
+    - [Autoscaling in Aurora serverless](#autoscaling-in-aurora-serverless)
 
 ## Overview
 
@@ -119,3 +121,33 @@ It is effectively AWS's solution for RDBMS, it is their flagship and thus has al
 - Define your own DB cluster parameter group to define other options
 - All parameter changes are applied immediately
 
+## Scaling in Aurora
+
+- We have 3 tpyes of storage in Aurora:
+  - Storage:
+    - Built in and automatic
+    - 10 GB increments up to 64 TB
+  - Compute:
+    - Instance scaling:
+      - Vertical scaling
+      - Minimal downtie possible using replica promotion
+    - Read scaling:
+      - Horizontal scaling
+      - Up to 15 read replicas
+    - Can set higher value of `max_connections` parameter in teh instance level parameter group
+  - Autoscaling:
+    - You define scaling policies
+    - Horizontal scaling achieved by using min and max replicas and scaling conditinos
+    - Condition can be defined using a target metric - e.g CPU utilisation
+    - Makes use of Cloudwatch metrics and alarms
+    - You define a service-linked IAM role and cooldown period
+
+### Autoscaling in Aurora serverless
+
+- Scales up and down based on the load (CPU utilisation and num of connections)
+- After scale up there is a 15 minute cooldown period for subsequent scale down
+- After scale down there is a 310 seconds cooldown epriod for subsequent scale down
+- There is **no** cooldown period for scaling up
+- Scaling cannot happen if:
+  - There are long running queries in progress
+  - Temporary tables are in use
