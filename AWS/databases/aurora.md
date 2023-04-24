@@ -4,6 +4,8 @@
   - [Overview](#overview)
   - [Architecture](#architecture)
   - [Aurora parallel query](#aurora-parallel-query)
+  - [Aurora serverless](#aurora-serverless)
+    - [Data API](#data-api)
 
 
 ## Overview
@@ -37,4 +39,29 @@ It is effectively AWS's solution for RDBMS, it is their flagship and thus has al
   - Performance insights
   - Backtrack (PITR) 
   - IAM authentication
+
+## Aurora serverless
+
+- Fully managed autoscaling Aurora configuration
+- Supported on MySQL and PostgreSQL
+- Auto shutdown when there is no load on the DB:
+  - Supports automatic pause
+  - Wake up takes 30 seconds
+  - no compute charge when not running
+- Typically results in a 40% reduction of costs as compared to RDS
+- Great for infrequent or unpredictable workloads:
+  - No capacity planning needed
+  - Can be used for DEVtest environments
+
+### Data API
+
+- Queries can be run via APIs in comparison to a DB connection
+- Run queries using:
+  - Query editor within RDS console
+  - Command line queries
+  - AWS SDK
+- No need for connection management
+- Uses DB credentials stored in AWS secrets manager
+- Good for use with Lambda functions
+- Lambda needs no VPC config
 
