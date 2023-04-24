@@ -14,6 +14,7 @@
     - [Parameter groups in Aurora serverless](#parameter-groups-in-aurora-serverless)
   - [Scaling in Aurora](#scaling-in-aurora)
     - [Autoscaling in Aurora serverless](#autoscaling-in-aurora-serverless)
+  - [Monitoring in Aurora](#monitoring-in-aurora)
 
 ## Overview
 
@@ -151,3 +152,12 @@ It is effectively AWS's solution for RDBMS, it is their flagship and thus has al
 - Scaling cannot happen if:
   - There are long running queries in progress
   - Temporary tables are in use
+
+## Monitoring in Aurora
+
+- Same as RDS
+- Advance auditing (only availiable in MySQL):
+  - To audit DB activity
+  - Can be viewed in the logs section of the RDS console
+  - Enable with `server_audit_logging` parameter
+  - Use `server_audit_events` parameter to choose which events to log
