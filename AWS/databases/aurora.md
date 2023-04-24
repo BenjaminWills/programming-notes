@@ -10,6 +10,8 @@
     - [Aurora serverless pricing](#aurora-serverless-pricing)
   - [Security](#security)
     - [SSL for Aurora serverless](#ssl-for-aurora-serverless)
+  - [Parameter groups](#parameter-groups)
+    - [Parameter groups in Aurora serverless](#parameter-groups-in-aurora-serverless)
 
 ## Overview
 
@@ -100,3 +102,20 @@ It is effectively AWS's solution for RDBMS, it is their flagship and thus has al
 - Same procedure as connecting to RDS / Aurora
 - With Aurora serverless can use certificates from ACM
 - No need to download RDS SSL/TLS certificates
+
+## Parameter groups
+
+- Work like RDS engines
+- In addition also has cluster parameter groups
+- The DB parameter group refers to the engine config for the given DB instance
+- The cluster parameter group refers to the config for all DB instances within an Aurora DB cluster
+- DB parameter groups require a reboot to come into effect
+- Cluster parameter groups do not require a reboot to come into effect
+
+### Parameter groups in Aurora serverless
+
+- Only DB cluster parameter groups, this is because there are no permanent DB instances
+- Aurora manages capaciy configuration options
+- Define your own DB cluster parameter group to define other options
+- All parameter changes are applied immediately
+
