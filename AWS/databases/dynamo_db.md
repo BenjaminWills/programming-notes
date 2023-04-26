@@ -5,6 +5,7 @@
   - [Comparison of SQL to NOSQL](#comparison-of-sql-to-nosql)
   - [Tables](#tables)
   - [Data types in DynamoDB](#data-types-in-dynamodb)
+  - [Dynamo DB consistency](#dynamo-db-consistency)
 
 ## Introduction
 
@@ -66,3 +67,22 @@ Data is stored internally as `JSON` files
   - Complex JSON structure with nested attributes
   - E.g list and map
 
+## Dynamo DB consistency
+
+- Read consistency consists of:
+  - Strong consistency:
+    - The most up to date data
+    - Must be requested explicitly
+  - Eventual consistency:
+    - May or may not reflect latest copy of data
+    - Default consistency for all read operations
+    - 50% cheaper than strong consistency
+  - Transactional consistency:
+    - For ACID support across one or more tables with single AWS account
+    - 2x cost of strong consistent reads
+- Write consistency consists of:
+  - Standard Consistency
+  - Transactional Consistency
+    - For ACID support across one or more tables with single AWS account
+    - 2x cost of strong consistent reads
+  
