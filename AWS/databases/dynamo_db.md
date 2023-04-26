@@ -14,6 +14,7 @@
     - [Global secondary indexes (GSI)](#global-secondary-indexes-gsi)
     - [When do we use these](#when-do-we-use-these)
   - [Design patterns](#design-patterns)
+  - [Partitions](#partitions)
 
 ## Introduction
 
@@ -200,3 +201,18 @@ Indexes in DynamoDB are different from their relational counterparts. When you c
     - Many to one modelling
     - Global secondary index with game_id as PK and score as SK
 
+## Partitions
+
+- Partitions store DynamoDB table data
+- Each partition stores 10 GB of SSD volume
+- Not to be confused with partition/hash key
+- One partition can store items with multiple partition keys
+- A table can have multiple partitions
+- Number of partitions depend on table size and provisioned capacity
+- Managed internally by DynamoDB
+- Provisioned capacity is distributed across table partitions
+- Once allocated, cannot be deallocated
+- Calculating number of partitions:
+  - $P_T = ceil(\frac{\text{RCU}+3\text{WCU}}{3000})$
+  - $P_S = ceil(\frac{\text{storage required}}{10\text{GB}})$
+  - Number of partitions: $P = \max(P_T,P_s)$
