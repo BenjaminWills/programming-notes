@@ -7,6 +7,8 @@
   - [Data types in DynamoDB](#data-types-in-dynamodb)
   - [Dynamo DB consistency](#dynamo-db-consistency)
   - [Dynamo DB pricing model](#dynamo-db-pricing-model)
+    - [Throughput](#throughput)
+    - [Use cases of provision vs on demand](#use-cases-of-provision-vs-on-demand)
 
 ## Introduction
 
@@ -103,3 +105,38 @@ Data is stored internally as `JSON` files
   - Cannot use reserved capacity with on demand nodes.
 - storage, backup, replication, streams, caching, data transfer out charged additionally
 
+### Throughput
+
+- Provisioned capacity:
+  - Capacity units:
+    - 1 capacity unit = 1 request/sec
+  - RCUs:
+    - In blocks of 4KB, last block always rounded up
+    - 1 strongly consistent table read/sec = 1 RCU
+    - 2 eventually consistent table reads/sec = 1 RCU
+    - 1 transactional read/sec = 2 RCU
+  - WCUs
+    - In blocks of 1KB, last block rounded up
+    - 1 table write/sec = 1 WCU
+    - 1 transactional write/sec = 2 WCU
+- On demand capacity:
+  - Uses Request units
+    - Same as Capacity units for calculations
+  - RRUs:
+    - In blocks of 4KB, last block always rounded up
+    - 1 strongly consistent table read/sec = 1 RRU
+    - 2 eventually consistent table reads/sec = 1 RRU
+    - 1 transactional read/sec = 2 RRU
+  - WRUs:
+    - In blocks of 1KB, last block rounded up
+    - 1 table write/sec = 1 WRU
+    - 1 transactional write/sec = 2 WRU
+
+### Use cases of provision vs on demand
+
+| Provisioned  |  On-Demand |
+|---|---|
+|  Typically used in production environment | Typically used in dev/test environment, or for small applications   |
+| Use this when we have predictable traffic  | Use this when you have variable and unpredictable traffic  |
+| Can result in throttling when consumption exceeds provision  |  Throttling can occur if you exceed 2x the precious peak within 30 minutes  |
+| Tends to be cost effective  | Recommended to space traffic growth over at least 30 minutes before driving 2x  |
