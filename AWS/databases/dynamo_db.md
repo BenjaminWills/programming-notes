@@ -2,8 +2,7 @@
 
 - [Dynamo DB](#dynamo-db)
   - [Introduction](#introduction)
-  - [Basics](#basics)
-
+  - [Comparison of SQL to NOSQL](#comparison-of-sql-to-nosql)
 
 ## Introduction
 
@@ -13,4 +12,15 @@ Supports `CRUD` through APIS, with transactional support.
 
 No direct analytical queries.
 
-## Basics
+Data is stored internally as `JSON` files
+
+## Comparison of SQL to NOSQL
+
+| SQL  | DynamoDB  |
+|---|---|
+|  Tables |  Tables |
+|  Rows |  Items |
+|  Columns | Attributes  |
+|  Primary Keys - multicolumn and optional | Primary keys - manditory, minmum of one attribute and maximum two attributes  |
+| Indexes  | Local secondary indexes  |
+| Views  | Global secondary indexes  |
