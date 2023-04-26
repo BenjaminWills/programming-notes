@@ -13,6 +13,7 @@
     - [Local secondary index (LSI)](#local-secondary-index-lsi)
     - [Global secondary indexes (GSI)](#global-secondary-indexes-gsi)
     - [When do we use these](#when-do-we-use-these)
+  - [Design patterns](#design-patterns)
 
 ## Introduction
 
@@ -184,3 +185,18 @@ Indexes in DynamoDB are different from their relational counterparts. When you c
 | When the application needs strongly consistent index reads  | When the application only requires eventually consistent reads  |
 | Same WCU and RCU as main table  | Has own WCU and RCU provisions  |
 |  No throttling conditinos |  If writes are throttled then main table is throttled |
+
+## Design patterns
+
+- Can define different entitiy relationships such as one to one, many to one and many to many
+- Examples:
+  - Store players' game states:
+    - One to one modelling or one to many
+    - user_id as PK and game_id as SK
+  - Players gaming history:
+    - One to many modelling
+    - user_id as PK, game_timestamp as SK
+  - Gaming leaderboard
+    - Many to one modelling
+    - Global secondary index with game_id as PK and score as SK
+
