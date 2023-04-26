@@ -3,10 +3,11 @@
 - [Dynamo DB](#dynamo-db)
   - [Introduction](#introduction)
   - [Comparison of SQL to NOSQL](#comparison-of-sql-to-nosql)
+  - [Tables](#tables)
 
 ## Introduction
 
-`AWS's` non relational NOSQL key value store database. It is serverless, fast, flexible, cost effective, fault tolerant and secure. Single digit millisecond performance at any scale. 
+`AWS's` non relational NOSQL key value store database. It is serverless, fast, flexible, cost effective, fault tolerant and secure. Single digit millisecond performance at any scale.
 
 Supports `CRUD` through APIS, with transactional support.
 
@@ -24,3 +25,30 @@ Data is stored internally as `JSON` files
 |  Primary Keys - multicolumn and optional | Primary keys - manditory, minmum of one attribute and maximum two attributes  |
 | Indexes  | Local secondary indexes  |
 | Views  | Global secondary indexes  |
+
+## Tables
+
+- Tables are top level entities (like schemas in SQL)
+- No string inter table relationships
+- Control performance at table level
+- Table items stored as JSON
+- Primary keys can be simple or composite
+  - Simple key has single attribute (partiton key or hash key)
+  - Composite key has two attributes (partition/hash key + sort/range key)
+  - Non key attributes are optional
+  - Key structure
+
+  ```JSON
+  \\ Simple key table structure
+  {
+    "partition_key":"",
+    "attribute_1":""
+  }
+  \\ Complex key table structure
+  {
+    "partition_key":"",
+    "sort_key":"",
+    "attribute_1":""
+  }
+  ```
+  
