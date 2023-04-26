@@ -4,6 +4,7 @@
   - [Introduction](#introduction)
   - [Comparison of SQL to NOSQL](#comparison-of-sql-to-nosql)
   - [Tables](#tables)
+  - [Data types in DynamoDB](#data-types-in-dynamodb)
 
 ## Introduction
 
@@ -52,3 +53,16 @@ Data is stored internally as `JSON` files
   }
   ```
   
+## Data types in DynamoDB
+
+- Scalar types:
+  - Exactly one value
+  - E.g string, number, binary, Boolean and null
+  - Keys or index attributes only suport strings, numbers and binary
+- Set types:
+  - One Key with multiple scalar values
+  - E.g string set, number set, binary set
+- Document types:
+  - Complex JSON structure with nested attributes
+  - E.g list and map
+
