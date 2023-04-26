@@ -9,6 +9,10 @@
   - [Dynamo DB pricing model](#dynamo-db-pricing-model)
     - [Throughput](#throughput)
     - [Use cases of provision vs on demand](#use-cases-of-provision-vs-on-demand)
+  - [Indexing](#indexing)
+    - [Local secondary index (LSI)](#local-secondary-index-lsi)
+    - [Global secondary indexes (GSI)](#global-secondary-indexes-gsi)
+    - [When do we use these](#when-do-we-use-these)
 
 ## Introduction
 
@@ -140,3 +144,43 @@ Data is stored internally as `JSON` files
 | Use this when we have predictable traffic  | Use this when you have variable and unpredictable traffic  |
 | Can result in throttling when consumption exceeds provision  |  Throttling can occur if you exceed 2x the precious peak within 30 minutes  |
 | Tends to be cost effective  | Recommended to space traffic growth over at least 30 minutes before driving 2x  |
+
+## Indexing
+
+Indexes in DynamoDB are different from their relational counterparts. When you create a secondary index, you must specify its key attributes—a partition key and a sort key. After you create the secondary index, you can Query it or Scan it just as you would with a table. DynamoDB does not have a query optimizer, so a secondary index is only used when you Query it or Scan it.
+
+### Local secondary index (LSI)
+
+- Can define up to 5 LSIs
+- Has same partition/hash key attribute as the primary index of the table
+- Has different sort/range key than the primary index of the table
+- Must have sort/range key
+- Indexed items $\leq10$ GB
+- Can only be created and destroyed upon table creation
+- Can only query a single partition
+- Supports all consistency models
+- LSIs consume provision throughput of base table
+- Can query any table attributes
+
+### Global secondary indexes (GSI)
+
+- Can define up to 20 GSIs
+- Can have same or different partiton hash key than tables primary index
+- Can have same or different sort/range key than tables primary index
+- Can omit sort/range key
+- No size restriction for indexed items
+- Can be created or removed at any time
+- Can query across partitions
+- GSIs only support eventual consistency
+- Have own provisioned throughput
+- Can only query projected attributes
+
+### When do we use these
+
+| LSI  | GSI  |
+|---|---|
+|  When the application needs the same partition key as the table | When the application requires a different partition key than the table  |
+|  When you need to avoid additional costs|  When the application requires finer throughput control |
+| When the application needs strongly consistent index reads  | When the application only requires eventually consistent reads  |
+| Same WCU and RCU as main table  | Has own WCU and RCU provisions  |
+|  No throttling conditinos |  If writes are throttled then main table is throttled |
