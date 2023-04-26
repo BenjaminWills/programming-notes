@@ -6,6 +6,7 @@
   - [Tables](#tables)
   - [Data types in DynamoDB](#data-types-in-dynamodb)
   - [Dynamo DB consistency](#dynamo-db-consistency)
+  - [Dynamo DB pricing model](#dynamo-db-pricing-model)
 
 ## Introduction
 
@@ -86,3 +87,19 @@ Data is stored internally as `JSON` files
     - For ACID support across one or more tables with single AWS account
     - 2x cost of strong consistent reads
   
+## Dynamo DB pricing model
+
+- Provisioned capacity:
+  - You pay for the capacity that you provision
+  - You can use autoscaling to adjust the provisioned capacity
+  - Uses `capacity units`: Read capacity units and Write capacity units. (RCU, WCU)
+  - Consumption beyond provisioned capacity may result in throttling
+  - Use reserved capacity for discounts over 1 or 3 year term (one time fee then an hourly fee for every 100 RCU+WCU)
+- On-demand capacity:
+  - Pay per request (number of read and writes)
+  - No need to provision capacity units
+  - Instantly accomodates workloads as they ramp up or down
+  - Uses read request units, and write request units (RRU, WRU)
+  - Cannot use reserved capacity with on demand nodes.
+- storage, backup, replication, streams, caching, data transfer out charged additionally
+
