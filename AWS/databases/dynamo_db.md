@@ -25,6 +25,7 @@
   - [Backups](#backups)
     - [What gets restored](#what-gets-restored)
     - [What does not get restored](#what-does-not-get-restored)
+    - [Continuous backups](#continuous-backups)
   - [Best practices](#best-practices)
 
 ## Introduction
@@ -315,7 +316,6 @@ Indexes in DynamoDB are different from their relational counterparts. When you c
 ### What gets restored
 
 - Table data
-- GSIs and LSIs (optional)
 - Encryption settitngs (you can change)
 - Provisioned RCU/WCU at timestamp that backup is created
 - Billing mode
@@ -327,6 +327,22 @@ Indexes in DynamoDB are different from their relational counterparts. When you c
 - CloudWatch metrics and alarms
 - Stream and TTL settings
 - Tags
+
+### Continuous backups
+
+- Uses PITR
+- Restore to any second within the last 35 days
+- Prices per GB based on the table size
+- 35 day clock is reset on disabling and re enabling PITR
+- Restored tables that were a part of global tables will be restored as an independent (non global) table
+- Always restores data to a new table
+- What cannot be restored:
+  - Stream settings
+  - TTL options
+  - Autoscaling config
+  - PITR settings
+  - Alarms and tags
+
 
 ## Best practices
 
