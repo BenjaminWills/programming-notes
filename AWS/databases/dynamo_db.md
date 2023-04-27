@@ -17,6 +17,8 @@
   - [Partitions](#partitions)
   - [Scaling](#scaling)
     - [Autoscaling](#autoscaling)
+  - [Storage](#storage)
+  - [Operations](#operations)
   - [Best practices](#best-practices)
 
 ## Introduction
@@ -231,6 +233,26 @@ Indexes in DynamoDB are different from their relational counterparts. When you c
 
 - No additional costs, uses AWS application autoscaling service
 - Set desired target utilisation, minimum and maximum provisioned capacity
+
+## Storage
+
+- DynamoDB supports item sizes up to 400 KB each
+- This includes attribute name and attribute value (JSON doc)
+- Options for storing larger items:
+  - Compress large attribute values
+  - Store large attribtue values in S3
+
+## Operations
+
+- Table cleanup:
+  - Options:
+    1. Scan + delete => very slow and expensive
+    2. Drop table + recreate table => fast, cheap and efficient
+- Copying a DynamoDB table:
+  - Options:
+    1. Use AWS data pipeline (uses EMR)
+    2. Create a backup of source table and restore into a new table (can take some time)
+    3. Scan + write => write own code (can be expensive)
 
 ## Best practices
 
