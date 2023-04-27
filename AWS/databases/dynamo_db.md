@@ -15,6 +15,8 @@
     - [When do we use these](#when-do-we-use-these)
   - [Design patterns](#design-patterns)
   - [Partitions](#partitions)
+  - [Scaling](#scaling)
+    - [Autoscaling](#autoscaling)
 
 ## Introduction
 
@@ -216,3 +218,15 @@ Indexes in DynamoDB are different from their relational counterparts. When you c
   - $P_T = ceil(\frac{\text{RCU}+3\text{WCU}}{3000})$
   - $P_S = ceil(\frac{\text{storage required}}{10\text{GB}})$
   - Number of partitions: $P = \max(P_T,P_s)$
+
+## Scaling
+
+- You can manually scale up and down provisioned capacity as needed
+- You can scale down up to 4 times a day
+- You gain one scale down for every 4 hours without a scale down, thus you can have a 9 scale down hard limit
+- Any increase in partitions on a scale up will not resilt in decrease on scale down
+
+### Autoscaling
+
+- No additional costs, uses AWS application autoscaling service
+- Set desired target utilisation, minimum and maximum provisioned capacity
