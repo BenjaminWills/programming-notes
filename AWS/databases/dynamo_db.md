@@ -26,6 +26,8 @@
     - [What gets restored](#what-gets-restored)
     - [What does not get restored](#what-does-not-get-restored)
     - [Continuous backups](#continuous-backups)
+  - [Encrpytion](#encrpytion)
+    - [Encryption client](#encryption-client)
   - [Best practices](#best-practices)
 
 ## Introduction
@@ -343,6 +345,27 @@ Indexes in DynamoDB are different from their relational counterparts. When you c
   - PITR settings
   - Alarms and tags
 
+## Encrpytion
+
+- Server side encryption at rest:
+  - Enabled by default
+  - Uses KMS
+  - 256-bit AES encryption
+  - Can use AWS owned CMK, AWS managed CMK or customer managed CMK
+  - Encrypts primary key, secondary indexes, streams, global tables, backups and DAX clusters
+- Encryption in transit:
+  - Use VPC endpoints for applications running in a VPC
+  - Use TLS endpoints for encrypting data in transit
+
+### Encryption client
+
+- For client side encryption
+- Added protection with encryption in-transit
+- Results in end-2-end encryption
+- Doesn't encrypt entire table:
+  - Encrypts the attribute values but not their names
+  - Doesn't encrypt values of primary key attributes
+  - Can selectively encrypt other attribute values
 
 ## Best practices
 
