@@ -17,6 +17,7 @@
   - [Partitions](#partitions)
   - [Scaling](#scaling)
     - [Autoscaling](#autoscaling)
+  - [Best practices](#best-practices)
 
 ## Introduction
 
@@ -230,3 +231,30 @@ Indexes in DynamoDB are different from their relational counterparts. When you c
 
 - No additional costs, uses AWS application autoscaling service
 - Set desired target utilisation, minimum and maximum provisioned capacity
+
+## Best practices
+
+- Efficient key design:
+  - Partition key should have many unique values
+  - Distribute reads and writes uniformly across paritions
+  - Store hot and cold data in separate tables
+  - Consider all possible query patterns to eliminate use of scans and filters
+  - Choose sort key depending on applications needs
+  - Use indexes based on applications query patterns (use indexes wisely)
+  - Use primary key or LSIs when strong consistency is desired
+  - Use GSIs for finer control of throughput or when the application needs to query using a different partition key
+  - Use shorter attribute names
+- Storing large item attributes:
+  - Use compression (zip, tar etc...)
+  - Use S3 to store large attributes
+  - Split large attributes across multiple items
+- Reading:
+  - Avoid scan and filter operations (very costly)
+  - Use eventual consistency, this will half the cost of the read
+- LSIs:
+  - Use LSIs sparingly (LSI consume same capacity as table)
+  - Project fewer attributes
+  - Watch for expanding item collections (10 GB limit - one partition)
+- GSIs:
+  - Project fewer attributes
+  - Can be used for eventually consistent read replicas
