@@ -22,6 +22,9 @@
   - [DynamoDB accelarator (DAX)](#dynamodb-accelarator-dax)
     - [Architecture](#architecture)
     - [DAX Operations](#dax-operations)
+  - [Backups](#backups)
+    - [What gets restored](#what-gets-restored)
+    - [What does not get restored](#what-does-not-get-restored)
   - [Best practices](#best-practices)
 
 ## Introduction
@@ -290,6 +293,40 @@ Indexes in DynamoDB are different from their relational counterparts. When you c
 - You can use write around approach to bypass DAX e.g for writing lots of data - this causes a sync drift
 - For reads if DAX has the data (a cache hit) it is simply returned without going through DynamoDB and visa versa for a cache miss
 - Strongly consistent reads bypass DAX
+
+## Backups
+
+- Automatically:
+  - Encrypted
+  - Cataloged
+- Easily disvoverable
+- Highly scalable
+- Backup operations complete in seconds
+- Backups are consistent within seconds across thousands of partitions
+- No provisioned capacity consumption
+- Does not effect table performance or availability
+- Backups are preserved regardless of table deletion
+- Integrated with AWS backup service
+- Periodic backups can be schedulled using Lambda and cloudwatch triggers
+- Cannot overwrite an existing table during restore, restores only done to new tables
+- To retain original table name delete old table before running the restore
+- Use IAM policies for access
+
+### What gets restored
+
+- Table data
+- GSIs and LSIs (optional)
+- Encryption settitngs (you can change)
+- Provisioned RCU/WCU at timestamp that backup is created
+- Billing mode
+
+### What does not get restored
+
+- Autoscaling policies
+- IAM policies
+- CloudWatch metrics and alarms
+- Stream and TTL settings
+- Tags
 
 ## Best practices
 
