@@ -19,6 +19,9 @@
     - [Autoscaling](#autoscaling)
   - [Storage](#storage)
   - [Operations](#operations)
+  - [DynamoDB accelarator (DAX)](#dynamodb-accelarator-dax)
+    - [Architecture](#architecture)
+    - [DAX Operations](#dax-operations)
   - [Best practices](#best-practices)
 
 ## Introduction
@@ -253,6 +256,40 @@ Indexes in DynamoDB are different from their relational counterparts. When you c
     1. Use AWS data pipeline (uses EMR)
     2. Create a backup of source table and restore into a new table (can take some time)
     3. Scan + write => write own code (can be expensive)
+
+## DynamoDB accelarator (DAX)
+
+- In memory Caching, microsecond latency by default.
+- Sits between DynamoDB and Client application
+- SAves costs due to reduced read load on DynamoDB
+- Helps prevent hot partitions
+- Minimal code changes required to add DAX to your existing dynamoDB app
+- Only supports eventual consistency
+- Not made for write heavy applications, only for read heavy
+- Run inside VPC
+- Supports multi AZ
+- Secute (encryption at rest with KMS, VPC, IAM, Cloudtrail...)
+
+### Architecture
+
+- DAX has 2 types of caches:
+  - Item cache
+    - Stores result of index reads
+    - Default TTL of 5 mins
+    - When cache becomes full, older and less popular items are removed
+  - Query cache
+    - Stores results of query and scan operations
+    - Default TTL of 5 mins
+
+### DAX Operations
+
+- Only for item level operations
+- Table level operations must be sent directly to DynamoDB
+- Write operations use write-through approach
+- Data is first written to DynamoDB adn then to DAX, only considered successful if both write
+- You can use write around approach to bypass DAX e.g for writing lots of data - this causes a sync drift
+- For reads if DAX has the data (a cache hit) it is simply returned without going through DynamoDB and visa versa for a cache miss
+- Strongly consistent reads bypass DAX
 
 ## Best practices
 
