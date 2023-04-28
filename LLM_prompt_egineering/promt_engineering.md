@@ -526,7 +526,8 @@ triple backticks.
 
 The description is intended for furniture retailers, 
 so should be technical in nature and focus on the 
-materials the product is constructed from.
+materials the product is constructed from. The decription
+should be at most 50 words.
 
 At the end of the description, include every 7-character 
 Product ID in the technical specification.
@@ -541,49 +542,34 @@ Give the table the title 'Product Dimensions'.
 Format everything as HTML that can be used in a website. 
 Place the description in a <div> element.
 
-Technical specifications: ```{fact_sheet_chair}```
-"""
+Technical specifications: ```{fact_sheet_chair}
 ```
 
 This leads to the following amazing output:
 
 <div>
-<h2>Mid-Century Inspired Office Chair</h2>
-<p>Introducing our mid-century inspired office chair, part of a beautiful family of office furniture that includes filing cabinets, desks, bookcases, meeting tables, and more. This chair is available in several options of shell color and base finishes, allowing you to customize it to your liking. You can choose between plastic back and front upholstery or full upholstery in 10 fabric and 6 leather options. The base finish options are stainless steel, matte black, gloss white, or chrome. The chair is also available with or without armrests, making it suitable for both home and business settings. Plus, it's qualified for contract use, ensuring its durability and longevity.</p>
-<p>The chair's construction features a 5-wheel plastic coated aluminum base and a pneumatic chair adjust for easy raise/lower action. You can also choose between soft or hard-floor caster options and two choices of seat foam densities: medium (1.8 lb/ft3) or high (2.8 lb/ft3). The armrests are also customizable, with the option of armless or 8 position PU armrests.</p>
-<p>The materials used in the chair's construction are of the highest quality. The shell base glider is made of cast aluminum with modified nylon PA6/PA66 coating, with a shell thickness of 10 mm. The seat is made of HD36 foam, ensuring maximum comfort and support.</p>
-<p>Made in Italy, this mid-century inspired office chair is the perfect addition to any office space. Order yours today!</p>
-<h3>Product IDs:</h3>
-<ul>
-<li>SWC-100</li>
-<li>SWC-110</li>
-</ul>
-</div>
-
+<p>Introducing our mid-century inspired office chair, part of a beautiful family of furniture. Available in multiple shell colors and base finishes, with plastic or full upholstery options. Suitable for home or business settings and qualified for contract use. Product ID: SWC-100, SWC-110.</p>
 <table>
   <caption>Product Dimensions</caption>
   <tr>
-    <th>Dimension</th>
-    <th>Measurement (inches)</th>
+    <th>Width</th>
+    <td>53 cm | 20.87"</td>
   </tr>
   <tr>
-    <td>Width</td>
-    <td>20.87"</td>
+    <th>Depth</th>
+    <td>51 cm | 20.08"</td>
   </tr>
   <tr>
-    <td>Depth</td>
-    <td>20.08"</td>
+    <th>Height</th>
+    <td>80 cm | 31.50"</td>
   </tr>
   <tr>
-    <td>Height</td>
-    <td>31.50"</td>
+    <th>Seat Height</th>
+    <td>44 cm | 17.32"</td>
   </tr>
   <tr>
-    <td>Seat Height</td>
-    <td>17.32"</td>
-  </tr>
-  <tr>
-    <td>Seat Depth</td>
-    <td>16.14"</td>
+    <th>Seat Depth</th>
+    <td>41 cm | 16.14"</td>
   </tr>
 </table>
+</div>
