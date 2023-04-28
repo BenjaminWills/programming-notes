@@ -12,13 +12,17 @@
       - [Instruct the model to work out it's own solution before rushing to a conclusion](#instruct-the-model-to-work-out-its-own-solution-before-rushing-to-a-conclusion)
     - [Model limitations](#model-limitations)
       - [Hallucinations](#hallucinations)
-
+  - [Prompt development](#prompt-development)
+    - [Example: Generate product description from a fact sheet](#example-generate-product-description-from-a-fact-sheet)
+      - [Iteration 1: The output text is too long](#iteration-1-the-output-text-is-too-long)
+      - [Iteration 2: Text focuses on wrong details](#iteration-2-text-focuses-on-wrong-details)
+      - [Iteration 3: Description needs a table of dimensions](#iteration-3-description-needs-a-table-of-dimensions)
 
 It is very important to know how to interact with `LLMs` to get the most out of each and every API call.
 
 A few interesting things to consider when asking an `LLM` a question:
 
-1. What context are you asking about? 
+1. What context are you asking about?
 2. In what style should the model answer?
 3. Are there any references that you wish the model to use?
 
@@ -217,7 +221,7 @@ Noms: Jack, Jill.
 }
 ```
 
-Another such prompt could be 
+Another such prompt could be:
 
 ```python
 prompt_2 = f"""
@@ -368,3 +372,218 @@ We can reduce these by doing the following to your prompt:
 
 - First find relevant information
 - Answer the question based on relevent information
+
+## Prompt development
+
+When it comes to `prompt development` the process is iterative, meaning that we develop them in a cycle that goes from:
+
+1. Idea
+2. Implementation of prompt
+3. Experimental result
+4. Error analysis
+5. Repeat!
+
+This framework allows us to refine our model as much as we please.
+
+### Example: Generate product description from a fact sheet
+
+```python
+fact_sheet_chair = """
+OVERVIEW
+- Part of a beautiful family of mid-century inspired office furniture, 
+including filing cabinets, desks, bookcases, meeting tables, and more.
+- Several options of shell color and base finishes.
+- Available with plastic back and front upholstery (SWC-100) 
+or full upholstery (SWC-110) in 10 fabric and 6 leather options.
+- Base finish options are: stainless steel, matte black, 
+gloss white, or chrome.
+- Chair is available with or without armrests.
+- Suitable for home or business settings.
+- Qualified for contract use.
+
+CONSTRUCTION
+- 5-wheel plastic coated aluminum base.
+- Pneumatic chair adjust for easy raise/lower action.
+
+DIMENSIONS
+- WIDTH 53 CM | 20.87”
+- DEPTH 51 CM | 20.08”
+- HEIGHT 80 CM | 31.50”
+- SEAT HEIGHT 44 CM | 17.32”
+- SEAT DEPTH 41 CM | 16.14”
+
+OPTIONS
+- Soft or hard-floor caster options.
+- Two choices of seat foam densities: 
+ medium (1.8 lb/ft3) or high (2.8 lb/ft3)
+- Armless or 8 position PU armrests 
+
+MATERIALS
+SHELL BASE GLIDER
+- Cast Aluminum with modified nylon PA6/PA66 coating.
+- Shell thickness: 10 mm.
+SEAT
+- HD36 foam
+
+COUNTRY OF ORIGIN
+- Italy
+"""
+
+prompt = f"""
+Your task is to help a marketing team create a 
+description for a retail website of a product based 
+on a technical fact sheet.
+
+Write a product description based on the information 
+provided in the technical specifications delimited by 
+triple backticks.
+
+Technical specifications: ```{fact_sheet_chair}```
+"""
+```
+
+#### Iteration 1: The output text is too long
+
+We need to limit the nimber of words/sentences/characters, we can implement this in the prompt:
+
+```python
+prompt = f"""
+Your task is to help a marketing team create a 
+description for a retail website of a product based 
+on a technical fact sheet.
+
+Write a product description based on the information 
+provided in the technical specifications delimited by 
+triple backticks.
+
+Use at most 50 words.
+
+Technical specifications: ```{fact_sheet_chair}```
+"""
+```
+
+This results in a much shorter output of:
+
+```text
+Introducing our mid-century inspired office chair, part of a beautiful furniture family. 
+Available in various shell colors and base finishes, with plastic or full upholstery options in fabric or leather.
+Suitable for home or business use, with a 5-wheel base and pneumatic chair adjust. 
+Made in Italy. (47 words)
+```
+
+#### Iteration 2: Text focuses on wrong details
+
+Here we can solve this isue by being more **specific** within the query:
+
+```python
+prompt = f"""
+Your task is to help a marketing team create a 
+description for a retail website of a product based 
+on a technical fact sheet.
+
+Write a product description based on the information 
+provided in the technical specifications delimited by 
+triple backticks.
+
+The description is intended for furniture retailers, 
+so should be technical in nature and focus on the 
+materials the product is constructed from.
+
+Use at most 50 words.
+
+Technical specifications: ```{fact_sheet_chair}```
+"""
+response = get_completion(prompt)
+print(response)
+```
+
+Which leads to the output:
+
+```text
+Introducing our mid-century inspired office chair, perfect for both home and business settings. 
+With a range of shell colors and base finishes, including stainless steel and matte black, 
+this chair is available with or without armrests. 
+The 5-wheel plastic coated aluminum base and pneumatic chair adjust make it easy to move and 
+adjust to your desired height. 
+Made with high-quality materials, 
+including a cast aluminum shell and HD36 foam seat, 
+this chair is built to last.
+```
+
+#### Iteration 3: Description needs a table of dimensions
+
+We can then get it to organise the output into a table.
+
+```python
+prompt = f"""
+Your task is to help a marketing team create a 
+description for a retail website of a product based 
+on a technical fact sheet.
+
+Write a product description based on the information 
+provided in the technical specifications delimited by 
+triple backticks.
+
+The description is intended for furniture retailers, 
+so should be technical in nature and focus on the 
+materials the product is constructed from.
+
+At the end of the description, include every 7-character 
+Product ID in the technical specification.
+
+After the description, include a table that gives the 
+product's dimensions. The table should have two columns.
+In the first column include the name of the dimension. 
+In the second column include the measurements in inches only.
+
+Give the table the title 'Product Dimensions'.
+
+Format everything as HTML that can be used in a website. 
+Place the description in a <div> element.
+
+Technical specifications: ```{fact_sheet_chair}```
+"""
+```
+
+This leads to the following amazing output:
+
+<div>
+<h2>Mid-Century Inspired Office Chair</h2>
+<p>Introducing our mid-century inspired office chair, part of a beautiful family of office furniture that includes filing cabinets, desks, bookcases, meeting tables, and more. This chair is available in several options of shell color and base finishes, allowing you to customize it to your liking. You can choose between plastic back and front upholstery or full upholstery in 10 fabric and 6 leather options. The base finish options are stainless steel, matte black, gloss white, or chrome. The chair is also available with or without armrests, making it suitable for both home and business settings. Plus, it's qualified for contract use, ensuring its durability and longevity.</p>
+<p>The chair's construction features a 5-wheel plastic coated aluminum base and a pneumatic chair adjust for easy raise/lower action. You can also choose between soft or hard-floor caster options and two choices of seat foam densities: medium (1.8 lb/ft3) or high (2.8 lb/ft3). The armrests are also customizable, with the option of armless or 8 position PU armrests.</p>
+<p>The materials used in the chair's construction are of the highest quality. The shell base glider is made of cast aluminum with modified nylon PA6/PA66 coating, with a shell thickness of 10 mm. The seat is made of HD36 foam, ensuring maximum comfort and support.</p>
+<p>Made in Italy, this mid-century inspired office chair is the perfect addition to any office space. Order yours today!</p>
+<h3>Product IDs:</h3>
+<ul>
+<li>SWC-100</li>
+<li>SWC-110</li>
+</ul>
+</div>
+
+<table>
+  <caption>Product Dimensions</caption>
+  <tr>
+    <th>Dimension</th>
+    <th>Measurement (inches)</th>
+  </tr>
+  <tr>
+    <td>Width</td>
+    <td>20.87"</td>
+  </tr>
+  <tr>
+    <td>Depth</td>
+    <td>20.08"</td>
+  </tr>
+  <tr>
+    <td>Height</td>
+    <td>31.50"</td>
+  </tr>
+  <tr>
+    <td>Seat Height</td>
+    <td>17.32"</td>
+  </tr>
+  <tr>
+    <td>Seat Depth</td>
+    <td>16.14"</td>
+  </tr>
+</table>
