@@ -7,7 +7,7 @@
       - [Ask for a strucrured output](#ask-for-a-strucrured-output)
       - [Checking whether conditions are satisfied](#checking-whether-conditions-are-satisfied)
       - [Few shot prompting](#few-shot-prompting)
-  - [Principle 2](#principle-2)
+    - [Principle 2](#principle-2)
 
 
 It is very important to know how to interact with `LLMs` to get the most out of each and every API call.
@@ -158,7 +158,9 @@ the most intricate tapestry begins with a solitary thread.
 Would have an output like:
 
 ```text
-<grandparent>: Resilience is like a tree that bends with the wind but never breaks. It is the ability to bounce back from adversity and keep moving forward, even when things get tough. Just like a tree that grows stronger with each storm it weathers, resilience is a quality that can be developed and strengthened over time.
+<grandparent>: Resilience is like a tree that bends with the wind but never breaks.
+ It is the ability to bounce back from adversity and keep moving forward, even when things get tough. 
+ Just like a tree that grows stronger with each storm it weathers, resilience is a quality that can be developed and strengthened over time.
 ```
 
-## Principle 2
+### Principle 2
