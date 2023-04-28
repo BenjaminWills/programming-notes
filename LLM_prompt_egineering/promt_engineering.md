@@ -9,6 +9,7 @@
       - [Few shot prompting](#few-shot-prompting)
     - [Principle 2](#principle-2)
       - [Specify the steps required to complete the task](#specify-the-steps-required-to-complete-the-task)
+      - [Instruct the model to work out it's own solution before rushing to a conclusion](#instruct-the-model-to-work-out-its-own-solution-before-rushing-to-a-conclusion)
 
 
 It is very important to know how to interact with `LLMs` to get the most out of each and every API call.
@@ -246,3 +247,93 @@ Translation: Jack et Jill partent en quête d'eau, mais la malchance frappe et i
 Names: Jack, Jill
 Output JSON: {"french_summary": "Jack et Jill partent en quête d'eau, mais la malchance frappe et ils dégringolent la colline, rentrant chez eux légèrement meurtris mais avec leurs esprits aventureux intacts.", "num_names": 2}
 ```
+
+#### Instruct the model to work out it's own solution before rushing to a conclusion
+
+We can get better results this way, as the model has time to consider multiple view points and approaches to a problem.
+
+Here is an example:
+
+```python
+prompt = f"""
+Determine if the student's solution is correct or not.
+
+Question:
+I'm building a solar power installation and I need \
+ help working out the financials. 
+- Land costs $100 / square foot
+- I can buy solar panels for $250 / square foot
+- I negotiated a contract for maintenance that will cost \ 
+me a flat $100k per year, and an additional $10 / square \
+foot
+What is the total cost for the first year of operations 
+as a function of the number of square feet.
+
+Student's Solution:
+Let x be the size of the installation in square feet.
+Costs:
+1. Land cost: 100x
+2. Solar panel cost: 250x
+3. Maintenance cost: 100,000 + 100x
+Total cost: 100x + 250x + 100,000 + 100x = 450x + 100,000
+"""
+```
+
+Then we ask the model to evaluate the solution.
+
+```text
+The student's solution is correct
+```
+
+Now this is wrong. What if we asked the model to work out its own solution first
+
+```python
+prompt = f"""
+Your task is to determine if the student's solution \
+is correct or not.
+To solve the problem do the following:
+- First, work out your own solution to the problem. 
+- Then compare your solution to the student's solution \ 
+and evaluate if the student's solution is correct or not. 
+Don't decide if the student's solution is correct until 
+you have done the problem yourself.
+
+Use the following format:
+Question:...
+question here...
+Student's solution:...
+student's solution here...
+Actual solution:...
+steps to work out the solution and your solution here...
+Is the student's solution the same as actual solution \
+just calculated:...
+yes or no...
+Student grade:...
+correct or incorrect...
+
+Question:
+...
+I'm building a solar power installation and I need help \
+working out the financials. 
+- Land costs $100 / square foot
+- I can buy solar panels for $250 / square foot
+- I negotiated a contract for maintenance that will cost \
+me a flat $100k per year, and an additional $10 / square \
+foot
+What is the total cost for the first year of operations \
+as a function of the number of square feet.
+...
+Student's solution:
+...
+Let x be the size of the installation in square feet.
+Costs:
+1. Land cost: 100x
+2. Solar panel cost: 250x
+3. Maintenance cost: 100,000 + 100x
+Total cost: 100x + 250x + 100,000 + 100x = 450x + 100,000
+...
+Actual solution:
+"""
+```
+
+This much more **specific** prompt actually leads to the correct solution.
