@@ -10,6 +10,8 @@
     - [Principle 2](#principle-2)
       - [Specify the steps required to complete the task](#specify-the-steps-required-to-complete-the-task)
       - [Instruct the model to work out it's own solution before rushing to a conclusion](#instruct-the-model-to-work-out-its-own-solution-before-rushing-to-a-conclusion)
+    - [Model limitations](#model-limitations)
+      - [Hallucinations](#hallucinations)
 
 
 It is very important to know how to interact with `LLMs` to get the most out of each and every API call.
@@ -337,3 +339,32 @@ Actual solution:
 ```
 
 This much more **specific** prompt actually leads to the correct solution.
+
+### Model limitations
+
+#### Hallucinations
+
+A `hallucination` in a `LLM` is essentially a statement that sounds plausible but is not true.
+
+```python
+prompt = f"""
+Tell me about AeroGlide UltraSlim Smart Toothbrush by Boie
+"""
+```
+
+The product does not exist but the model responds with:
+
+```text
+The AeroGlide UltraSlim Smart Toothbrush by Boie is a high-tech toothbrush that uses advanced sonic technology to provide a deep and thorough clean. It features a slim and sleek design that makes it easy to hold and maneuver, and it comes with a range of smart features that help you optimize your brushing routine.
+
+One of the key features of the AeroGlide UltraSlim Smart Toothbrush is its advanced sonic technology, which uses high-frequency vibrations to break up plaque and bacteria on your teeth and gums. This technology is highly effective at removing even the toughest stains and buildup, leaving your teeth feeling clean and fresh.
+
+In addition to its sonic technology, the AeroGlide UltraSlim Smart Toothbrush also comes with a range of smart features that help you optimize your brushing routine. These include a built-in timer that ensures you brush for the recommended two minutes, as well as a pressure sensor that alerts you if you're brushing too hard.
+
+Overall, the AeroGlide UltraSlim Smart Toothbrush by Boie is a highly advanced and effective toothbrush that is perfect for anyone looking to take their oral hygiene to the next level. With its advanced sonic technology and smart features, it provides a deep and thorough clean that leaves your teeth feeling fresh and healthy.
+```
+
+We can reduce these by doing the following to your prompt:
+
+- First find relevant information
+- Answer the question based on relevent information
