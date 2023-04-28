@@ -8,6 +8,7 @@
       - [Checking whether conditions are satisfied](#checking-whether-conditions-are-satisfied)
       - [Few shot prompting](#few-shot-prompting)
     - [Principle 2](#principle-2)
+      - [Specify the steps required to complete the task](#specify-the-steps-required-to-complete-the-task)
 
 
 It is very important to know how to interact with `LLMs` to get the most out of each and every API call.
@@ -164,3 +165,84 @@ Would have an output like:
 ```
 
 ### Principle 2
+
+#### Specify the steps required to complete the task
+
+This allows the model to complete a complex task exactly how you wish for it to be completed. Specificity is very important.
+
+```python
+text = f"""
+In a charming village, siblings Jack and Jill set out on \ 
+a quest to fetch water from a hilltop \ 
+well. As they climbed, singing joyfully, misfortune \ 
+struck—Jack tripped on a stone and tumbled \ 
+down the hill, with Jill following suit. \ 
+Though slightly battered, the pair returned home to \ 
+comforting embraces. Despite the mishap, \ 
+their adventurous spirits remained undimmed, and they \ 
+continued exploring with delight.
+"""
+# example 1
+prompt_1 = f"""
+Perform the following actions: 
+1 - Summarize the following text delimited by triple \
+backticks with 1 sentence.
+2 - Translate the summary into French.
+3 - List each name in the French summary.
+4 - Output a json object that contains the following \
+keys: french_summary, num_names.
+
+Separate your answers with line breaks.
+
+Text:
+```{text}```
+"""
+```
+
+which would output:
+
+```text
+Completion for prompt 1:
+Two siblings, Jack and Jill, go on a quest to fetch water from a well on a hilltop, but misfortune strikes and they both tumble down the hill, returning home slightly battered but with their adventurous spirits undimmed.
+
+Deux frères et sœurs, Jack et Jill, partent en quête d'eau d'un puits sur une colline, mais un malheur frappe et ils tombent tous les deux de la colline, rentrant chez eux légèrement meurtris mais avec leurs esprits aventureux intacts. 
+Noms: Jack, Jill.
+
+{
+  "french_summary": "Deux frères et sœurs, Jack et Jill, partent en quête d'eau d'un puits sur une colline, mais un malheur frappe et ils tombent tous les deux de la colline, rentrant chez eux légèrement meurtris mais avec leurs esprits aventureux intacts.",
+  "num_names": 2
+}
+```
+
+Another such prompt could be 
+
+```python
+prompt_2 = f"""
+Your task is to perform the following actions: 
+1 - Summarize the following text delimited by 
+  <> with 1 sentence.
+2 - Translate the summary into French.
+3 - List each name in the French summary.
+4 - Output a json object that contains the 
+  following keys: french_summary, num_names.
+
+Use the following format:
+Text: <text to summarize>
+Summary: <summary>
+Translation: <summary translation>
+Names: <list of names in Italian summary>
+Output JSON: <json with summary and num_names>
+
+Text: <{text}>
+"""
+```
+
+Which asks for a much more structured answer and leads to this output:
+
+```text
+Completion for prompt 2:
+Summary: Jack and Jill go on a quest to fetch water, but misfortune strikes and they tumble down the hill, returning home slightly battered but with their adventurous spirits undimmed. 
+Translation: Jack et Jill partent en quête d'eau, mais la malchance frappe et ils dégringolent la colline, rentrant chez eux légèrement meurtris mais avec leurs esprits aventureux intacts.
+Names: Jack, Jill
+Output JSON: {"french_summary": "Jack et Jill partent en quête d'eau, mais la malchance frappe et ils dégringolent la colline, rentrant chez eux légèrement meurtris mais avec leurs esprits aventureux intacts.", "num_names": 2}
+```
