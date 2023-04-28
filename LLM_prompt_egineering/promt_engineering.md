@@ -17,6 +17,11 @@
       - [Iteration 1: The output text is too long](#iteration-1-the-output-text-is-too-long)
       - [Iteration 2: Text focuses on wrong details](#iteration-2-text-focuses-on-wrong-details)
       - [Iteration 3: Description needs a table of dimensions](#iteration-3-description-needs-a-table-of-dimensions)
+  - [Summarising](#summarising)
+    - [Summarise with word/sentence/character limit](#summarise-with-wordsentencecharacter-limit)
+    - [Summarise with a focus on the shipping and delivery](#summarise-with-a-focus-on-the-shipping-and-delivery)
+    - [Summarise witha focus on price and value](#summarise-witha-focus-on-price-and-value)
+    - [Extraction](#extraction)
 
 It is very important to know how to interact with `LLMs` to get the most out of each and every API call.
 
@@ -573,3 +578,112 @@ This leads to the following amazing output:
   </tr>
 </table>
 </div>
+
+## Summarising
+
+We can use `LLMs` to summarise text, this is mega useful for research papers or documents.
+
+The text:
+
+```python
+prod_review = """
+Got this panda plush toy for my daughter's birthday, \
+who loves it and takes it everywhere. It's soft and \ 
+super cute, and its face has a friendly look. It's \ 
+a bit small for what I paid though. I think there \ 
+might be other options that are bigger for the \ 
+same price. It arrived a day earlier than expected, \ 
+so I got to play with it myself before I gave it \ 
+to her.
+"""
+```
+
+### Summarise with word/sentence/character limit
+
+```python
+prompt = f"""
+Your task is to generate a short summary of a product \
+review from an ecommerce site. 
+
+Summarize the review below, delimited by triple 
+backticks, in at most 30 words. 
+
+Review: ```{prod_review}```
+"""
+```
+
+result:
+
+```text
+Soft and cute panda plush toy loved by daughter, but a bit small for the price. Arrived early.
+```
+
+### Summarise with a focus on the shipping and delivery
+
+```python
+prompt = f"""
+Your task is to generate a short summary of a product \
+review from an ecommerce site to give feedback to the \
+Shipping deparmtment. 
+
+Summarize the review below, delimited by triple 
+backticks, in at most 30 words, and focusing on any aspects \
+that mention shipping and delivery of the product. 
+
+Review: ```{prod_review}```
+"""
+```
+
+result:
+
+```text
+he panda plush toy arrived a day earlier than expected, but the customer felt it was a bit small for the price paid.
+```
+
+### Summarise witha focus on price and value
+
+```python
+prompt = f"""
+Your task is to generate a short summary of a product \
+review from an ecommerce site to give feedback to the \
+pricing deparmtment, responsible for determining the \
+price of the product.  
+
+Summarize the review below, delimited by triple 
+backticks, in at most 30 words, and focusing on any aspects \
+that are relevant to the price and perceived value. 
+
+Review: ```{prod_review}```
+"""
+```
+
+result:
+
+```text
+The panda plush toy is soft, cute, and loved by the recipient, but the price may be too high for its size.
+```
+
+### Extraction
+
+We can also extract information from text instead.
+
+```python
+prompt = f"""
+Your task is to extract relevant information from \ 
+a product review from an ecommerce site to give \
+feedback to the Shipping department. 
+
+From the review below, delimited by triple quotes \
+extract the information relevant to shipping and \ 
+delivery. Limit to 30 words. 
+
+Review: ```{prod_review}```
+"""
+```
+
+results:
+
+```text
+The product arrived a day earlier than expected.
+
+```
