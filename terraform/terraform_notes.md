@@ -105,6 +105,11 @@ terraform apply
 ```sh
 terraform destroy
 ```
+### Give pre-confirmation when deploying or destroying resources
+Append the following to the end of your command:
+```sh
+--auto-approve
+```
 
 ### Validate syntax
 
@@ -233,6 +238,7 @@ There are 2 types of dependencies in resources:
 1. `Implicit` - this occurs when we make a reference using string interpolation (`${x.y.attribute}`). So `terraform` knows which order to provision in
 2. `Explicit` - we can use the `depends_on` argument to hard code dependencies which is a list of resources. This way we can create an order of creation.
 
+The order that resources are written in the Terraform file do not reflect the order of creation during deployment, therefore it is important to identify dependencies and account for them.
 ### Output blocks
 
 An `output block` can capture the output of a resource block:
